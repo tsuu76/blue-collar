@@ -25,68 +25,17 @@ MasterResume-shaped tailored copy — never writes back to the master file.
 from __future__ import annotations
 
 import logging
-import re
 
 from pydantic import ValidationError
 
 from src.ai.base import AIProvider, AIResponseError
 from src.ai.factory import get_ai_provider
 
+from .fabrication_guard import find_fabricated_numbers, find_suspicious_terms
 from .schema import Bullet, Experience, MasterResume, Project
 from .tailor_schema import BulletChange, TailoringInstructions
 
 logger = logging.getLogger("job_hunter.resume.tailor")
-
-# Generic resume/sentence words that are capitalized but not fabrication
-# risks — kept short and reviewed by the QC pass regardless, this is just to
-# cut down obvious false positives.
-_TOKEN_STOPWORDS = {
-    "the", "this", "that", "these", "those", "with", "and", "for", "across",
-}
-_TOKEN_RE = re.compile(r"\b[A-Z][A-Za-z0-9+#.\-]*\b")
-_NUMBER_RE = re.compile(r"\d+%?")
-_SENTENCE_END_CHARS = {".", "!", "?"}
-
-
-def _skill_words(skills: set[str]) -> set[str]:
-    """
-    Break multi-word/slashed skill phrases (e.g. "QA testing", "TCP/IP
-    basics") into individual lowercase words. Needed because the fabrication
-    guard compares single extracted tokens (e.g. "QA") against known
-    skills — without this, a token like "QA" would be wrongly flagged as
-    unknown even though "QA testing" already exists as a skill, just never
-    as that exact standalone phrase.
-    """
-    words: set[str] = set()
-    for skill in skills:
-        for word in re.split(r"[\s/,\-]+", skill):
-            if word:
-                words.add(word.lower())
-    return words
-
-
-def _extract_tech_tokens(text: str) -> set[str]:
-    """
-    Capitalized/technical-looking tokens, excluding sentence-initial words.
-    Sentence-initial capitalization is just English grammar (every bullet
-    starts with a capital letter) and carries no signal about whether a
-    term is a genuine technology/proper-noun mention — flagging it produces
-    constant false positives (e.g. "Diagnosed issues..." would otherwise
-    flag the harmless verb "Diagnosed"). Mid-sentence capitalized words
-    (e.g. "...using Kubernetes and AWS Lambda") are a much stronger signal
-    and are still caught.
-    """
-    tokens: set[str] = set()
-    for match in _TOKEN_RE.finditer(text):
-        word = match.group(0)
-        if word.lower() in _TOKEN_STOPWORDS:
-            continue
-        prefix = text[: match.start()].rstrip()
-        is_sentence_initial = not prefix or prefix[-1] in _SENTENCE_END_CHARS
-        if is_sentence_initial:
-            continue
-        tokens.add(word.lower())
-    return tokens
 
 
 def validate_tailoring_instructions(resume: MasterResume, instructions: TailoringInstructions) -> list[str]:
@@ -129,7 +78,6 @@ def validate_tailoring_instructions(resume: MasterResume, instructions: Tailorin
     valid_bullet_ids = resume.all_bullet_ids()
     bullet_by_id = _index_bullets(resume)
     known_skills = resume.all_skills()
-    known_skill_words = _skill_words(known_skills)
 
     seen_bullet_ids: set[str] = set()
     for change in instructions.bullet_changes:
@@ -148,18 +96,14 @@ def validate_tailoring_instructions(resume: MasterResume, instructions: Tailorin
             continue
 
         original = bullet_by_id[change.id]
-        orig_numbers = set(_NUMBER_RE.findall(original.text))
-        new_numbers = set(_NUMBER_RE.findall(change.text))
-        fabricated_numbers = new_numbers - orig_numbers
+        fabricated_numbers = find_fabricated_numbers(change.text, [original.text])
         if fabricated_numbers:
             problems.append(
                 f"bullet {change.id!r} rewrite introduces number(s) not present in the original text: "
                 f"{sorted(fabricated_numbers)} — possible fabricated metric"
             )
 
-        new_tokens = _extract_tech_tokens(change.text)
-        allowed_tokens = _extract_tech_tokens(original.text) | known_skills | known_skill_words
-        suspicious = {t for t in new_tokens if t not in allowed_tokens}
+        suspicious = find_suspicious_terms(change.text, [original.text], known_skills)
         if suspicious:
             problems.append(
                 f"bullet {change.id!r} rewrite mentions term(s) not found anywhere in the master resume: "

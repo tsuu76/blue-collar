@@ -124,3 +124,43 @@ class MasterResume(BaseModel):
         for b in self.additional:
             skills.update(s.strip().lower() for s in b.skills)
         return skills
+
+    def all_text_fragments(self) -> list[str]:
+        """
+        Every piece of free text in the resume (summary + every bullet).
+        Used as the "ground truth" pool for fabrication checks elsewhere
+        (e.g. cover letter generation) — anything a generated document
+        claims should be traceable back to one of these fragments.
+        """
+        fragments = [self.summary] if self.summary else []
+        for edu in self.education:
+            fragments.extend(b.text for b in edu.highlights)
+        for exp in self.experience:
+            fragments.extend(b.text for b in exp.bullets)
+        for proj in self.projects:
+            fragments.extend(b.text for b in proj.bullets)
+        fragments.extend(b.text for b in self.additional)
+        return fragments
+
+    def identifying_names(self) -> list[str]:
+        """
+        Proper nouns the candidate is entitled to reference by name (company
+        names, project names, institutions, credentials, job titles held).
+        These rarely appear inside bullet prose itself, so callers grounding
+        generated text (e.g. a cover letter naming "Tipaload" or "CashFlo")
+        need this in addition to all_text_fragments() — otherwise a
+        perfectly legitimate reference to the candidate's own history looks
+        indistinguishable from a fabricated new name.
+        """
+        names: list[str] = []
+        if self.personal.full_name:
+            names.append(self.personal.full_name)
+        for exp in self.experience:
+            names.extend([exp.company, exp.title])
+        for proj in self.projects:
+            names.append(proj.name)
+        for edu in self.education:
+            names.extend([edu.institution, edu.credential, edu.field_of_study])
+        for cert in self.certifications:
+            names.extend([cert.name, cert.issuer])
+        return [n for n in names if n]

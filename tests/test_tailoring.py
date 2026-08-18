@@ -54,7 +54,7 @@ def make_sample_resume() -> MasterResume:
                     "name": "CashFlo",
                     "technologies": ["React", "SQLite"],
                     "bullets": [
-                        {"id": "project_01_bullet_01", "text": "Built a full-stack finance app.", "skills": ["React", "SQLite"]}
+                        {"id": "project_01_bullet_01", "text": "Built a full-stack finance app.", "skills": ["React", "SQLite", "REST API design"]}
                     ],
                 }
             ],
@@ -165,6 +165,22 @@ class TestFabricationPrevention:
                     id="exp_01_bullet_01",
                     action="rewrite",
                     text="Performed QA troubleshooting across staging and production.",
+                )
+            ]
+        )
+        assert validate_tailoring_instructions(resume, instructions) == []
+
+    def test_plural_of_an_existing_term_is_not_flagged(self):
+        # Regression: "API design" exists as a skill (via "REST API
+        # design"), but a rewrite using the plural "APIs" must not be
+        # flagged just because "APIs" != "API" as exact strings.
+        resume = make_sample_resume()
+        instructions = TailoringInstructions(
+            bullet_changes=[
+                BulletChange(
+                    id="project_01_bullet_01",
+                    action="rewrite",
+                    text="Built a full-stack finance app, designing REST APIs for the backend.",
                 )
             ]
         )
