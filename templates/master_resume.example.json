@@ -1,0 +1,56 @@
+{
+  "_comment": "EXAMPLE ONLY — fictional placeholder data showing the required structure. Copy this to data/master_resume.json and replace every field with your own real, factual information. The AI tailoring pipeline treats this file as ground truth and will never add content beyond what you put here yourself.",
+  "personal": {
+    "full_name": "Jordan Example",
+    "email": "jordan.example@email.com",
+    "phone": "0400 000 000",
+    "location": "Sydney, NSW",
+    "linkedin": "linkedin.com/in/jordanexample",
+    "github": "github.com/jordanexample",
+    "portfolio": ""
+  },
+  "summary": "Cybersecurity student with hands-on full-stack development experience, seeking an entry-level IT support role.",
+  "skills": ["Python", "Java", "React", "MySQL", "Excel", "Git", "Networking fundamentals"],
+  "education": [
+    {
+      "id": "edu_01",
+      "institution": "Example University",
+      "credential": "Bachelor of Cybersecurity",
+      "field_of_study": "Cybersecurity",
+      "start_date": "2023-02",
+      "end_date": "Present",
+      "location": "Sydney, NSW",
+      "highlights": [
+        {
+          "id": "edu_01_bullet_01",
+          "text": "Relevant coursework: network security, data analytics, machine learning fundamentals.",
+          "skills": ["networking", "data analytics", "machine learning"]
+        }
+      ]
+    }
+  ],
+  "experience": [],
+  "projects": [
+    {
+      "id": "project_01",
+      "name": "Example Full-Stack Web App",
+      "description": "A full-stack application built as a personal/coursework project.",
+      "technologies": ["Python", "React", "MySQL"],
+      "url": "",
+      "bullets": [
+        {
+          "id": "project_01_bullet_01",
+          "text": "Built a full-stack web application using React and a Python backend, storing data in MySQL.",
+          "skills": ["Python", "React", "MySQL"]
+        },
+        {
+          "id": "project_01_bullet_02",
+          "text": "Designed the database schema and wrote queries to support core application features.",
+          "skills": ["MySQL", "data analysis"]
+        }
+      ]
+    }
+  ],
+  "certifications": [],
+  "additional": []
+}

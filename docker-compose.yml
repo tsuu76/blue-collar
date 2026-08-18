@@ -1,0 +1,45 @@
+# IT Job Hunter — local workflow engine
+#
+# Runs n8n only. Bound to 127.0.0.1 so it is never reachable from outside this
+# machine. Basic auth is required (see .env). Ollama is expected to run
+# natively on the host (not in Docker) — n8n reaches it via host.docker.internal.
+#
+# Start:   docker compose up -d
+# Stop:    docker compose down
+# Logs:    docker compose logs -f n8n
+
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    container_name: job-hunter-n8n
+    restart: unless-stopped
+    ports:
+      # Bind explicitly to loopback only — never 0.0.0.0.
+      - "127.0.0.1:${N8N_PORT:-5678}:5678"
+    environment:
+      - N8N_HOST=${N8N_HOST:-localhost}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
+      - N8N_BASIC_AUTH_ACTIVE=${N8N_BASIC_AUTH_ACTIVE:-true}
+      - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD:-changeme}
+      - WEBHOOK_URL=http://${N8N_HOST:-localhost}:${N8N_PORT:-5678}/
+      - GENERIC_TIMEZONE=Australia/Sydney
+      - TZ=Australia/Sydney
+      # Ollama runs natively on the host, not in this compose file.
+      - OLLAMA_BASE_URL_FROM_CONTAINER=http://host.docker.internal:11434
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_VERSION_NOTIFICATIONS_ENABLED=false
+      - N8N_TEMPLATES_ENABLED=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+      # Mount project so workflows can read/write local files (resumes, PDFs, db).
+      - ./data:/data
+      - ./applications:/applications
+      - ./workflows:/workflows
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  n8n_data:
+    name: job-hunter-n8n-data

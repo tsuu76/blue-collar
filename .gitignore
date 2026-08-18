@@ -35,3 +35,9 @@ logs/
 # Editor
 .vscode/
 .idea/
+
+# Python virtual environment
+.venv/
+
+# Benchmark output
+data/benchmark_results.json
