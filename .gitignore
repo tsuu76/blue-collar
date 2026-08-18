@@ -1,0 +1,37 @@
+# Secrets & environment
+.env
+*.pem
+*.key
+
+# Personal data — resume, applications, database
+data/
+applications/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+
+# Node / n8n
+node_modules/
+.n8n/
+
+# Playwright
+playwright-report/
+test-results/
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Editor
+.vscode/
+.idea/
