@@ -1,8 +1,15 @@
 # IT Job Hunter — local workflow engine
 #
 # Runs n8n only. Bound to 127.0.0.1 so it is never reachable from outside this
-# machine. Basic auth is required (see .env). Ollama is expected to run
-# natively on the host (not in Docker) — n8n reaches it via host.docker.internal.
+# machine. Ollama is expected to run natively on the host (not in Docker) —
+# n8n reaches it via host.docker.internal.
+#
+# Auth: modern n8n (v1+) replaced the legacy N8N_BASIC_AUTH_* env vars with
+# its own built-in owner-account system. On first visit to
+# http://localhost:5678 you'll be prompted to create a local owner account
+# (email + password) — that account is stored only in the n8n_data Docker
+# volume on this machine and never leaves it. The N8N_BASIC_AUTH_* vars in
+# .env are harmless leftovers for older n8n versions; they're ignored here.
 #
 # Start:   docker compose up -d
 # Stop:    docker compose down
