@@ -20,6 +20,8 @@ import logging
 
 from pydantic import ValidationError
 
+from src.config import settings
+
 from .base import AIProvider, AIResponseError
 from .factory import get_ai_provider
 from .schemas import JobAnalysis
@@ -70,7 +72,7 @@ def analyze_job(
     description: str,
     candidate_skills: list[str],
     provider: AIProvider | None = None,
-    max_retries: int = 2,
+    max_retries: int = settings.ollama_max_retries,
 ) -> JobAnalysis:
     """
     Run AI job analysis and return a validated JobAnalysis.

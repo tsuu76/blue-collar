@@ -66,6 +66,8 @@ SYSTEM_PROMPT = (
 
 _PROMPT_TEMPLATE = """CANDIDATE FACTS (the only source of truth — do not add anything beyond this):
 
+Candidate name: {full_name}
+
 Summary: {summary}
 
 Skills: {skills}
@@ -80,9 +82,11 @@ JOB DESCRIPTION:
 {description}
 
 Write a cover letter for this candidate applying to this job. Requirements:
-- Aim for approximately {target_words} words. It MUST be at least {min_words} words and no more than
-  {max_words} words — models tend to undershoot, so write generously and include specific detail rather
-  than stopping early; a letter that reads a little long is far better than one that's too short.
+- Target {target_words} words, and it MUST be at least {min_words} words — this is a hard minimum, not a
+  suggestion. Before finishing, count what you've written in your head; if it's anywhere close to
+  {min_words} words, keep going: add a further paragraph with more concrete detail from the candidate
+  facts above (another project detail, another angle on the internship, why the specific coursework
+  matters here) rather than stopping. A letter that runs a little long is far better than one that's short.
 - First person, a brief natural greeting is fine (no "Dear Hiring Manager" boilerplate needed).
 - Specific to this role and company — reference the actual job title and something concrete from the description.
 - Mention 2-3 genuinely relevant skills/projects/experience from the candidate facts above.
@@ -94,6 +98,9 @@ Write a cover letter for this candidate applying to this job. Requirements:
   If the job description doesn't mention the company's culture/values, don't praise or characterize them;
   focus on the role and the candidate's fit instead.
 - No invented facts about the candidate OR the company. No generic AI-cover-letter phrasing.
+- Do NOT use placeholder brackets like "[Your Name]", "[Company Address]", or any other bracketed
+  placeholder — this letter is final text, not a template. Sign off with the candidate's real name only
+  (see candidate facts above), or no signature line at all.
 - Output ONLY the cover letter body text — no subject line, no explanation, no markdown formatting.
 """
 
@@ -118,12 +125,14 @@ def _bullets_text(resume: MasterResume) -> str:
 def build_prompt(resume: MasterResume, *, title: str, company: str, description: str) -> str:
     min_words = settings.cover_letter_min_words
     max_words = settings.cover_letter_max_words
-    # Lean toward the upper-middle of the range, not the midpoint — models
-    # reliably undershoot a stated target more often than they overshoot
-    # one, so aiming a bit high in the prompt lands closer to the actual
-    # allowed range in practice.
-    target_words = round(min_words + (max_words - min_words) * 0.6)
+    # Lean well toward the top of the range, not the midpoint — in practice
+    # local models (tested against llama3:latest) undershoot a stated word
+    # target consistently and by a wide margin, even when told explicitly
+    # how far short a previous attempt fell. Aiming near the top of the
+    # range is what actually lands attempts inside it.
+    target_words = round(min_words + (max_words - min_words) * 0.8)
     return _PROMPT_TEMPLATE.format(
+        full_name=resume.personal.full_name or "(not provided)",
         summary=resume.summary or "(none provided)",
         skills=", ".join(resume.skills) or "(none listed)",
         bullets=_bullets_text(resume),
@@ -204,7 +213,7 @@ def generate_cover_letter(
     company: str,
     description: str,
     provider: AIProvider | None = None,
-    max_retries: int = 2,
+    max_retries: int = settings.ollama_max_retries,
 ) -> str:
     """
     Generate and validate a cover letter. Raises AIResponseError if no
@@ -214,7 +223,8 @@ def generate_cover_letter(
     unvalidated prose.
     """
     ai = provider or get_ai_provider()
-    prompt = build_prompt(resume, title=title, company=company, description=description)
+    base_prompt = build_prompt(resume, title=title, company=company, description=description)
+    prompt = base_prompt
 
     last_problems: list[str] = ["(no attempts made)"]
     for attempt in range(max_retries + 1):
@@ -223,6 +233,7 @@ def generate_cover_letter(
         except AIResponseError as exc:
             last_problems = [str(exc)]
             logger.warning("Cover letter attempt %d/%d failed to generate: %s", attempt + 1, max_retries + 1, exc)
+            prompt = base_prompt
             continue
 
         problems = validate_cover_letter(text, resume, title=title, company=company, description=description)
@@ -231,6 +242,15 @@ def generate_cover_letter(
         last_problems = problems
         logger.warning(
             "Cover letter attempt %d/%d failed validation: %s", attempt + 1, max_retries + 1, "; ".join(problems)
+        )
+        # Feed the specific failure back in for the next attempt instead of
+        # blindly repeating the same prompt — this matters most for word
+        # count, where models reliably undershoot a stated target and
+        # benefit from being told exactly how far short the last attempt
+        # fell, rather than just re-reading the same instructions again.
+        prompt = (
+            f"{base_prompt}\n\nYour previous attempt had these problems — fix them this time:\n"
+            + "\n".join(f"- {p}" for p in problems)
         )
 
     raise AIResponseError(

@@ -117,13 +117,17 @@ class TestFabricationPrevention:
             skills=ReorderOrSelect(action="reorder", order=["Python", "SQL", "Git", "Kubernetes"])
         )
         problems = validate_tailoring_instructions(resume, instructions)
-        assert any("must be a reordering of exactly the existing skills" in p for p in problems)
+        assert any("skills cannot be invented" in p for p in problems)
 
-    def test_cannot_silently_drop_a_skill_via_reorder(self):
+    def test_omitting_a_real_skill_is_allowed(self):
+        # Subset selection is intentional here (same as projects/experience)
+        # — omitting a skill that genuinely exists on the master resume is
+        # not a fabrication risk, only inventing one that doesn't is. Live
+        # testing showed models consistently and reasonably want to drop
+        # clearly irrelevant skills for a given job.
         resume = make_sample_resume()
         instructions = TailoringInstructions(skills=ReorderOrSelect(action="reorder", order=["Python", "SQL"]))
-        problems = validate_tailoring_instructions(resume, instructions)
-        assert any("must be a reordering of exactly the existing skills" in p for p in problems)
+        assert validate_tailoring_instructions(resume, instructions) == []
 
     def test_cannot_fabricate_a_metric_in_a_rewrite(self):
         resume = make_sample_resume()

@@ -30,6 +30,7 @@ from pydantic import ValidationError
 
 from src.ai.base import AIProvider, AIResponseError
 from src.ai.factory import get_ai_provider
+from src.config import settings
 
 from .fabrication_guard import find_fabricated_numbers, find_suspicious_terms
 from .schema import Bullet, Experience, MasterResume, Project
@@ -46,13 +47,22 @@ def validate_tailoring_instructions(resume: MasterResume, instructions: Tailorin
         problems.append("summary.action is 'rewrite' but no text was provided")
 
     if instructions.skills.action == "reorder":
+        # Subset selection is allowed, same as projects/experience — live
+        # testing showed models consistently and reasonably want to omit
+        # clearly irrelevant skills (e.g. creative-tool skills on a
+        # technical support resume). Omitting a TRUE skill from display is
+        # not a fabrication risk (the master resume, and every skill this
+        # candidate genuinely has, is untouched); only inventing a skill
+        # that was never there is. What's still hard-blocked below: any
+        # entry that isn't one of the resume's real skills.
         requested = [s.strip() for s in instructions.skills.order]
         if len(requested) != len(set(requested)):
             problems.append("skills.order contains duplicate entries")
-        if set(requested) != {s.strip() for s in resume.skills}:
+        unknown_skills = set(requested) - {s.strip() for s in resume.skills}
+        if unknown_skills:
             problems.append(
-                "skills.order must be a reordering of exactly the existing skills — "
-                "no skills may be added or removed here"
+                f"skills.order references skill(s) not in the master resume: {sorted(unknown_skills)} — "
+                f"skills cannot be invented"
             )
 
     valid_project_ids = {p.id for p in resume.projects}
@@ -248,7 +258,7 @@ def generate_tailoring_instructions(
     title: str,
     description: str,
     provider: AIProvider | None = None,
-    max_retries: int = 2,
+    max_retries: int = settings.ollama_max_retries,
 ) -> TailoringInstructions:
     """
     Ask the AI for tailoring instructions and validate them against the
@@ -258,7 +268,8 @@ def generate_tailoring_instructions(
     resume, or flag for manual review) rather than use unvalidated output.
     """
     ai = provider or get_ai_provider()
-    prompt = build_prompt(resume, title, description)
+    base_prompt = build_prompt(resume, title, description)
+    prompt = base_prompt
 
     last_error: str | None = None
     for attempt in range(max_retries + 1):
@@ -268,6 +279,7 @@ def generate_tailoring_instructions(
         except (AIResponseError, ValidationError) as exc:
             last_error = str(exc)
             logger.warning("Tailoring attempt %d/%d failed to parse/validate shape: %s", attempt + 1, max_retries + 1, exc)
+            prompt = base_prompt
             continue
 
         problems = validate_tailoring_instructions(resume, instructions)
@@ -275,6 +287,15 @@ def generate_tailoring_instructions(
             return instructions
         last_error = "; ".join(problems)
         logger.warning("Tailoring attempt %d/%d failed content validation: %s", attempt + 1, max_retries + 1, last_error)
+        # Feed the specific validation problems back in rather than blindly
+        # repeating the same prompt — live testing showed models reliably
+        # repeat the exact same mistake (e.g. trying to drop "irrelevant"
+        # skills from skills.order, which isn't permitted) across every
+        # retry unless told explicitly what went wrong.
+        prompt = (
+            f"{base_prompt}\n\nYour previous attempt was invalid — fix these specific problems this time:\n"
+            + "\n".join(f"- {p}" for p in problems)
+        )
 
     raise AIResponseError(
         f"AI resume tailoring failed for {title!r} after {max_retries + 1} attempts: {last_error}"

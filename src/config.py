@@ -57,9 +57,14 @@ class Settings:
     ai_provider: str = os.getenv("AI_PROVIDER", "ollama")
     ollama_base_url: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     ollama_model: str = os.getenv("OLLAMA_MODEL", "llama3:latest")
-    ollama_qc_model: str = os.getenv("OLLAMA_QC_MODEL", "llama3:latest")
+    # QC uses a different model than the rest of the pipeline: live testing
+    # showed llama3:latest confidently hallucinates false fabrication claims
+    # on this specific cross-document verification task (e.g. claiming a
+    # skill wasn't in the resume when it plainly was), while mistral:latest
+    # passed the same real scenarios cleanly. See src/quality_control/qc.py.
+    ollama_qc_model: str = os.getenv("OLLAMA_QC_MODEL", "mistral:latest")
     ollama_timeout_seconds: int = _int("OLLAMA_TIMEOUT_SECONDS", 120)
-    ollama_max_retries: int = _int("OLLAMA_MAX_RETRIES", 2)
+    ollama_max_retries: int = _int("OLLAMA_MAX_RETRIES", 3)
 
     # --- Targeting ---
     target_domain: str = os.getenv("TARGET_DOMAIN", "IT")
