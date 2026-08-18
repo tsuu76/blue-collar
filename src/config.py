@@ -56,8 +56,8 @@ class Settings:
     # --- AI provider (local only — enforced by AI_PROVIDER choices in src/ai) ---
     ai_provider: str = os.getenv("AI_PROVIDER", "ollama")
     ollama_base_url: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
-    ollama_model: str = os.getenv("OLLAMA_MODEL", "qwen3:8b")
-    ollama_qc_model: str = os.getenv("OLLAMA_QC_MODEL", "qwen3:8b")
+    ollama_model: str = os.getenv("OLLAMA_MODEL", "llama3:latest")
+    ollama_qc_model: str = os.getenv("OLLAMA_QC_MODEL", "llama3:latest")
     ollama_timeout_seconds: int = _int("OLLAMA_TIMEOUT_SECONDS", 120)
     ollama_max_retries: int = _int("OLLAMA_MAX_RETRIES", 2)
 
