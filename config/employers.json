@@ -1,0 +1,30 @@
+[
+  {
+    "_comment": "Verified live against the real API before being added here (see git history). SafetyCulture is a genuine Sydney-headquartered tech company — a real, working, AU-relevant example.",
+    "company": "SafetyCulture",
+    "platform": "ashby",
+    "identifier": "safetyculture",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live and working, but not AU-focused — kept disabled as a reference example proving the Greenhouse adapter works against a real board. Replace with a real employer you want to track, or enable this one if you want it.",
+    "company": "Greenhouse",
+    "platform": "greenhouse",
+    "identifier": "greenhouse",
+    "enabled": false
+  },
+  {
+    "_comment": "Verified live and working (309 real postings at time of writing), not AU-focused — disabled reference example for the Lever adapter.",
+    "company": "Palantir",
+    "platform": "lever",
+    "identifier": "palantir",
+    "enabled": false
+  },
+  {
+    "_comment": "Verified live and working, not AU-focused — disabled reference example for the SmartRecruiters adapter.",
+    "company": "Visa",
+    "platform": "smartrecruiters",
+    "identifier": "Visa",
+    "enabled": false
+  }
+]
