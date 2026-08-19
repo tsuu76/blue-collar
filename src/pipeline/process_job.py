@@ -178,6 +178,20 @@ def process_job(
             qc_result.passed,
         )
 
+        # Notification failures must never break the pipeline — notify()
+        # itself already swallows per-channel errors, but the import is
+        # deliberately local so a notifications-package issue can't ever
+        # prevent process_job from returning its result.
+        try:
+            from src.notifications.notifier import notify_job_flagged_for_review, notify_job_ready
+
+            if qc_result.passed:
+                notify_job_ready(job["title"], job["company"] or "Unknown company", score.total_score)
+            else:
+                notify_job_flagged_for_review(job["title"], job["company"] or "Unknown company")
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Notification failed after processing job=%d: %s", job_id, exc)
+
         return ProcessResult(job_id, final_status, qualified=True, application_id=application_id)
     finally:
         conn.close()
