@@ -540,6 +540,33 @@ button{ font:inherit; color:inherit; }
    — the design system didn't define an equivalent of the old .hint class. */
 .hint{ font-size:var(--fs-sm); color:var(--text-faint); margin:2px 0 0; }
 
+/* --- Blue Collar brand -----------------------------------------------
+   .brand__mark in the design system is a crimson gradient tile with a
+   text monogram inside it. The mark is now a real SVG badge (static/
+   logo.svg) that carries its own gradient, border highlight and shape,
+   so the tile styling underneath it is cleared out — otherwise the
+   crimson square would show through behind the blue badge's rounded
+   corners. Size/flex behaviour is kept identical. */
+.brand__mark{
+  background:none;
+  box-shadow:none;
+  border-radius:0;
+  width:34px; height:34px;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,.55));
+}
+/* The italic half of the wordmark picks up the mark's blue rather than
+   the design system's default ember, so the logo and the name read as
+   one object instead of two accents fighting. */
+.brand__name em{ color:var(--steel); }
+
+/* Below ~430px the two topbar buttons squeeze the wordmark until it
+   ellipsises to "Blue …", which looks broken. Drop the text and let the
+   badge alone carry the brand at that width — the mark is designed to
+   stand on its own. */
+@media (max-width:430px){
+  .brand__name{ display:none; }
+}
+
 /* The READY_TO_APPLY column hosts the CardSwap widget (see .swap-slot
    above). CardSwap's real pixel-based slot math (cardDistance/verticalDistance,
    see frontend/cardswap/src/main.jsx) needs ~330px of width to render

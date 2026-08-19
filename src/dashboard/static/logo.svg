@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Blue Collar — app mark.
+
+  A stylized shirt collar: two folded wings meeting in a chevron. Reads as
+  a collar at wordmark size and as a clean chevron at favicon size, which
+  is the point — it has to survive being 16px in a browser tab.
+
+  The blue is deliberate: the rest of this UI is crimson/oxblood, so the
+  mark is the one place the palette turns cool. It earns the name instead
+  of just stating it, and gives the topbar a focal point that isn't
+  competing with the crimson "Import job" button beside it.
+
+  Self-contained: no external refs, no fonts, no CSS deps — so it works
+  identically as <img>, as a favicon, and offline.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" role="img" aria-label="Blue Collar">
+  <defs>
+    <linearGradient id="bc-badge" x1="4" y1="2" x2="32" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6aa0cf"/>
+      <stop offset=".52" stop-color="#31618e"/>
+      <stop offset="1" stop-color="#1a3a58"/>
+    </linearGradient>
+    <linearGradient id="bc-collar" x1="18" y1="9" x2="18" y2="26" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d7e6f4"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="1" y="1" width="34" height="34" rx="11" fill="url(#bc-badge)"/>
+  <!-- top inner highlight: the "lit from above" edge that makes it read as a physical badge -->
+  <rect x="1.5" y="1.5" width="33" height="33" rx="10.5" fill="none" stroke="#ffffff" stroke-opacity=".26"/>
+
+  <!-- collar wings; the right one sits a shade darker so the fold reads -->
+  <path d="M8.6 9.8 18 19.2 18 25.6 8.6 16.2Z" fill="url(#bc-collar)"/>
+  <path d="M27.4 9.8 18 19.2 18 25.6 27.4 16.2Z" fill="url(#bc-collar)" fill-opacity=".8"/>
+</svg>

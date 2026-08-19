@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}IT Job Hunter{% endblock %}</title>
+<title>{% block title %}Blue Collar{% endblock %}</title>
+<link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='logo.svg') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 {% block head %}{% endblock %}
 </head>
@@ -11,8 +12,8 @@
 <header class="topbar">
   <div class="topbar__inner">
     <a class="brand" href="{{ url_for('index') }}">
-      <span class="brand__mark" aria-hidden="true">IT</span>
-      <span class="brand__name">Job <em>Hunter</em></span>
+      <img class="brand__mark" src="{{ url_for('static', filename='logo.svg') }}" alt="" width="34" height="34">
+      <span class="brand__name">Blue <em>Collar</em></span>
     </a>
     <div class="topbar__actions">
       <form method="post" action="{{ url_for('discover_now') }}">

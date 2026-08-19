@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Local fallback mark for jobs with no company image. Deliberately a
-     tiny hand-written SVG: no external image service, no network call. -->
+     tiny hand-written SVG: no external image service, no network call.
+     Colours track the design system's surface/steel tokens so it sits
+     quietly on a CardSwap card instead of competing with the job text. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Company">
-  <rect width="64" height="64" rx="10" fill="#2c0703" stroke="#000000" stroke-width="2"/>
-  <path d="M18 44V26l14-8 14 8v18" fill="none" stroke="#890620" stroke-width="3" stroke-linejoin="round"/>
-  <rect x="27" y="34" width="10" height="10" fill="#890620"/>
+  <rect width="64" height="64" rx="14" fill="#2c1c19" stroke="#ffffff" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M18 45V27l14-8 14 8v18" fill="none" stroke="#7fa6c9" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="27" y="35" width="10" height="10" rx="1.5" fill="#7fa6c9" fill-opacity=".85"/>
 </svg>
