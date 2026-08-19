@@ -42,6 +42,7 @@ browser_profile/
 # ==================================================
 data/
 applications/
+backups/
 *.db
 *.db-journal
 *.db-wal
