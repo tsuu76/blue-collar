@@ -87,7 +87,9 @@ Write a cover letter for this candidate applying to this job. Requirements:
   {min_words} words, keep going: add a further paragraph with more concrete detail from the candidate
   facts above (another project detail, another angle on the internship, why the specific coursework
   matters here) rather than stopping. A letter that runs a little long is far better than one that's short.
-- First person, a brief natural greeting is fine (no "Dear Hiring Manager" boilerplate needed).
+- First person. Start directly with the actual letter content (e.g. "I'm writing to apply for...") —
+  do NOT open with a greeting line, "Dear Hiring Manager", or the candidate's own name on its own line;
+  the letterhead already shows who this is from, so repeating the name at the top is redundant.
 - Specific to this role and company — reference the actual job title and something concrete from the description.
 - Mention 2-3 genuinely relevant skills/projects/experience from the candidate facts above.
 - Explain briefly why the candidate is suitable, without exaggerating.

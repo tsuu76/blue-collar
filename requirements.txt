@@ -3,5 +3,10 @@ python-dotenv>=1.0.1
 requests>=2.32.3
 pydantic>=2.13.0
 
+# Templating + local PDF rendering (Phase 13) — Playwright drives a local
+# headless Chromium; no cloud rendering API involved.
+jinja2>=3.1.4
+playwright>=1.47.0
+
 # Testing
 pytest>=8.3.3

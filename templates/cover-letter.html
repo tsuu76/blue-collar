@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+  Consistent professional cover letter template (spec section 18/20). Plain
+  single-column layout, no graphics — the AI-generated letter body
+  (src/cover_letter/generator.py) is inserted as plain paragraphs; it never
+  touches this template's structure or styling.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{ personal.full_name }} — Cover Letter</title>
+<style>
+  @page { size: A4; margin: 22mm 22mm; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    line-height: 1.55;
+    color: #1a1a1a;
+    margin: 0;
+  }
+  .sender {
+    margin-bottom: 14pt;
+  }
+  .sender .name {
+    font-size: 13pt;
+    font-weight: 700;
+  }
+  .sender .contact-line {
+    font-size: 9.5pt;
+    color: #333;
+  }
+  .sender .contact-line span:not(:last-child)::after {
+    content: " \00b7 ";
+    color: #777;
+  }
+  .date {
+    margin-bottom: 14pt;
+    color: #333;
+  }
+  .recipient {
+    margin-bottom: 14pt;
+  }
+  .body p {
+    margin: 0 0 11pt 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="sender">
+  <div class="name">{{ personal.full_name }}</div>
+  <div class="contact-line">
+    {% if personal.location %}<span>{{ personal.location }}</span>{% endif %}
+    {% if personal.email %}<span>{{ personal.email }}</span>{% endif %}
+    {% if personal.phone %}<span>{{ personal.phone }}</span>{% endif %}
+  </div>
+</div>
+
+<div class="date">{{ date }}</div>
+
+<div class="recipient">
+  Re: {{ job_title }}{% if company %} — {{ company }}{% endif %}
+</div>
+
+<div class="body">
+  {% for paragraph in paragraphs %}
+  <p>{{ paragraph }}</p>
+  {% endfor %}
+</div>
+
+</body>
+</html>
