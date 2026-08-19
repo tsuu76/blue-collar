@@ -19,7 +19,7 @@ from src.database.jobs_repo import (
     update_job_analysis,
     update_job_status,
 )
-from src.database.models import JobStatus, compute_dedupe_hash
+from src.database.models import JobStatus, canonicalize_url, compute_dedupe_hash
 
 
 @pytest.fixture()
@@ -90,6 +90,60 @@ class TestDedupeHash:
         assert h1 == h2
         assert h1 != h3
 
+    def test_source_and_source_job_id_takes_priority(self):
+        # Same platform id must dedupe even if title/company text differs
+        # slightly (e.g. a re-titled posting) — the platform id is more
+        # precise than fuzzy text matching.
+        h1 = compute_dedupe_hash(
+            "IT Support Officer", "Acme", "Sydney", "https://boards.greenhouse.io/acme/jobs/123",
+            source="greenhouse", source_job_id="123",
+        )
+        h2 = compute_dedupe_hash(
+            "IT Support Officer (Updated)", "Acme Pty Ltd", "Sydney NSW", "https://boards.greenhouse.io/acme/jobs/123?utm_source=x",
+            source="greenhouse", source_job_id="123",
+        )
+        assert h1 == h2
+
+    def test_different_source_job_id_different_hash(self):
+        h1 = compute_dedupe_hash("Title", "Acme", "Sydney", "https://a.com/1", source="greenhouse", source_job_id="123")
+        h2 = compute_dedupe_hash("Title", "Acme", "Sydney", "https://a.com/1", source="greenhouse", source_job_id="456")
+        assert h1 != h2
+
+    def test_same_source_job_id_different_source_different_hash(self):
+        h1 = compute_dedupe_hash("Title", "Acme", "Sydney", "https://a.com/1", source="greenhouse", source_job_id="123")
+        h2 = compute_dedupe_hash("Title", "Acme", "Sydney", "https://a.com/1", source="lever", source_job_id="123")
+        assert h1 != h2
+
+    def test_manual_import_unaffected_by_new_params(self):
+        # Existing manual-import call sites never pass source/source_job_id
+        # — confirms the default empty-string behavior is unchanged.
+        h1 = compute_dedupe_hash("IT Support Officer", "Acme", "Sydney", "https://a.com/1")
+        h2 = compute_dedupe_hash("IT Support Officer", "Acme", "Sydney", "https://a.com/1", source="", source_job_id="")
+        assert h1 == h2
+
+
+class TestCanonicalizeUrl:
+    def test_strips_tracking_params(self):
+        assert canonicalize_url("https://a.com/job/1?utm_source=x&utm_campaign=y") == canonicalize_url("https://a.com/job/1")
+
+    def test_strips_trailing_slash(self):
+        assert canonicalize_url("https://a.com/job/1/") == canonicalize_url("https://a.com/job/1")
+
+    def test_lowercases_host(self):
+        assert canonicalize_url("https://Example.COM/job/1") == canonicalize_url("https://example.com/job/1")
+
+    def test_strips_fragment(self):
+        assert canonicalize_url("https://a.com/job/1#apply") == canonicalize_url("https://a.com/job/1")
+
+    def test_keeps_non_tracking_query_params(self):
+        assert canonicalize_url("https://a.com/job?id=1") != canonicalize_url("https://a.com/job?id=2")
+
+    def test_empty_url_returns_empty(self):
+        assert canonicalize_url("") == ""
+
+    def test_malformed_url_does_not_raise(self):
+        canonicalize_url("not a url :::")  # must not raise
+
 
 class TestInsertJob:
     def test_insert_and_get(self, conn):
@@ -120,6 +174,43 @@ class TestInsertJob:
         job_id_2 = insert_job(conn, other)
         conn.commit()
         assert job_id_1 != job_id_2
+
+    def test_stores_canonical_url(self, conn):
+        job = dict(SAMPLE_JOB, url="https://Example.com/jobs/it-support-1/?utm_source=x")
+        job_id = insert_job(conn, job)
+        conn.commit()
+        row = get_job(conn, job_id)
+        assert row["canonical_url"] == "https://example.com/jobs/it-support-1"
+
+    def test_stores_discovery_metadata(self, conn):
+        job = dict(SAMPLE_JOB, discovery_metadata={"posted_date": "2026-08-01", "application_url": "https://example.com/apply/1"})
+        job_id = insert_job(conn, job)
+        conn.commit()
+        row = get_job(conn, job_id)
+        assert row["discovery_metadata_json"] is not None
+        import json
+
+        assert json.loads(row["discovery_metadata_json"])["posted_date"] == "2026-08-01"
+
+    def test_no_discovery_metadata_is_null(self, conn):
+        job_id = insert_job(conn, SAMPLE_JOB)
+        conn.commit()
+        row = get_job(conn, job_id)
+        assert row["discovery_metadata_json"] is None
+
+    def test_same_source_job_id_is_duplicate_even_with_different_title(self, conn):
+        job = dict(SAMPLE_JOB, source="greenhouse", source_job_id="123", url="https://boards.greenhouse.io/acme/jobs/123")
+        insert_job(conn, job)
+        conn.commit()
+        retitled = dict(
+            SAMPLE_JOB,
+            title="IT Support Officer (Updated)",
+            source="greenhouse",
+            source_job_id="123",
+            url="https://boards.greenhouse.io/acme/jobs/123?utm_source=x",
+        )
+        with pytest.raises(DuplicateJobError):
+            insert_job(conn, retitled)
 
 
 class TestStatusTransitions:

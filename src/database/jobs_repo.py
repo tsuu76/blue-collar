@@ -5,10 +5,11 @@ phases (filtering, scoring, etc.) without turning into one giant file.
 """
 from __future__ import annotations
 
+import json
 import sqlite3
 from typing import Any
 
-from .models import compute_dedupe_hash
+from .models import canonicalize_url, compute_dedupe_hash
 
 
 class DuplicateJobError(Exception):
@@ -33,25 +34,37 @@ def insert_job(conn: sqlite3.Connection, job: dict[str, Any]) -> int:
 
     Required keys: source, url, title, description.
     Optional: source_job_id, company, location, salary, category,
-    experience_required, fit_score, status, application_type.
+    experience_required, fit_score, status, application_type,
+    discovery_metadata (dict — stored as JSON; e.g. posted_date,
+    application_url when it differs from url).
+
+    Dedup prefers (source + source_job_id) when both are present — the
+    precise signal an automated discovery adapter can supply — falling back
+    to (title + company + location) or the canonicalized URL, exactly as
+    before, for manually-imported jobs that don't have a platform id.
     """
     dedupe_hash = compute_dedupe_hash(
         title=job.get("title", ""),
         company=job.get("company", ""),
         location=job.get("location", ""),
         url=job.get("url", ""),
+        source=job.get("source", ""),
+        source_job_id=job.get("source_job_id", "") or "",
     )
     existing = find_by_dedupe_hash(conn, dedupe_hash)
     if existing:
         raise DuplicateJobError(existing["id"])
+
+    discovery_metadata = job.get("discovery_metadata")
+    discovery_metadata_json = json.dumps(discovery_metadata) if discovery_metadata else None
 
     cur = conn.execute(
         """
         INSERT INTO jobs (
             source, source_job_id, url, title, company, location, salary,
             description, category, experience_required, fit_score, status,
-            dedupe_hash, application_type
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            dedupe_hash, application_type, canonical_url, discovery_metadata_json
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """,
         (
             job.get("source"),
@@ -68,6 +81,8 @@ def insert_job(conn: sqlite3.Connection, job: dict[str, Any]) -> int:
             job.get("status", "NEW"),
             dedupe_hash,
             job.get("application_type"),
+            canonicalize_url(job.get("url", "")),
+            discovery_metadata_json,
         ),
     )
     return cur.lastrowid

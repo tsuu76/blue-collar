@@ -39,6 +39,8 @@ CREATE TABLE IF NOT EXISTS jobs (
     rejection_reason       TEXT,                       -- set when cheap filter or AI rejects the job
     ai_analysis_json       TEXT,                       -- raw validated AI analysis result, for audit/debug
     application_type       TEXT,                       -- "TYPE_A" (assisted ATS) | "TYPE_B" (manual)
+    canonical_url          TEXT,                       -- normalized url (see src/database/models.py canonicalize_url) for stronger dedup
+    discovery_metadata_json TEXT,                      -- source-specific extras from automated discovery: posted_date, application_url, etc. (src/job_discovery/)
     created_at             TEXT NOT NULL DEFAULT (datetime('now')),
     updated_at             TEXT NOT NULL DEFAULT (datetime('now')),
     UNIQUE (dedupe_hash)
