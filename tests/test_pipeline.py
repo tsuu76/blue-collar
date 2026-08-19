@@ -186,6 +186,11 @@ class TestFullSuccessPath:
             assert app["status"] == JobStatus.READY_TO_APPLY
             assert app["qc_passed"] == 1
             assert app["resume_path"] is not None
+
+            from src.database.jobs_repo import get_job
+
+            job_row = get_job(conn, job_id)
+            assert job_row["application_type"] == "TYPE_B"
         finally:
             conn.close()
 

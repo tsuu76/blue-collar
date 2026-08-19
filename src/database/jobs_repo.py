@@ -84,6 +84,13 @@ def update_job_status(conn: sqlite3.Connection, job_id: int, status: str, reject
     )
 
 
+def update_job_application_type(conn: sqlite3.Connection, job_id: int, application_type: str) -> None:
+    conn.execute(
+        "UPDATE jobs SET application_type = ?, updated_at = datetime('now') WHERE id = ?",
+        (application_type, job_id),
+    )
+
+
 def update_job_analysis(conn: sqlite3.Connection, job_id: int, category: str, fit_score: int, experience_required: str, ai_analysis_json: str) -> None:
     conn.execute(
         """

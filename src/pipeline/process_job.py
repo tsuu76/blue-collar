@@ -32,7 +32,8 @@ from src.ai.job_analysis import analyze_job
 from src.config import PROJECT_ROOT, settings
 from src.database.applications_repo import insert_application, insert_cover_letter, insert_resume_version
 from src.database.db import get_connection
-from src.database.jobs_repo import get_job, update_job_analysis, update_job_status
+from src.browser_assist.classify import classify_application_type
+from src.database.jobs_repo import get_job, update_job_analysis, update_job_application_type, update_job_status
 from src.database.models import JobStatus
 from src.job_filter.cheap_filter import run_cheap_filter
 from src.job_filter.scoring import score_job
@@ -164,10 +165,12 @@ def process_job(
             return ProcessResult(job_id, JobStatus.QUALIFIED, qualified=True, reason=f"Application generation failed: {exc}")
 
         application_id = _persist_application(conn, job, qc_result, applications_dir)
+        # Always TYPE_B (manual) — see src/browser_assist/classify.py for
+        # why this can never be auto-detected as TYPE_A without verified
+        # per-site policy review, which can't be determined in code.
+        update_job_application_type(conn, job_id, classify_application_type(job["url"]))
         conn.commit()
 
-        # TYPE_B (manual) always, until Phase 16 adds a legitimate, ToS-
-        # compliant TYPE_A (assisted ATS) automation path.
         final_status = JobStatus.READY_TO_APPLY if qc_result.passed else JobStatus.QUALIFIED
         update_job_status(conn, job_id, final_status)
         conn.commit()

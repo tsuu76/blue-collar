@@ -17,6 +17,7 @@
         <dl>
           <dt>Source</dt><dd>{{ job.source }}</dd>
           <dt>URL</dt><dd><a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.url }}</a></dd>
+          {% if platform %}<dt>Platform</dt><dd>{{ platform }}</dd>{% endif %}
           {% if job.salary %}<dt>Salary</dt><dd>{{ job.salary }}</dd>{% endif %}
           <dt>Experience required</dt><dd>{{ job.experience_required or 'Not analyzed yet' }}</dd>
           {% if job.fit_score %}<dt>Match score</dt><dd class="fit-score">{{ job.fit_score }} / 100</dd>{% endif %}
@@ -73,6 +74,9 @@
         {% endif %}
 
         <a class="button primary" href="{{ job.url }}" target="_blank" rel="noopener">Open job listing</a>
+        <form method="post" action="{{ url_for('check_link', job_id=job.id) }}">
+          <button class="button" type="submit">Check link is still live</button>
+        </form>
 
         {% if job.status not in ["APPLIED", "SKIPPED"] %}
         <form method="post" action="{{ url_for('mark_applied', job_id=job.id) }}">

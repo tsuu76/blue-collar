@@ -6,6 +6,7 @@ never touches data/jobs.db.
 from __future__ import annotations
 
 import json
+from unittest.mock import patch
 
 import pytest
 
@@ -241,6 +242,33 @@ class TestDocumentServing:
         resp = client.get(f"/job/{job_id}/resume.pdf")
         assert resp.status_code == 200
         assert resp.data.startswith(b"%PDF")
+
+
+class TestCheckLink:
+    def test_check_link_reachable(self, client, db_path):
+        job_id = insert_sample_job(db_path, url="https://example.com/jobs/1")
+        with patch("src.dashboard.app.check_url_reachable") as mock_check:
+            from src.browser_assist.reachability import ReachabilityResult
+
+            mock_check.return_value = ReachabilityResult(reachable=True, status_code=200)
+            resp = client.post(f"/job/{job_id}/check-link", follow_redirects=True)
+        assert resp.status_code == 200
+        assert b"reachable" in resp.data
+
+    def test_check_link_dead(self, client, db_path):
+        job_id = insert_sample_job(db_path, url="https://example.com/jobs/expired")
+        with patch("src.dashboard.app.check_url_reachable") as mock_check:
+            from src.browser_assist.reachability import ReachabilityResult
+
+            mock_check.return_value = ReachabilityResult(reachable=False, status_code=404)
+            resp = client.post(f"/job/{job_id}/check-link", follow_redirects=True)
+        assert resp.status_code == 200
+        assert b"dead or expired" in resp.data
+
+    def test_job_detail_shows_detected_platform(self, client, db_path):
+        job_id = insert_sample_job(db_path, url="https://boards.greenhouse.io/acme/jobs/123")
+        resp = client.get(f"/job/{job_id}")
+        assert b"Greenhouse" in resp.data
 
 
 class TestProcessRoute:

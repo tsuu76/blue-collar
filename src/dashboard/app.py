@@ -19,6 +19,8 @@ from pathlib import Path
 
 from flask import Flask, abort, flash, redirect, render_template, request, send_file, url_for
 
+from src.browser_assist.classify import detect_platform
+from src.browser_assist.reachability import check_url_reachable
 from src.config import PROJECT_ROOT, settings
 from src.database.applications_repo import get_application_by_job_id, update_application_status
 from src.database.db import get_connection, init_db
@@ -87,7 +89,12 @@ def create_app(db_path: str | Path | None = None) -> Flask:
                 qc_issues = []
 
         return render_template(
-            "job_detail.html", job=job, application=application, analysis=analysis, qc_issues=qc_issues
+            "job_detail.html",
+            job=job,
+            application=application,
+            analysis=analysis,
+            qc_issues=qc_issues,
+            platform=detect_platform(job["url"]),
         )
 
     @app.route("/job/<int:job_id>/mark-applied", methods=["POST"])
@@ -122,6 +129,26 @@ def create_app(db_path: str | Path | None = None) -> Flask:
             conn.close()
         flash(f"Skipped {job['title']} at {job['company']}.")
         return redirect(url_for("index"))
+
+    @app.route("/job/<int:job_id>/check-link", methods=["POST"])
+    def check_link(job_id: int):
+        conn = get_connection(app.config["DB_PATH"])
+        try:
+            job = get_job(conn, job_id)
+            if job is None:
+                abort(404)
+        finally:
+            conn.close()
+
+        result = check_url_reachable(job["url"])
+        if result.robots_disallowed:
+            flash("Could not check this link — the site's robots.txt disallows automated access to it.")
+        elif result.reachable:
+            flash(f"Link looks reachable (HTTP {result.status_code}).")
+        else:
+            detail = f"HTTP {result.status_code}" if result.status_code else (result.error or "unreachable")
+            flash(f"⚠ This link may be dead or expired ({detail}).")
+        return redirect(url_for("job_detail", job_id=job_id))
 
     @app.route("/job/<int:job_id>/process", methods=["POST"])
     def process(job_id: int):
