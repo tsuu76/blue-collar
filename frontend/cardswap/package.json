@@ -1,0 +1,20 @@
+{
+  "name": "job-hunter-cardswap-widget",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Isolated React island that renders the official React Bits CardSwap component into the existing Flask/Jinja dashboard. NOT a frontend for the whole app — see ../../src/dashboard/ for that. Build output is committed to src/dashboard/static/ so the Flask app never needs Node at runtime, only when this component itself is edited.",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

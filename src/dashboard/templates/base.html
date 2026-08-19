@@ -5,30 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% block title %}IT Job Hunter{% endblock %}</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% block head %}{% endblock %}
 </head>
 <body>
 <header class="topbar">
-  <a class="brand" href="{{ url_for('index') }}">IT Job Hunter</a>
-  <div class="topbar-actions">
-    <form method="post" action="{{ url_for('discover_now') }}">
-      <button class="discover-button" type="submit" title="Check every enabled employer in config/employers.json for new jobs, then run them through the pipeline">Run discovery</button>
-    </form>
-    <a class="import-link" href="{{ url_for('import_job') }}">+ Import job</a>
+  <div class="topbar__inner">
+    <a class="brand" href="{{ url_for('index') }}">
+      <span class="brand__mark" aria-hidden="true">IT</span>
+      <span class="brand__name">Job <em>Hunter</em></span>
+    </a>
+    <div class="topbar__actions">
+      <form method="post" action="{{ url_for('discover_now') }}">
+        <button class="btn btn--ghost" type="submit" title="Check every enabled employer in config/employers.json for new jobs, then run them through the pipeline">Run discovery</button>
+      </form>
+      <a class="btn btn--primary" href="{{ url_for('import_job') }}">+ Import job</a>
+    </div>
   </div>
 </header>
 
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-  <div class="flash-container">
-    {% for message in messages %}
-    <div class="flash">{{ message }}</div>
-    {% endfor %}
-  </div>
-  {% endif %}
-{% endwith %}
+{#- .page and .shell must NEST, not share an element: both set `padding`,
+    and .page (declared later in style.css) would otherwise clobber
+    .shell's horizontal padding, leaving content flush to the viewport
+    edge. .page owns the vertical rhythm; .shell owns max-width + gutters. -#}
+<main class="page">
+  <div class="shell">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="flash">{{ message }}</div>
+      {% endfor %}
+      {% endif %}
+    {% endwith %}
 
-<main>
-  {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
+  </div>
 </main>
 
 </body>

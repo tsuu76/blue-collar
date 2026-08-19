@@ -2,22 +2,72 @@
 {% block title %}Dashboard — IT Job Hunter{% endblock %}
 {% block content %}
 
+{#- Maps this app's real JobStatus values onto the design system's
+    data-status slugs (see .column[data-status=...] in style.css), which
+    drive each column's accent dot and border treatment. READY_TO_APPLY
+    is "ready" there; every other status is just its lowercase name. -#}
+{% set status_slugs = {
+  'NEW': 'new', 'ANALYZING': 'analyzing', 'QUALIFIED': 'qualified',
+  'READY_TO_APPLY': 'ready', 'APPLIED': 'applied', 'INTERVIEW': 'interview',
+  'OFFER': 'offer', 'REJECTED': 'rejected', 'SKIPPED': 'skipped'
+} %}
+
+<div class="pagehead">
+  <p class="eyebrow">Pipeline</p>
+  <div class="pagehead__row">
+    <h1 class="pagehead__title">Dashboard</h1>
+  </div>
+</div>
+
 <div class="board">
   {% for status in status_order %}
-  <section class="column">
-    <h2 class="column-title">{{ status.replace('_', ' ') }} <span class="count">{{ columns[status] | length }}</span></h2>
-    {% if not columns[status] %}
-    <p class="empty">No jobs</p>
+  <section class="column" data-status="{{ status_slugs.get(status, status | lower) }}">
+    <header class="column__head">
+      <h2 class="column__label"><span class="dot"></span><span>{{ status.replace('_', ' ') }}</span></h2>
+      <span class="column__count">{{ columns[status] | length }}</span>
+    </header>
+
+    {% if status == 'READY_TO_APPLY' and manual_cards %}
+    {# React Bits CardSwap mount point — real component, real GSAP animation,
+       rendered by static/cardswap-react.js (built from frontend/cardswap/).
+       Job data below is the SAME manual_cards this column's plain list
+       already used — no second job-retrieval path. #}
+    <div class="swap-slot">
+      <div id="cardswap-root"></div>
+    </div>
+    <script type="application/json" id="cardswap-jobs-data">{{ manual_cards | tojson }}</script>
+    <script type="module" src="{{ url_for('static', filename='cardswap-react.js') }}"></script>
     {% endif %}
-    {% for job in columns[status] %}
-    <a class="card" href="{{ url_for('job_detail', job_id=job.id) }}">
-      {% if job.fit_score %}<div class="score">{{ job.fit_score }}</div>{% endif %}
-      <div class="card-title">{{ job.title }}</div>
-      <div class="card-company">{{ job.company or 'Unknown company' }}</div>
-      <div class="card-meta">{{ job.location or '—' }} · {{ job.source }}</div>
-      {% if job.experience_required %}<div class="card-meta">{{ job.experience_required }}</div>{% endif %}
-    </a>
-    {% endfor %}
+
+    {% if not columns[status] %}
+    <p class="empty"><span class="empty__glyph">—</span>No jobs</p>
+    {% else %}
+    <div class="column__list">
+      {% for job in columns[status] %}
+      <a class="jobcard" href="{{ url_for('job_detail', job_id=job.id) }}">
+        <div class="jobcard__top">
+          <div>
+            <div class="jobcard__title">{{ job.title }}</div>
+            {% if job.company %}
+            <div class="jobcard__company">{{ job.company }}</div>
+            {% else %}
+            <div class="jobcard__company jobcard__company--unknown">Unknown company</div>
+            {% endif %}
+          </div>
+          {% if job.fit_score %}
+          <span class="score {% if job.fit_score >= 75 %}score--high{% elif job.fit_score >= 50 %}score--mid{% else %}score--low{% endif %}">{{ job.fit_score }}</span>
+          {% endif %}
+        </div>
+        <div class="jobcard__meta">
+          <span>{{ job.location or '—' }}</span>
+          <span class="sep">·</span>
+          <span>{{ job.source }}</span>
+        </div>
+        {% if job.experience_required %}<div class="jobcard__exp">{{ job.experience_required }}</div>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
   </section>
   {% endfor %}
 </div>

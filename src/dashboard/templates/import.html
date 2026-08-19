@@ -2,24 +2,65 @@
 {% block title %}Import job — IT Job Hunter{% endblock %}
 {% block content %}
 
-<a class="back-link" href="{{ url_for('index') }}">&larr; Back to dashboard</a>
-
-<div class="detail">
-  <h1>Import a job</h1>
-  <p class="subtitle">
-    Paste a job you found on SEEK, Indeed, an employer's careers page, or anywhere else —
-    this never scrapes or automates those sites, you bring the details here yourself.
-  </p>
-
-  <form class="panel form" method="post" action="{{ url_for('import_job') }}">
-    <label>Job title *<input type="text" name="title" required></label>
-    <label>Company<input type="text" name="company"></label>
-    <label>Location<input type="text" name="location" placeholder="e.g. Sydney NSW"></label>
-    <label>Salary<input type="text" name="salary"></label>
-    <label>Job URL<input type="url" name="url" placeholder="https://..."></label>
-    <label>Description *<textarea name="description" rows="12" required></textarea></label>
-    <button class="button primary" type="submit">Import job</button>
-  </form>
+<div class="pagehead">
+  <a class="backlink" href="{{ url_for('index') }}">&larr; Back to dashboard</a>
+  <div class="pagehead__row">
+    <div>
+      <h1 class="pagehead__title">Import a job</h1>
+      <p class="pagehead__sub">
+        Paste a job you found on SEEK, Indeed, an employer's careers page, or anywhere else —
+        this never scrapes or automates those sites, you bring the details here yourself.
+      </p>
+    </div>
+  </div>
 </div>
+
+<section class="panel" style="max-width:820px">
+  <div class="panel__body">
+    <form class="form" method="post" action="{{ url_for('import_job') }}">
+
+      <div class="field">
+        <label class="field__label" for="f-title">Job title <span class="field__req">required</span></label>
+        <input class="input" id="f-title" type="text" name="title" required>
+      </div>
+
+      <div class="form__row">
+        <div class="field">
+          <label class="field__label" for="f-company">Company</label>
+          <input class="input" id="f-company" type="text" name="company">
+        </div>
+        <div class="field">
+          <label class="field__label" for="f-location">Location</label>
+          <input class="input" id="f-location" type="text" name="location" placeholder="e.g. Sydney NSW">
+        </div>
+      </div>
+
+      <div class="form__row">
+        <div class="field">
+          <label class="field__label" for="f-salary">Salary</label>
+          <input class="input" id="f-salary" type="text" name="salary">
+        </div>
+        <div class="field">
+          <label class="field__label" for="f-url">Job URL</label>
+          <input class="input" id="f-url" type="url" name="url" placeholder="https://...">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="f-description">
+          Description <span class="field__req">required</span>
+          <span class="field__hint">Paste the full posting text — the filter and AI analysis read this.</span>
+        </label>
+        <textarea class="textarea" id="f-description" name="description" rows="12" required></textarea>
+      </div>
+
+      <div class="form__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Import job</button>
+        <a class="btn btn--quiet" href="{{ url_for('index') }}">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+</section>
 
 {% endblock %}

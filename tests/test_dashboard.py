@@ -76,6 +76,82 @@ class TestIndex:
         assert b"IT Support Officer" in resp.data
 
 
+class TestManualApplicationCards:
+    """
+    The READY_TO_APPLY column's CardSwap widget (src/dashboard/static/
+    cardswap-react.js, built from frontend/cardswap/) reads its job data
+    from a <script type="application/json"> island the server renders —
+    these tests cover that server-side data, not the React/animation side
+    (which is verified manually in-browser; see the CardSwap integration
+    notes). Real jobs.fit_score / ai_analysis_json columns only — no new
+    schema.
+    """
+
+    def _make_ready_job(self, db_path, *, title, fit_score, reason=None, application_url=None, **overrides):
+        from src.database.jobs_repo import update_job_analysis, update_job_status
+
+        job_id = insert_sample_job(
+            db_path,
+            title=title,
+            status=JobStatus.READY_TO_APPLY,
+            discovery_metadata=({"application_url": application_url} if application_url else None),
+            **overrides,
+        )
+        conn = get_connection(db_path)
+        update_job_status(conn, job_id, JobStatus.READY_TO_APPLY)
+        analysis = {"reasons": [reason]} if reason else {"reasons": []}
+        update_job_analysis(conn, job_id, category="ENTRY_LEVEL_IT", fit_score=fit_score, experience_required="0-1 years", ai_analysis_json=json.dumps(analysis))
+        conn.commit()
+        conn.close()
+        return job_id
+
+    def test_data_island_includes_fit_score_and_reason(self, client, db_path):
+        self._make_ready_job(db_path, title="IT Support Officer", fit_score=82, reason="Strong entry-level match")
+
+        resp = client.get("/")
+        html = resp.data.decode()
+        start = html.index('id="cardswap-jobs-data"')
+        payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
+
+        assert len(payload) == 1
+        card = payload[0]
+        assert card["title"] == "IT Support Officer"
+        assert card["fit_score"] == 82
+        assert card["reason"] == "Strong entry-level match"
+
+    def test_data_island_sorted_by_fit_score_descending(self, client, db_path):
+        self._make_ready_job(db_path, title="Lower Match", fit_score=40, url="https://example.com/jobs/low")
+        self._make_ready_job(db_path, title="Higher Match", fit_score=90, url="https://example.com/jobs/high")
+
+        resp = client.get("/")
+        html = resp.data.decode()
+        start = html.index('id="cardswap-jobs-data"')
+        payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
+
+        assert [c["title"] for c in payload] == ["Higher Match", "Lower Match"]
+
+    def test_data_island_href_prefers_application_url(self, client, db_path):
+        self._make_ready_job(
+            db_path,
+            title="Service Desk Analyst",
+            fit_score=70,
+            application_url="https://boards.greenhouse.io/acme/jobs/1/apply",
+            url="https://boards.greenhouse.io/acme/jobs/1",
+        )
+
+        resp = client.get("/")
+        html = resp.data.decode()
+        start = html.index('id="cardswap-jobs-data"')
+        payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
+
+        assert payload[0]["href"] == "https://boards.greenhouse.io/acme/jobs/1/apply"
+
+    def test_no_ready_to_apply_jobs_omits_cardswap_mount(self, client):
+        resp = client.get("/")
+        assert b'id="cardswap-root"' not in resp.data
+        assert b'id="cardswap-jobs-data"' not in resp.data
+
+
 class TestJobDetail:
     def test_job_detail_loads(self, client, db_path):
         job_id = insert_sample_job(db_path)

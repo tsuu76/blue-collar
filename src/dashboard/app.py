@@ -43,6 +43,71 @@ STATUS_COLUMNS = [
     JobStatus.SKIPPED,
 ]
 
+# Every job in this tool is TYPE_B/manual — src/browser_assist/classify.py
+# always returns TYPE_B, deliberately, since automated form-filling is never
+# attempted (spec section 28). READY_TO_APPLY is the status a job reaches
+# once it has a tailored resume/cover letter and is waiting on the human to
+# actually go fill in and submit the form, so that's "the jobs requiring
+# manual application" for the CardSwap stack on the dashboard.
+_MANUAL_APPLICATION_STATUS = JobStatus.READY_TO_APPLY
+
+
+def _manual_application_cards(jobs: list) -> list[dict]:
+    """
+    Build the small list of {title, company, location, href, image,
+    fit_score, reason} dicts fed to the dashboard's CardSwap widget (see
+    static/cardswap-react.js, built from frontend/cardswap/) via a JSON
+    data island in dashboard.html, from existing job rows only — no new
+    columns, no external calls, no second job-retrieval path.
+
+    fit_score is the existing jobs.fit_score column. reason is the first
+    entry of the existing ai_analysis_json.reasons list, when present —
+    both already computed by the AI analysis stage (src/ai/job_analysis.py)
+    long before this ever reaches the dashboard.
+
+    Sorted by fit_score descending (highest-match first) — the React glue
+    code only swaps through the top few of these, so this ordering decides
+    which jobs get the eye-catching treatment, not which jobs exist.
+    """
+    cards = []
+    for job in jobs:
+        href = job["url"]
+        if job["discovery_metadata_json"]:
+            try:
+                metadata = json.loads(job["discovery_metadata_json"])
+                href = metadata.get("application_url") or href
+            except (TypeError, ValueError):
+                pass
+
+        # No image column exists on jobs (see schema.sql) — every card uses
+        # the same small local SVG mark rather than reaching out to any
+        # external image service.
+        image = url_for("static", filename="company-fallback.svg")
+
+        reason = None
+        if job["ai_analysis_json"]:
+            try:
+                analysis = json.loads(job["ai_analysis_json"])
+                reasons = analysis.get("reasons") or []
+                reason = reasons[0] if reasons else None
+            except (TypeError, ValueError):
+                pass
+
+        cards.append(
+            {
+                "job_id": job["id"],
+                "title": job["title"],
+                "company": job["company"],
+                "location": job["location"],
+                "href": href,
+                "image": image,
+                "fit_score": job["fit_score"],
+                "reason": reason,
+            }
+        )
+    cards.sort(key=lambda c: c["fit_score"] if c["fit_score"] is not None else -1, reverse=True)
+    return cards
+
 
 def create_app(db_path: str | Path | None = None) -> Flask:
     app = Flask(__name__)
@@ -61,7 +126,14 @@ def create_app(db_path: str | Path | None = None) -> Flask:
         for job in all_jobs:
             columns.setdefault(job["status"], []).append(job)
 
-        return render_template("dashboard.html", columns=columns, status_order=STATUS_COLUMNS)
+        manual_cards = _manual_application_cards(columns.get(_MANUAL_APPLICATION_STATUS, []))
+
+        return render_template(
+            "dashboard.html",
+            columns=columns,
+            status_order=STATUS_COLUMNS,
+            manual_cards=manual_cards,
+        )
 
     @app.route("/job/<int:job_id>")
     def job_detail(job_id: int):

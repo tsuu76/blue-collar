@@ -1,0 +1,149 @@
+/* Dashboard-specific styling for what's INSIDE each CardSwap card — kept
+   separate from the official CardSwap.css (which only styles the generic
+   `.card` box: position/border/background/3D transform). This file only
+   adds the dashboard's palette and the job-content layout; it never
+   touches CardSwap's own layout/animation properties.
+
+   Both this file and CardSwap.css get injected into a shadow root (see
+   main.jsx) rather than the page <head>. That means NOTHING here inherits
+   from the dashboard's style.css — not its :root custom properties, not
+   its `*{box-sizing}` reset, not its font stack. So the design-system
+   values this card needs are restated locally below, deliberately, rather
+   than referenced as var(--...) which would resolve to nothing. Keep
+   these in sync with :root in src/dashboard/static/style.css. */
+:host {
+  --surface-2:   #221614;
+  --surface-3:   #2c1c19;
+  --text:        #f7efec;
+  --text-dim:    rgba(247,239,236,.68);
+  --text-faint:  rgba(247,239,236,.42);
+  --line:        rgba(247,239,236,.10);
+  --line-strong: rgba(247,239,236,.18);
+  --oxblood:     #890620;
+  --crimson:     #c8203f;
+  --ember:       #e0a44a;
+  --sage-soft:   rgba(120,195,154,.14);
+  --ember-soft:  rgba(224,164,74,.14);
+  --crimson-soft:rgba(200,32,63,.16);
+  --font-sans:   "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono:   "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.job-card {
+  background: linear-gradient(168deg, var(--surface-3), var(--surface-2));
+  border: 1px solid var(--line-strong);
+  color: var(--text);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, .85);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  overflow: hidden;
+}
+/* Accent rail down the left edge, echoing .jobcard:hover::after in the
+   main stylesheet so the swapping cards read as the same family. */
+.job-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--crimson), var(--oxblood));
+}
+.job-card:hover,
+.job-card:focus-visible {
+  border-color: rgba(200, 32, 63, .45);
+  outline: none;
+}
+
+.job-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+.job-card-img {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  flex: 0 0 auto;
+}
+.job-card-score {
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: .8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-3);
+  color: var(--text-dim);
+}
+.job-card-score[data-tier="high"] { color: #b9f0d0; background: var(--sage-soft);    border-color: rgba(120,195,154,.35); }
+.job-card-score[data-tier="mid"]  { color: #f6d59a; background: var(--ember-soft);   border-color: rgba(224,164,74,.35); }
+.job-card-score[data-tier="low"]  { color: #ffa7b6; background: var(--crimson-soft); border-color: rgba(200,32,63,.35); }
+
+.job-card-title {
+  font-size: .9375rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.005em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow-wrap: anywhere;
+}
+
+.job-card-company {
+  font-size: .8125rem;
+  color: var(--text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-card-location {
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  letter-spacing: .04em;
+  color: var(--text-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.job-card-reason {
+  font-size: .75rem;
+  line-height: 1.45;
+  color: var(--text-dim);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 2px;
+}
+
+.job-card-cta {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: .6875rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ember);
+}

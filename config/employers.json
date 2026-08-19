@@ -7,6 +7,132 @@
     "enabled": true
   },
   {
+    "_comment": "Verified live 2026-08-19 via GET https://boards-api.greenhouse.io/v1/boards/cultureamp/jobs — HTTP 200, 27 postings, 11 in Sydney/Melbourne. Culture Amp is a Melbourne-headquartered employee-experience software company with a large Sydney presence.",
+    "company": "Culture Amp",
+    "platform": "greenhouse",
+    "identifier": "cultureamp",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://boards-api.greenhouse.io/v1/boards/zipcolimited/jobs — HTTP 200, 30 postings, 20 AU (mostly Sydney/Melbourne). Zip Co is an ASX-listed Sydney-headquartered BNPL/fintech; already had an 'IT Operations Engineer' posting live at verification time. Zip also has a separate, currently-live Ashby board (see 'Zip' below, identifier 'zip') — both resolve, so both are kept; the project's existing dedupe (dedupe_hash) protects against the same posting appearing on both.",
+    "company": "Zip Co",
+    "platform": "greenhouse",
+    "identifier": "zipcolimited",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://boards-api.greenhouse.io/v1/boards/sonderaustralia/jobs — HTTP 200, 50 postings, 26 AU (Sydney/Waterloo NSW). Sonder is a Sydney-headquartered safety/wellbeing app company.",
+    "company": "Sonder",
+    "platform": "greenhouse",
+    "identifier": "sonderaustralia",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://boards-api.greenhouse.io/v1/boards/karbon/jobs — HTTP 200, 14 postings, 6 AU (Sydney). Karbon is a practice-management software company with a genuine Sydney office.",
+    "company": "Karbon",
+    "platform": "greenhouse",
+    "identifier": "karbon",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.lever.co/v0/postings/megaport?mode=json — HTTP 200, 43 postings, 11 AU (Brisbane/Australia-wide). Megaport is an ASX-listed Brisbane-headquartered networking company; had a live 'Technical Support Engineer' (Brisbane) posting that already clears the existing entry-level filter at verification time.",
+    "company": "Megaport",
+    "platform": "lever",
+    "identifier": "megaport",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.lever.co/v0/postings/australianethical?mode=json — HTTP 200, 1 posting (Sydney). Australian Ethical is a Sydney-headquartered ethical superannuation/investment manager. Board is thin right now but real and low-cost to poll (one request); kept enabled since the 6-hour cycle will pick up whatever it posts next.",
+    "company": "Australian Ethical",
+    "platform": "lever",
+    "identifier": "australianethical",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.lever.co/v0/postings/macquarietechnologygroup?mode=json — HTTP 200, 12 postings, all 12 AU (Sydney/Melbourne). Macquarie Technology Group is an ASX-listed Sydney-headquartered cloud/telco provider; had a live '2026 Cloud Networking and Cyber Graduate Program' posting at verification time — a strong entry-level-IT fit.",
+    "company": "Macquarie Technology Group",
+    "platform": "lever",
+    "identifier": "macquarietechnologygroup",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.lever.co/v0/postings/servicerocket?mode=json — HTTP 200, 10 postings, 5 AU (Sydney/Remote AU). ServiceRocket is an Atlassian-ecosystem technical-services company with a genuine Sydney office; had a live 'Associate Technology Consultant' posting.",
+    "company": "ServiceRocket",
+    "platform": "lever",
+    "identifier": "servicerocket",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.lever.co/v0/postings/envato-2?mode=json — HTTP 200, 4 postings, 2 AU. Envato is a Melbourne-headquartered creative marketplace company. Note the identifier is 'envato-2', not 'envato' — the plain 'envato' slug 404s (an old/retired board).",
+    "company": "Envato",
+    "platform": "lever",
+    "identifier": "envato-2",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.ashbyhq.com/posting-api/job-board/xero — HTTP 200, 110 postings, 35 AU (Sydney/Melbourne). Xero is a Wellington/Sydney-headquartered accounting-software company with a large AU engineering and support presence.",
+    "company": "Xero",
+    "platform": "ashby",
+    "identifier": "xero",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.ashbyhq.com/posting-api/job-board/zip — HTTP 200, 127 postings, 7 AU (Sydney/Australia). This is Zip Co's separate, currently-live Ashby board — see the 'Zip Co' Greenhouse entry above for why both are kept. Had a live 'Senior Technical Support Engineer' (Australia) posting.",
+    "company": "Zip",
+    "platform": "ashby",
+    "identifier": "zip",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.ashbyhq.com/posting-api/job-board/relevanceai — HTTP 200, 11 postings, 6 AU (Sydney). Relevance AI is a Sydney-founded AI company.",
+    "company": "Relevance AI",
+    "platform": "ashby",
+    "identifier": "relevanceai",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.ashbyhq.com/posting-api/job-board/legora — HTTP 200, 270 postings, 18 AU (Sydney). Legora is a legal-AI company (Stockholm HQ) with a real, active Sydney office/hiring presence.",
+    "company": "Legora",
+    "platform": "ashby",
+    "identifier": "legora",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.smartrecruiters.com/v1/companies/KPMGAustralia1/postings — HTTP 200, 92 postings, 80 AU-wide. KPMG Australia is a Big 4 firm with a genuine Audit Technology / IT Asset Management function ('IT Asset Management (ITAM) — Senior Consultant', '2027 KPMG Graduate Program' both live at verification time). NOTE: the SmartRecruiters adapter fetches a detail page per posting (see src/job_discovery/sources/smartrecruiters.py) and the project rate-limits to one request per 2s per host — 92 postings means this employer alone adds roughly 3 minutes to a discovery run.",
+    "company": "KPMG Australia",
+    "platform": "smartrecruiters",
+    "identifier": "KPMGAustralia1",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.smartrecruiters.com/v1/companies/Nearmap/postings — HTTP 200, 32 postings, 11 AU (Barangaroo, Sydney). Nearmap is an ASX-listed Sydney-headquartered aerial-imagery company.",
+    "company": "Nearmap",
+    "platform": "smartrecruiters",
+    "identifier": "Nearmap",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.smartrecruiters.com/v1/companies/QantasGroup/postings — HTTP 200, 72 postings, 63 AU-wide. Qantas is Australia's national airline with a large domestic IT/systems function. NOTE: same per-posting detail-fetch cost as KPMG above — 72 postings adds roughly 2.5 minutes to a discovery run.",
+    "company": "Qantas Group",
+    "platform": "smartrecruiters",
+    "identifier": "QantasGroup",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.smartrecruiters.com/v1/companies/Sodexo/postings — HTTP 200, 100 postings, 57 AU-wide, real and safe to poll. Left DISABLED though: at verification time every AU posting was facilities/catering/FIFO-site roles (Balcatta Support Centre coordinators, technicians, managers) with none matching entry-level IT support, and — like KPMG/Qantas above — its 100 postings would add ~3.5 minutes to every discovery run for very low expected yield. Flip to enabled if Sodexo's AU postings ever skew more IT/service-desk.",
+    "company": "Sodexo",
+    "platform": "smartrecruiters",
+    "identifier": "Sodexo",
+    "enabled": false
+  },
+  {
+    "_comment": "Verified live 2026-08-19 via GET https://api.smartrecruiters.com/v1/companies/SydneyAirport1/postings — HTTP 200, 14 postings, all 14 AU (Mascot, NSW). Sydney Airport Corporation — real, low-cost to poll (14 detail calls).",
+    "company": "Sydney Airport",
+    "platform": "smartrecruiters",
+    "identifier": "SydneyAirport1",
+    "enabled": true
+  },
+  {
     "_comment": "Verified live and working, but not AU-focused — kept disabled as a reference example proving the Greenhouse adapter works against a real board. Replace with a real employer you want to track, or enable this one if you want it.",
     "company": "Greenhouse",
     "platform": "greenhouse",
