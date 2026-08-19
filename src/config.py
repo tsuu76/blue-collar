@@ -103,6 +103,10 @@ class Settings:
     # --- PDF ---
     pdf_engine: str = os.getenv("PDF_ENGINE", "playwright")
 
+    # --- Dashboard (local only — never bind to 0.0.0.0) ---
+    dashboard_host: str = os.getenv("DASHBOARD_HOST", "127.0.0.1")
+    dashboard_port: int = _int("DASHBOARD_PORT", 8420)
+
     # --- Notifications ---
     notify_desktop: bool = _bool("NOTIFY_DESKTOP", True)
     notify_telegram: bool = _bool("NOTIFY_TELEGRAM", False)

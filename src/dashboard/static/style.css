@@ -1,0 +1,186 @@
+/* IT Job Hunter dashboard — plain hand-written CSS, no framework/CDN. */
+
+:root {
+  --bg: #f4f5f7;
+  --panel: #ffffff;
+  --border: #e0e2e6;
+  --text: #1a1a1a;
+  --muted: #666;
+  --accent: #2563eb;
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+.import-link {
+  color: #fff;
+  background: var(--accent);
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.flash-container { max-width: 900px; margin: 12px auto 0; padding: 0 20px; }
+.flash {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+main { padding: 20px; }
+
+.board {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+.column {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  min-width: 260px;
+  max-width: 280px;
+  flex: 0 0 auto;
+  padding: 12px;
+}
+.column-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.count {
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 0.8rem;
+}
+.empty { color: var(--muted); font-size: 0.85rem; }
+
+.card {
+  display: block;
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+.card:hover { border-color: var(--accent); }
+.card-title { font-weight: 600; font-size: 0.92rem; padding-right: 34px; }
+.card-company { font-size: 0.85rem; color: var(--muted); }
+.card-meta { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+.score {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 1px 7px;
+}
+
+.back-link { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+
+.detail { max-width: 1000px; margin: 16px auto 0; }
+.detail h1 { margin-bottom: 2px; }
+.subtitle { color: var(--muted); margin-top: 0; }
+
+.status-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+}
+.status-applied, .status-ready_to_apply, .status-offer { color: var(--success); }
+.status-rejected, .status-skipped { color: var(--danger); }
+.status-qualified, .status-new, .status-analyzing { color: var(--accent); }
+
+.detail-grid { display: flex; gap: 16px; margin-top: 14px; align-items: flex-start; }
+.detail-main { flex: 2; min-width: 0; }
+.detail-side { flex: 1; min-width: 260px; }
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.panel h2 { font-size: 1rem; margin: 0 0 10px 0; }
+
+dl { margin: 0; }
+dt { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; margin-top: 8px; }
+dt:first-child { margin-top: 0; }
+dd { margin: 0 0 0 0; word-break: break-word; }
+.fit-score { font-weight: 700; color: var(--accent); }
+
+.label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; margin: 10px 0 2px 0; }
+.description { white-space: pre-wrap; font-size: 0.92rem; line-height: 1.5; }
+
+.actions { display: flex; flex-direction: column; gap: 8px; }
+.button {
+  display: block;
+  text-align: center;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+}
+.button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.button.success { background: var(--success); color: #fff; border-color: var(--success); }
+.button.muted { background: transparent; color: var(--muted); }
+.hint { font-size: 0.78rem; color: var(--muted); margin: 2px 0 0 0; }
+.warning { color: var(--warning); font-size: 0.85rem; margin-bottom: 4px; }
+.warning-list { font-size: 0.82rem; color: var(--warning); margin: 0; }
+
+form { margin: 0; }
+
+.form { display: flex; flex-direction: column; gap: 12px; }
+.form label { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+.form input, .form textarea {
+  font-family: inherit;
+  font-size: 0.92rem;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+}

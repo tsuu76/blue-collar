@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}{{ job.title }} — IT Job Hunter{% endblock %}
+{% block content %}
+
+<a class="back-link" href="{{ url_for('index') }}">&larr; Back to dashboard</a>
+
+<div class="detail">
+  <h1>{{ job.title }}</h1>
+  <p class="subtitle">{{ job.company or 'Unknown company' }} · {{ job.location or 'Location not specified' }}</p>
+  <p class="status-badge status-{{ job.status | lower }}">{{ job.status.replace('_', ' ') }}</p>
+
+  <div class="detail-grid">
+    <div class="detail-main">
+
+      <section class="panel">
+        <h2>Job</h2>
+        <dl>
+          <dt>Source</dt><dd>{{ job.source }}</dd>
+          <dt>URL</dt><dd><a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.url }}</a></dd>
+          {% if job.salary %}<dt>Salary</dt><dd>{{ job.salary }}</dd>{% endif %}
+          <dt>Experience required</dt><dd>{{ job.experience_required or 'Not analyzed yet' }}</dd>
+          {% if job.fit_score %}<dt>Match score</dt><dd class="fit-score">{{ job.fit_score }} / 100</dd>{% endif %}
+          {% if job.rejection_reason %}<dt>Rejection reason</dt><dd>{{ job.rejection_reason }}</dd>{% endif %}
+        </dl>
+      </section>
+
+      {% if analysis %}
+      <section class="panel">
+        <h2>Why it matches</h2>
+        {% if analysis.reasons %}
+        <ul>{% for r in analysis.reasons %}<li>{{ r }}</li>{% endfor %}</ul>
+        {% endif %}
+        {% if analysis.matched_skills %}
+        <p class="label">Matched skills</p>
+        <p>{{ analysis.matched_skills | join(", ") }}</p>
+        {% endif %}
+        {% if analysis.missing_skills %}
+        <p class="label">Missing skills</p>
+        <p>{{ analysis.missing_skills | join(", ") }}</p>
+        {% endif %}
+        {% if analysis.concerns %}
+        <p class="label">Concerns</p>
+        <ul>{% for c in analysis.concerns %}<li>{{ c }}</li>{% endfor %}</ul>
+        {% endif %}
+      </section>
+      {% endif %}
+
+      <section class="panel">
+        <h2>Description</h2>
+        <p class="description">{{ job.description }}</p>
+      </section>
+
+    </div>
+
+    <div class="detail-side">
+
+      <section class="panel actions">
+        <h2>Application</h2>
+        {% if application and application.resume_path %}
+          <a class="button" href="{{ url_for('resume_pdf', job_id=job.id) }}" target="_blank">View resume</a>
+          <a class="button" href="{{ url_for('cover_letter_pdf', job_id=job.id) }}" target="_blank">View cover letter</a>
+          {% if application.qc_passed == 0 %}
+          <p class="warning">⚠ Flagged for manual review — quality control found issues:</p>
+          <ul class="warning-list">{% for issue in qc_issues %}<li>{{ issue }}</li>{% endfor %}</ul>
+          {% endif %}
+        {% elif job.status in ["NEW", "ANALYZING", "QUALIFIED"] %}
+          <form method="post" action="{{ url_for('process', job_id=job.id) }}">
+            <button class="button" type="submit">Process this job</button>
+          </form>
+          <p class="hint">Runs AI analysis / tailoring / cover letter / QC now — takes up to a minute or two.</p>
+        {% else %}
+          <p class="empty">No application generated for this job.</p>
+        {% endif %}
+
+        <a class="button primary" href="{{ job.url }}" target="_blank" rel="noopener">Open job listing</a>
+
+        {% if job.status not in ["APPLIED", "SKIPPED"] %}
+        <form method="post" action="{{ url_for('mark_applied', job_id=job.id) }}">
+          <button class="button success" type="submit">Mark applied</button>
+        </form>
+        <form method="post" action="{{ url_for('skip', job_id=job.id) }}">
+          <button class="button muted" type="submit">Skip</button>
+        </form>
+        {% endif %}
+      </section>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

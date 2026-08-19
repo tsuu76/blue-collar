@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Import job — IT Job Hunter{% endblock %}
+{% block content %}
+
+<a class="back-link" href="{{ url_for('index') }}">&larr; Back to dashboard</a>
+
+<div class="detail">
+  <h1>Import a job</h1>
+  <p class="subtitle">
+    Paste a job you found on SEEK, Indeed, an employer's careers page, or anywhere else —
+    this never scrapes or automates those sites, you bring the details here yourself.
+  </p>
+
+  <form class="panel form" method="post" action="{{ url_for('import_job') }}">
+    <label>Job title *<input type="text" name="title" required></label>
+    <label>Company<input type="text" name="company"></label>
+    <label>Location<input type="text" name="location" placeholder="e.g. Sydney NSW"></label>
+    <label>Salary<input type="text" name="salary"></label>
+    <label>Job URL<input type="url" name="url" placeholder="https://..."></label>
+    <label>Description *<textarea name="description" rows="12" required></textarea></label>
+    <button class="button primary" type="submit">Import job</button>
+  </form>
+</div>
+
+{% endblock %}

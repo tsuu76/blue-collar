@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — IT Job Hunter{% endblock %}
+{% block content %}
+
+<div class="board">
+  {% for status in status_order %}
+  <section class="column">
+    <h2 class="column-title">{{ status.replace('_', ' ') }} <span class="count">{{ columns[status] | length }}</span></h2>
+    {% if not columns[status] %}
+    <p class="empty">No jobs</p>
+    {% endif %}
+    {% for job in columns[status] %}
+    <a class="card" href="{{ url_for('job_detail', job_id=job.id) }}">
+      {% if job.fit_score %}<div class="score">{{ job.fit_score }}</div>{% endif %}
+      <div class="card-title">{{ job.title }}</div>
+      <div class="card-company">{{ job.company or 'Unknown company' }}</div>
+      <div class="card-meta">{{ job.location or '—' }} · {{ job.source }}</div>
+      {% if job.experience_required %}<div class="card-meta">{{ job.experience_required }}</div>{% endif %}
+    </a>
+    {% endfor %}
+  </section>
+  {% endfor %}
+</div>
+
+{% endblock %}
