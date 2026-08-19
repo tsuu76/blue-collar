@@ -1,0 +1,110 @@
+{
+  "name": "IT Job Hunter — Scheduled Job Discovery",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Every 6 Hours",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [260, 300],
+      "notes": "Discovery cadence. Change hoursInterval to adjust. Deliberately infrequent — entry-level job postings don't change minute to minute, and each run makes real requests to employer job boards."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8420/api/discover",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\"process\": true}",
+        "options": {
+          "timeout": 1800000
+        }
+      },
+      "id": "trigger-discovery",
+      "name": "Run Discovery",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [480, 300],
+      "notes": "Calls the local dashboard's discovery endpoint. host.docker.internal resolves the Mac host from inside the n8n container (see extra_hosts in docker-compose.yml). REQUIRES the dashboard to be running: python -m src.dashboard.app. 30-minute timeout because each qualified job runs real local AI (analysis + tailoring + cover letter + QC), which is slow by design."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "id": "found-new-jobs",
+              "leftValue": "={{ $json.inserted }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "any-new-jobs",
+      "name": "Any New Jobs?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [700, 300],
+      "notes": "Only continue when discovery actually inserted something new — avoids a pointless log entry on every quiet run."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "summary",
+              "name": "summary",
+              "value": "={{ 'Discovery: ' + $json.inserted + ' new, ' + $json.duplicates + ' duplicates. Ready to apply: ' + ($json.pipeline ? $json.pipeline.ready_to_apply : 0) + ', rejected: ' + ($json.pipeline ? $json.pipeline.rejected : 0) }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "summarize",
+      "name": "Summarize Run",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [920, 220],
+      "notes": "The per-job desktop/Telegram notifications are already sent by the existing pipeline (src/notifications/) as each application is generated — this node just produces a run-level summary visible in n8n's execution log."
+    }
+  ],
+  "connections": {
+    "Every 6 Hours": {
+      "main": [[{ "node": "Run Discovery", "type": "main", "index": 0 }]]
+    },
+    "Run Discovery": {
+      "main": [[{ "node": "Any New Jobs?", "type": "main", "index": 0 }]]
+    },
+    "Any New Jobs?": {
+      "main": [
+        [{ "node": "Summarize Run", "type": "main", "index": 0 }],
+        []
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "tags": []
+}

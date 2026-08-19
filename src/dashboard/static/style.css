@@ -30,6 +30,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .brand { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
 .import-link {
   color: #fff;
   background: var(--accent);
@@ -38,6 +39,17 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
 }
+.discover-button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.discover-button:hover { border-color: var(--accent); color: var(--accent); }
 
 .flash-container { max-width: 900px; margin: 12px auto 0; padding: 0 20px; }
 .flash {

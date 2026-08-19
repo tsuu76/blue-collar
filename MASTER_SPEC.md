@@ -718,3 +718,53 @@ spec above where they conflict:
   fabrication risk (only inventing one is), and fighting this natural,
   sensible behavior caused repeated hard failures. Full fabrication
   protection (rejecting any invented skill) is unchanged.
+
+---
+
+## Post-Phase-17 extension: automatic job discovery
+
+Added after the original 17 phases, at the user's request, as a layer
+**around** the existing system — no existing stage was rebuilt or replaced.
+
+- **Sources automated** (`src/job_discovery/sources/`): Greenhouse, Lever,
+  SmartRecruiters, Ashby. Each has a genuinely public, officially
+  documented, unauthenticated job-board API intended for third-party
+  consumption (each adapter's docstring cites the specific vendor doc).
+  These are the same endpoints those platforms' own hosted careers pages
+  use — not scraping, no bypass of anything.
+- **Sources deliberately NOT automated**: SEEK and Indeed (both prohibit
+  automated access in their current terms; no permitted public feed/API
+  was found — investigated, not assumed). Workforce Australia (no official
+  public API exists; the only programmatic access found was a paid
+  third-party scraper, excluded on both cost and ToS grounds).
+  Workday/SuccessFactors/Taleo/iCIMS (no clean public read API comparable
+  to the four above; automating them would need per-tenant
+  reverse-engineering with uncertain ToS standing). All of these remain
+  fully usable via the existing manual paste-import path.
+- **Employer registry** (`config/employers.json`): the only place a
+  company name is configured. Adapters are generic, so adding coverage is
+  a config edit, never a code change.
+- **Integration point**: `run_discovery()` inserts via the EXISTING
+  `insert_job()` (already dedupes) and hands off to the EXISTING
+  `process_new_jobs()`. Filtering, scoring, tailoring, cover letters, QC,
+  PDF generation, the dashboard, and notifications are all untouched —
+  a discovered job is indistinguishable from a manually imported one once
+  it's in the `jobs` table.
+- **Dedup strengthened** (additively): `compute_dedupe_hash()` now prefers
+  `(source + source_job_id)` when available — a platform-assigned job id
+  is more precise than fuzzy title/company text — falling back to the
+  original behavior unchanged for manual imports. Added URL
+  canonicalization (strips tracking params/fragments) so the same posting
+  with a different `?utm_source=` isn't treated as new.
+- **Browser-assisted application** (`src/browser_assist/handoff.py`):
+  scoped, with the user's explicit agreement, to a **hand-off only** —
+  opens the real application page in a visible browser and surfaces the
+  generated resume/cover-letter paths for the human to attach. It does
+  NOT fill fields, upload files, or submit; a test asserts the module
+  contains no form-interaction Playwright calls, so this boundary can't
+  erode later. Still gated behind `ALLOW_BROWSER_AUTOMATION` (default
+  false), and every job remains TYPE_B/manual.
+- **n8n** (`workflows/job-discovery.json`): Schedule Trigger (6h default)
+  → HTTP POST to the dashboard's `/api/discover`. Note this requires the
+  dashboard process to be running when the schedule fires — documented in
+  the workflow node notes and README rather than hidden.

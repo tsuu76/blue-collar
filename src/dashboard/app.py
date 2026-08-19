@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from flask import Flask, abort, flash, redirect, render_template, request, send_file, url_for
+from flask import Flask, abort, flash, jsonify, redirect, render_template, request, send_file, url_for
 
 from src.browser_assist.classify import detect_platform
 from src.browser_assist.reachability import check_url_reachable
@@ -183,6 +183,52 @@ def create_app(db_path: str | Path | None = None) -> Flask:
         if application is None or not application["cover_letter_path"] or not Path(application["cover_letter_path"]).exists():
             abort(404)
         return send_file(application["cover_letter_path"], mimetype="application/pdf")
+
+    @app.route("/api/discover", methods=["POST"])
+    def api_discover():
+        """
+        Automated discovery trigger — this is what the n8n schedule calls
+        (see workflows/job-discovery.json). Runs every enabled employer
+        adapter, inserts newly-found jobs, and hands them to the EXISTING
+        pipeline. Returns JSON counts so n8n can log/branch on the result.
+
+        Synchronous and potentially long-running (each qualified job hits
+        real local AI). That's acceptable here: it's a local single-user
+        tool, and n8n's HTTP node timeout is configurable in the workflow.
+        Pass {"process": false} to only discover+insert and skip the AI
+        pipeline (useful for a quick check of what discovery finds).
+        """
+        from src.job_discovery.run_discovery import run_discovery
+
+        payload = request.get_json(silent=True) or {}
+        process = bool(payload.get("process", True))
+        try:
+            result = run_discovery(db_path=app.config["DB_PATH"], process=process)
+            return jsonify({"ok": True, **result})
+        except Exception as exc:  # noqa: BLE001 — always answer n8n with JSON, never an HTML error page
+            app.logger.exception("Discovery run failed")
+            return jsonify({"ok": False, "error": str(exc)}), 500
+
+    @app.route("/discover", methods=["POST"])
+    def discover_now():
+        """Same discovery run, triggered from the dashboard's own button."""
+        from src.job_discovery.run_discovery import run_discovery
+
+        try:
+            result = run_discovery(db_path=app.config["DB_PATH"], process=True)
+        except Exception as exc:  # noqa: BLE001
+            app.logger.exception("Discovery run failed")
+            flash(f"Discovery failed: {exc}")
+            return redirect(url_for("index"))
+
+        pipeline = result.get("pipeline") or {}
+        flash(
+            f"Discovery: found {result['found']}, inserted {result['inserted']}, "
+            f"{result['duplicates']} duplicates. "
+            f"Pipeline: {pipeline.get('ready_to_apply', 0)} ready to apply, "
+            f"{pipeline.get('rejected', 0)} rejected."
+        )
+        return redirect(url_for("index"))
 
     @app.route("/import", methods=["GET", "POST"])
     def import_job():

@@ -77,6 +77,45 @@ company, description, URL), then open it and click **Process this job** to run i
 through the full pipeline (filter → AI analysis → scoring → tailoring → cover letter →
 quality control → PDF). Review the result, and apply yourself when you're ready.
 
+## Automatic job discovery
+
+The system can discover jobs itself from employer job boards, so you don't
+have to paste every job in manually.
+
+**Which sources**: only platforms with genuinely public, officially-documented,
+unauthenticated job-board APIs — **Greenhouse, Lever, SmartRecruiters, Ashby**.
+These are the same endpoints those platforms' own hosted careers pages use.
+Nothing scrapes rendered HTML or bypasses any restriction.
+
+**SEEK and Indeed are deliberately NOT automated** — both prohibit automated
+access in their terms, and no permitted public feed/API was found. They stay
+manual: paste a job URL into **Import job** exactly as before. Same for most
+large enterprises on Workday/SuccessFactors/Taleo, which have no comparable
+public read API.
+
+**Configure which employers to check** in [`config/employers.json`](config/employers.json)
+— see [`config/README.md`](config/README.md) for how to find a company's
+identifier and verify it before enabling. Adding coverage is a config edit,
+never a code change.
+
+**Run it three ways:**
+
+1. **Dashboard button** — "Run discovery" in the top bar.
+2. **Directly**: `python -c "from src.job_discovery import run_discovery; print(run_discovery())"`
+3. **On a schedule via n8n** — import [`workflows/job-discovery.json`](workflows/job-discovery.json)
+   into your local n8n (Workflows → Import from File), then activate it. It runs
+   every 6 hours by default (edit the Schedule Trigger node to change that).
+
+   ⚠️ **The n8n workflow calls the dashboard's HTTP endpoint, so the dashboard
+   must be running** (`python -m src.dashboard.app`) when the schedule fires.
+   If it isn't, that run simply fails and logs in n8n — nothing breaks, but no
+   jobs are discovered until the next run with the dashboard up.
+
+A discovered job then flows through the **exact same** pipeline a manually
+imported one does — cheap filter → AI analysis → scoring → resume tailoring →
+cover letter → QC → PDF → dashboard + notification. There is no separate
+"discovered job" path.
+
 ## Everyday use
 
 - `scripts/healthcheck.sh` — verify Ollama/Docker/n8n/database/dashboard are all in a

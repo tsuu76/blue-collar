@@ -9,7 +9,12 @@
 <body>
 <header class="topbar">
   <a class="brand" href="{{ url_for('index') }}">IT Job Hunter</a>
-  <a class="import-link" href="{{ url_for('import_job') }}">+ Import job</a>
+  <div class="topbar-actions">
+    <form method="post" action="{{ url_for('discover_now') }}">
+      <button class="discover-button" type="submit" title="Check every enabled employer in config/employers.json for new jobs, then run them through the pipeline">Run discovery</button>
+    </form>
+    <a class="import-link" href="{{ url_for('import_job') }}">+ Import job</a>
+  </div>
 </header>
 
 {% with messages = get_flashed_messages() %}
