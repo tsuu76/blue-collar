@@ -28,18 +28,29 @@ from src.database.jobs_repo import get_job, list_all_jobs, update_job_status
 from src.database.models import JobStatus
 from src.sources.manual_import import normalize_manual_job
 
-# Display order for the dashboard's status columns (spec section 21 lists
-# NEW/QUALIFIED/READY_TO_APPLY/APPLIED/INTERVIEW/REJECTED/SKIPPED; ANALYZING
-# and OFFER are included too since they're real states a job can be in).
+# Display order for the dashboard's status columns — ordered by how much
+# action the user can take, not by pipeline sequence. READY_TO_APPLY leads
+# because those jobs have a tailored resume/cover letter waiting and only
+# need the human to go submit the form; everything the user can act on
+# immediately is therefore visible first, above the fold.
+#
+# REJECTED is deliberately absent. Rejected jobs are still discovered,
+# still filtered, still written to the database and still readable at
+# /job/<id> — nothing about the rejection logic or storage changes. They
+# are simply not shown on the board, because a column of jobs the user
+# can't act on (946 of them at the time of writing) buried the ones they
+# can. index() builds its `columns` dict from this list and the template
+# iterates it, so omitting a status here hides that column and nothing
+# else. SKIPPED is kept, last: unlike a rejection, skipping is the user's
+# own decision and worth being able to see.
 STATUS_COLUMNS = [
-    JobStatus.NEW,
-    JobStatus.ANALYZING,
-    JobStatus.QUALIFIED,
     JobStatus.READY_TO_APPLY,
+    JobStatus.QUALIFIED,
+    JobStatus.ANALYZING,
+    JobStatus.NEW,
     JobStatus.APPLIED,
     JobStatus.INTERVIEW,
     JobStatus.OFFER,
-    JobStatus.REJECTED,
     JobStatus.SKIPPED,
 ]
 
