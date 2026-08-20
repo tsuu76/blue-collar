@@ -51,6 +51,35 @@ def _find_matches(haystack: str, needles: list[str]) -> list[str]:
     return matches
 
 
+# Seniority keywords fall into two kinds, and they need different scopes.
+#
+# Most of NEGATIVE_SENIORITY_KEYWORDS are RANK markers: they describe what
+# the job *is* ("Senior Engineer", "IT Manager", "Level 3 Support"). A rank
+# belongs in the title, so that is the only place worth matching them. When
+# they were matched against the description too, ordinary prose triggered
+# them constantly and rejected genuinely entry-level jobs — measured on 310
+# live Australian postings, 252 (81%) were rejected as SENIORITY, including
+# an "Account Executive" flagged for `lead` (from "generate sales leads")
+# and a "Workplace Experience Coordinator" flagged for `manager`/`head of`
+# (from a reporting line). Almost every entry-level job description
+# legitimately mentions senior staff, escalation paths or who you report
+# to, so description-scoped rank matching rejects the exact roles this
+# tool exists to find.
+#
+# The three phrases below are the exception: they describe the job's
+# DEMANDS, not its rank, and appear only in body text ("requires extensive
+# professional experience"). Matching those against the title alone would
+# make them dead rules, so they keep the original title+description scope.
+#
+# Kept here rather than in keywords.py so this stays a single-file change
+# to the filter's own logic; keywords.py remains the plain vocabulary list.
+_DEMAND_PHRASE_SENIORITY_KEYWORDS: tuple[str, ...] = (
+    "extensive professional experience",
+    "significant professional experience",
+    "management responsibilities",
+)
+
+
 def run_cheap_filter(
     title: str,
     description: str,
@@ -64,17 +93,31 @@ def run_cheap_filter(
     rejects (seniority, non-IT, excess experience) short-circuit before we
     even bother checking for positive keyword matches, matching the spec's
     instruction not to let a good skills/keyword match rescue a senior job.
+
+    Seniority RANK markers are matched against the title only (a job's rank
+    is stated in its title); the handful of seniority phrases that describe
+    the job's demands still match anywhere. Non-IT, experience and positive
+    IT-relevance checks are unchanged and still read title+description.
     """
     max_years = max_experience_years if max_experience_years is not None else settings.max_experience_years
     locations = target_locations if target_locations is not None else settings.target_locations
 
     combined_text = f"{title}\n{description}"
 
-    seniority_hits = _find_matches(combined_text, NEGATIVE_SENIORITY_KEYWORDS)
+    # Rank markers are judged on the TITLE only; demand phrases keep the
+    # original title+description scope. See the comment on
+    # _DEMAND_PHRASE_SENIORITY_KEYWORDS for why the two differ.
+    rank_keywords = [k for k in NEGATIVE_SENIORITY_KEYWORDS if k not in _DEMAND_PHRASE_SENIORITY_KEYWORDS]
+    demand_keywords = [k for k in NEGATIVE_SENIORITY_KEYWORDS if k in _DEMAND_PHRASE_SENIORITY_KEYWORDS]
+
+    rank_hits = _find_matches(title, rank_keywords)
+    demand_hits = _find_matches(combined_text, demand_keywords)
+    seniority_hits = rank_hits + demand_hits
     if seniority_hits:
+        where = "title" if rank_hits and not demand_hits else ("description" if demand_hits and not rank_hits else "title/description")
         return CheapFilterResult(
             passed=False,
-            reasons=[f"Rejected: seniority keyword(s) found: {seniority_hits}"],
+            reasons=[f"Rejected: seniority keyword(s) found in {where}: {seniority_hits}"],
             rejection_category="SENIORITY",
             location_ok=location_matches(location, locations),
         )
