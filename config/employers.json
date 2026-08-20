@@ -133,6 +133,90 @@
     "enabled": true
   },
   {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the ashby public API. 610 postings, 44 AU (Melbourne/Sydney). AU-founded global fintech with a large Melbourne engineering and operations base — the biggest single AU-relevant board found.",
+    "company": "Airwallex",
+    "platform": "ashby",
+    "identifier": "airwallex",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the greenhouse public API. 112 postings, 29 AU (Sydney). Sydney-headquartered digital-health group (Juniper, Pilot, Kin); large and frequently hiring ops/support staff.",
+    "company": "Eucalyptus",
+    "platform": "greenhouse",
+    "identifier": "eucalyptus",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the ashby public API. 38 postings, 1 AU at probe time. ASX-listed Sydney-headquartered hotel-commerce platform with a genuine customer/technical support function — worth polling even when the AU count is momentarily low.",
+    "company": "SiteMinder",
+    "platform": "ashby",
+    "identifier": "siteminder",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the lever public API. 21 postings, all 21 AU (Sydney/Melbourne). Australian care-marketplace platform; entirely domestic hiring, so every posting is AU-relevant.",
+    "company": "Mable",
+    "platform": "lever",
+    "identifier": "mable",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the lever public API. 9 postings, 7 AU (Sydney). Sydney-headquartered workforce-management SaaS; had a live 'Technical Support Engineer - Tier 3' (Sydney) posting that clears the existing entry-level filter at verification time.",
+    "company": "Deputy",
+    "platform": "lever",
+    "identifier": "deputy",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the ashby public API. 10 postings, 6 AU (Sydney). Sydney AI customer-support startup — its whole product area is support, so support-shaped roles are likely.",
+    "company": "Lorikeet",
+    "platform": "ashby",
+    "identifier": "lorikeet",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the ashby public API. 7 postings, 4 AU (Sydney). Sydney-headquartered research platform.",
+    "company": "Dovetail",
+    "platform": "ashby",
+    "identifier": "dovetail",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the greenhouse public API. 6 postings, all 6 AU (Sydney). ASX-listed Sydney small-business lender.",
+    "company": "Prospa",
+    "platform": "greenhouse",
+    "identifier": "prospa",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the lever public API. 6 postings, 4 AU (Sydney). Sydney blockchain-gaming company.",
+    "company": "Immutable",
+    "platform": "lever",
+    "identifier": "immutable",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the lever public API. 4 postings, all 4 AU (Sydney). Sydney green-finance lender.",
+    "company": "Brighte",
+    "platform": "lever",
+    "identifier": "brighte",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the greenhouse public API. 4 postings, 2 AU (Brisbane). Brisbane-headquartered DevOps tooling company.",
+    "company": "Octopus Deploy",
+    "platform": "greenhouse",
+    "identifier": "octopusdeploy",
+    "enabled": true
+  },
+  {
+    "_comment": "Verified live 2026-08-19 — HTTP 200 from the lever public API. 4 postings, 2 AU (Melbourne). ASX-listed Australian property-exchange operator.",
+    "company": "PEXA",
+    "platform": "lever",
+    "identifier": "pexa",
+    "enabled": true
+  },
+  {
     "_comment": "Verified live and working, but not AU-focused — kept disabled as a reference example proving the Greenhouse adapter works against a real board. Replace with a real employer you want to track, or enable this one if you want it.",
     "company": "Greenhouse",
     "platform": "greenhouse",
