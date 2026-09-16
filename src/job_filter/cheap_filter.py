@@ -17,6 +17,7 @@ from .experience import extract_min_years_required
 from .keywords import (
     NEGATIVE_EXPERIENCE_KEYWORDS,
     NEGATIVE_NON_IT_KEYWORDS,
+    NEGATIVE_ROLE_TYPE_KEYWORDS,
     NEGATIVE_SENIORITY_KEYWORDS,
     POSITIVE_EXPERIENCE_KEYWORDS,
     POSITIVE_TITLE_KEYWORDS,
@@ -29,7 +30,7 @@ class CheapFilterResult:
     passed: bool
     reasons: list[str] = field(default_factory=list)      # why it was rejected, or notable positive signals
     matched_positive_keywords: list[str] = field(default_factory=list)
-    rejection_category: str | None = None  # "SENIORITY" | "EXPERIENCE" | "NON_IT" | "NO_POSITIVE_MATCH" | None
+    rejection_category: str | None = None  # "SENIORITY" | "ROLE_TYPE" | "EXPERIENCE" | "NON_IT" | "NO_POSITIVE_MATCH" | None
     min_years_required: int | None = None
     location_ok: bool = False
 
@@ -90,14 +91,17 @@ def run_cheap_filter(
 ) -> CheapFilterResult:
     """
     Evaluate a job against the deterministic rules. Order matters: hard
-    rejects (seniority, non-IT, excess experience) short-circuit before we
-    even bother checking for positive keyword matches, matching the spec's
-    instruction not to let a good skills/keyword match rescue a senior job.
+    rejects (seniority, role-type, non-IT, excess experience) short-circuit
+    before we even bother checking for positive keyword matches, matching
+    the spec's instruction not to let a good skills/keyword match rescue a
+    senior job.
 
-    Seniority RANK markers are matched against the title only (a job's rank
-    is stated in its title); the handful of seniority phrases that describe
-    the job's demands still match anywhere. Non-IT, experience and positive
-    IT-relevance checks are unchanged and still read title+description.
+    Seniority RANK markers and role-TYPE markers (grad scheme, junior
+    developer) are both matched against the title only (a job's rank and
+    type are stated in its title); the handful of seniority phrases that
+    describe the job's demands still match anywhere. Non-IT, experience and
+    positive IT-relevance checks are unchanged and still read
+    title+description.
     """
     max_years = max_experience_years if max_experience_years is not None else settings.max_experience_years
     locations = target_locations if target_locations is not None else settings.target_locations
@@ -119,6 +123,21 @@ def run_cheap_filter(
             passed=False,
             reasons=[f"Rejected: seniority keyword(s) found in {where}: {seniority_hits}"],
             rejection_category="SENIORITY",
+            location_ok=location_matches(location, locations),
+        )
+
+    # Role-TYPE reject: grad schemes and junior developer/programmer titles
+    # are a different career track from IT support/service desk, not a
+    # lesser version of it, so these are rejected regardless of how
+    # entry-level the framing is. Title-scoped for the same reason rank
+    # markers are (see above) — an ordinary help-desk posting mentioning
+    # "recent graduates welcome" in its body text must not be rejected.
+    role_type_hits = _find_matches(title, NEGATIVE_ROLE_TYPE_KEYWORDS)
+    if role_type_hits:
+        return CheapFilterResult(
+            passed=False,
+            reasons=[f"Rejected: role-type keyword(s) found in title: {role_type_hits}"],
+            rejection_category="ROLE_TYPE",
             location_ok=location_matches(location, locations),
         )
 

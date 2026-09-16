@@ -35,21 +35,21 @@ POSITIVE_TITLE_KEYWORDS: list[str] = [
     "ict support officer",
     "ict support technician",
     "ict support",
-    "graduate it",
-    "it graduate",
-    "graduate technology",
-    "technology graduate",
-    "junior technical analyst",
-    "junior qa",
-    "junior test analyst",
-    "junior systems administrator",
-    "junior data analyst",
-    "junior business analyst",
     "technical customer support",
     "saas technical support",
     "noc technician",
     "noc l1",
 ]
+# Removed 2026-09-16: "graduate it" / "it graduate" / "graduate technology" /
+# "technology graduate" and the "junior <analyst/qa/sysadmin/business
+# analyst>" entries. The target band is L0/1 help desk, IT support, and
+# service desk specifically — not grad schemes and not junior
+# analyst/QA/sysadmin/BA roles, which are a different (and, for this
+# candidate, wrong) career track even though they're also "entry-level IT".
+# "application support" / "junior application support" are kept: L1
+# application support is genuinely in-band, and NEGATIVE_SENIORITY_KEYWORDS
+# below already catches senior/Tier-2-3 variants of it separately, so
+# keeping these widens the pool without letting senior roles through.
 
 # Hard-reject phrases. If any of these appear, the job is rejected outright
 # regardless of skills match — a high skill score must never override a
@@ -72,6 +72,14 @@ NEGATIVE_SENIORITY_KEYWORDS: list[str] = [
     "level 2",
     "l3",
     "level 3",
+    "tier 2",
+    "tier 3",
+    "2nd line",
+    "3rd line",
+    "engineer ii",
+    "engineer iii",
+    "level ii",
+    "level iii",
     "extensive professional experience",
     "significant professional experience",
     "management responsibilities",
@@ -104,15 +112,36 @@ POSITIVE_EXPERIENCE_KEYWORDS: list[str] = [
     "no experience necessary",
     "entry level",
     "entry-level",
-    "junior",
-    "graduate",
-    "graduate program",
     "trainee",
     "0-1 years",
     "0 to 1 year",
     "1 year",
     "1-2 years",
     "1 to 2 years",
+]
+# Removed 2026-09-16: bare "junior" and "graduate"/"graduate program" as
+# positive signals — they rewarded grad-scheme and junior-anything framing
+# regardless of role type, which is the opposite of the target band. See
+# NEGATIVE_ROLE_TYPE_KEYWORDS below, which now hard-rejects those titles
+# instead of scoring them favorably.
+
+# Role *types* ruled out regardless of how entry-level they're framed —
+# grad schemes and junior developer/programmer titles are a different
+# career track from IT support/service desk, not a lesser version of it.
+# Matched against the TITLE only, same scope as the rank markers in
+# NEGATIVE_SENIORITY_KEYWORDS, so an ordinary help-desk posting that
+# happens to mention "recent graduates encouraged to apply" in its body
+# text isn't wrongly rejected.
+NEGATIVE_ROLE_TYPE_KEYWORDS: list[str] = [
+    "developer",
+    "software engineer",
+    "software developer",
+    "programmer",
+    "graduate program",
+    "graduate scheme",
+    "grad program",
+    "grad scheme",
+    "graduate",
 ]
 
 # Non-IT roles that might otherwise slip past the seniority filter (e.g. a

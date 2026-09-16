@@ -67,10 +67,17 @@ class TestSampleJobsFromSpec:
         assert result.passed is False
         assert result.rejection_category == "SENIORITY"
 
-    def test_graduate_it_support_passes(self):
+    def test_graduate_it_support_rejected(self):
+        # Deliberate policy change, 2026-09-16: grad schemes are explicitly
+        # out of scope for the target band (L0/1 help desk / IT support /
+        # service desk) even though they're also "entry-level IT" — see
+        # NEGATIVE_ROLE_TYPE_KEYWORDS in src/job_filter/keywords.py. This
+        # sample used to assert passed is True; it now asserts the
+        # opposite on purpose, not because the old assertion was wrong.
         job = SAMPLE_JOBS["graduate_it_support"]
         result = run_cheap_filter(job["title"], job["description"], job["location"])
-        assert result.passed is True
+        assert result.passed is False
+        assert result.rejection_category == "ROLE_TYPE"
 
     def test_service_desk_1_year_passes(self):
         job = SAMPLE_JOBS["service_desk_1_year"]
@@ -89,10 +96,16 @@ class TestSampleJobsFromSpec:
         assert result.passed is True
 
     def test_software_engineer_5_years_rejected(self):
+        # Side effect of the 2026-09-16 ROLE_TYPE addition: "Software
+        # Engineer" is now hard-rejected as the wrong role type before the
+        # experience check even runs, so this sample's rejection_category
+        # changed from EXPERIENCE to ROLE_TYPE. passed is still False either
+        # way — this job was always going to be rejected — but the reason
+        # given is now more precise (wrong role, not just too many years).
         job = SAMPLE_JOBS["software_engineer_5_years"]
         result = run_cheap_filter(job["title"], job["description"], job["location"])
         assert result.passed is False
-        assert result.rejection_category == "EXPERIENCE"
+        assert result.rejection_category == "ROLE_TYPE"
 
 
 class TestHardVetoOverridesSkillMatch:
@@ -161,6 +174,43 @@ class TestConfigurableExperienceCap:
             max_experience_years=4,
         )
         assert result.passed is True
+
+
+class TestTierAndLevelSeniorityMarkers:
+    """
+    Real gap found in data/jobs.db on 2026-09-16: "Technical Support
+    Engineer - Tier 3" (job #2003) passed the old filter and reached
+    READY_TO_APPLY with fit_score 85 — a Tier 3 role, not the target L0/1
+    band. NEGATIVE_SENIORITY_KEYWORDS previously only caught "l3"/"level 3",
+    not "tier 3", "engineer ii/iii", or "2nd/3rd line" phrasing.
+    """
+
+    def test_tier_3_support_engineer_rejected(self):
+        result = run_cheap_filter(
+            "Technical Support Engineer - Tier 3",
+            "Provide technical support to enterprise customers.",
+            "Sydney NSW",
+        )
+        assert result.passed is False
+        assert result.rejection_category == "SENIORITY"
+
+    def test_engineer_ii_iii_rejected(self):
+        result = run_cheap_filter(
+            "IT Support Engineer II/III",
+            "Provide IT support to staff across the business.",
+            "Sydney NSW",
+        )
+        assert result.passed is False
+        assert result.rejection_category == "SENIORITY"
+
+    def test_2nd_line_support_rejected(self):
+        result = run_cheap_filter(
+            "2nd Line Support Technician",
+            "Handle escalated support tickets from the service desk.",
+            "Sydney NSW",
+        )
+        assert result.passed is False
+        assert result.rejection_category == "SENIORITY"
 
 
 class TestNoPositiveMatch:
