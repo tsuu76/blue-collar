@@ -57,8 +57,14 @@ class TestIndex:
         assert resp.status_code == 200
 
     def test_index_shows_job_in_correct_column(self, client, db_path):
+        # The pipeline board (status-columns view) moved from `/` to
+        # `/board` when `/` became the client-facing landing page — see
+        # src/dashboard/app.py:board_page and the "client-facing UI"
+        # commit that introduced home.html. The board's behaviour is
+        # unchanged, only its URL moved, so the assertion still tests
+        # what it did before, at the URL where that view now lives.
         insert_sample_job(db_path)
-        resp = client.get("/")
+        resp = client.get("/board")
         assert resp.status_code == 200
         assert b"IT Support Officer" in resp.data
         assert b"NEW" in resp.data
@@ -72,7 +78,8 @@ class TestIndex:
         conn.commit()
         conn.close()
 
-        resp = client.get("/")
+        # See note above — the pipeline board is at /board now.
+        resp = client.get("/board")
         assert b"IT Support Officer" in resp.data
 
 
@@ -106,9 +113,13 @@ class TestManualApplicationCards:
         return job_id
 
     def test_data_island_includes_fit_score_and_reason(self, client, db_path):
+        # The CardSwap widget lives on the pipeline board, which moved
+        # from `/` to `/board` when the client-facing landing page took
+        # over `/`. The data island is rendered by the same template,
+        # so the test still exercises exactly what it did before.
         self._make_ready_job(db_path, title="IT Support Officer", fit_score=82, reason="Strong entry-level match")
 
-        resp = client.get("/")
+        resp = client.get("/board")
         html = resp.data.decode()
         start = html.index('id="cardswap-jobs-data"')
         payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
@@ -123,7 +134,7 @@ class TestManualApplicationCards:
         self._make_ready_job(db_path, title="Lower Match", fit_score=40, url="https://example.com/jobs/low")
         self._make_ready_job(db_path, title="Higher Match", fit_score=90, url="https://example.com/jobs/high")
 
-        resp = client.get("/")
+        resp = client.get("/board")
         html = resp.data.decode()
         start = html.index('id="cardswap-jobs-data"')
         payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
@@ -139,7 +150,7 @@ class TestManualApplicationCards:
             url="https://boards.greenhouse.io/acme/jobs/1",
         )
 
-        resp = client.get("/")
+        resp = client.get("/board")
         html = resp.data.decode()
         start = html.index('id="cardswap-jobs-data"')
         payload = json.loads(html[html.index(">", start) + 1 : html.index("</script>", start)])
@@ -147,7 +158,10 @@ class TestManualApplicationCards:
         assert payload[0]["href"] == "https://boards.greenhouse.io/acme/jobs/1/apply"
 
     def test_no_ready_to_apply_jobs_omits_cardswap_mount(self, client):
-        resp = client.get("/")
+        # The CardSwap widget is on the pipeline board (moved from `/`
+        # to `/board`) — asserting the mount is ABSENT still needs to
+        # run against that page, not the landing dashboard.
+        resp = client.get("/board")
         assert b'id="cardswap-root"' not in resp.data
         assert b'id="cardswap-jobs-data"' not in resp.data
 

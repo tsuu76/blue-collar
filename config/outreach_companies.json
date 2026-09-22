@@ -1,0 +1,3287 @@
+[
+  {
+    "company": "Xero",
+    "website": "https://www.xero.com",
+    "platform": "ashby",
+    "identifier": "xero",
+    "contact_email": "gradcareers@xero.com",
+    "notes": "Discovered 2026-08-20 via ashby: 108 open posting(s), 3 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Deputy",
+    "website": "https://www.deputy.com",
+    "platform": "lever",
+    "identifier": "deputy",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-20 via lever: 12 open posting(s), 1 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "SafetyCulture",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "safetyculture",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 31 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Airwallex",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "airwallex",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 609 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "SiteMinder",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "siteminder",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 41 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Zip",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "zip",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 129 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Dovetail",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "dovetail",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 4 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Simply Wall St",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "simply-wall-st",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 5 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Swoop",
+    "website": "",
+    "platform": "ashby",
+    "identifier": "swoop",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via ashby: 11 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Culture Amp",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "cultureamp",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 29 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Eucalyptus",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "eucalyptus",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 109 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Buildkite",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "buildkite",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 8 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Prospa",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "prospa",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 6 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Athena",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "athena",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 4 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Octopus Deploy",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "octopusdeploy",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 4 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "mx51",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "mx51",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 1 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Spaceship",
+    "website": "",
+    "platform": "greenhouse",
+    "identifier": "spaceship",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via greenhouse: 1 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Mable",
+    "website": "",
+    "platform": "lever",
+    "identifier": "mable",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via lever: 23 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Immutable",
+    "website": "",
+    "platform": "lever",
+    "identifier": "immutable",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via lever: 6 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "PEXA",
+    "website": "",
+    "platform": "lever",
+    "identifier": "pexa",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via lever: 5 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Brighte",
+    "website": "",
+    "platform": "lever",
+    "identifier": "brighte",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via lever: 3 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Canva",
+    "website": "",
+    "platform": "smartrecruiters",
+    "identifier": "canva",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via smartrecruiters: 100 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Nearmap",
+    "website": "",
+    "platform": "smartrecruiters",
+    "identifier": "nearmap",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via smartrecruiters: 30 open posting(s), 1 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Judo Bank",
+    "website": "",
+    "platform": "smartrecruiters",
+    "identifier": "judobank",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via smartrecruiters: 24 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Flare HR",
+    "website": "",
+    "platform": "smartrecruiters",
+    "identifier": "flarehr",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via smartrecruiters: 14 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Qwilr",
+    "website": "",
+    "platform": "smartrecruiters",
+    "identifier": "qwilr",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via smartrecruiters: 1 open posting(s), 0 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Employment Hero",
+    "website": "https://employmenthero.com",
+    "platform": "careers_page",
+    "identifier": "https://employmenthero.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://employmenthero.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://employmenthero.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Tyro",
+    "website": "https://www.tyro.com",
+    "platform": "careers_page",
+    "identifier": "https://www.tyro.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.tyro.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Skedulo",
+    "website": "https://www.skedulo.com",
+    "platform": "careers_page",
+    "identifier": "https://www.skedulo.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.skedulo.com/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.skedulo.com/ -> reachable page https://www.skedulo.com/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Tanda",
+    "website": "https://www.tanda.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.tanda.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.tanda.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Secure Code Warrior",
+    "website": "https://www.securecodewarrior.com",
+    "platform": "lever",
+    "identifier": "securecodewarrior",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 0 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.securecodewarrior.com/company/careers -> Lever referenced by https://www.securecodewarrior.com/jobs (https://jobs.lever.co/securecodewarrior)]",
+    "enabled": true
+  },
+  {
+    "company": "Propeller Aero",
+    "website": "https://www.propelleraero.com",
+    "platform": "careers_page",
+    "identifier": "https://www.propelleraero.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.propelleraero.com/careers/ (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.propelleraero.com/ -> Workable referenced by https://www.propelleraero.com/careers/ (https://apply.workable.com/api/v1/widget/accounts/)]",
+    "enabled": true
+  },
+  {
+    "company": "Tiliter",
+    "website": "https://www.tiliter.com",
+    "platform": "careers_page",
+    "identifier": "https://www.tiliter.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.tiliter.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Zeller",
+    "website": "https://www.myzeller.com",
+    "platform": "lever",
+    "identifier": "Zeller",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 18 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.myzeller.com/ -> Lever referenced by https://www.myzeller.com/au/careers (https://jobs.lever.co/Zeller/79e5968c-d7d9-460f-88ae-b5cde71b7122)]",
+    "enabled": true
+  },
+  {
+    "company": "Hipages",
+    "website": "https://hipagesgroup.com.au",
+    "platform": "greenhouse",
+    "identifier": "hipagesgroup",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via greenhouse: 11 open posting(s), 0 entry-level/IT relevant [via reachable page https://hipagesgroup.com.au/ -> Greenhouse referenced by https://hipagesgroup.com.au/our-team/careers/ (https://boards.greenhouse.io/embed/job_board/js?for=hipagesgroup)]",
+    "enabled": true
+  },
+  {
+    "company": "Nuix",
+    "website": "https://www.nuix.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.nuix.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.nuix.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.nuix.com/ -> reachable page https://careers.nuix.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Marketplacer",
+    "website": "https://marketplacer.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.marketplacer.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.marketplacer.com/ (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://marketplacer.com/careers/ -> Workable referenced by https://careers.marketplacer.com/ (https://apply.workable.com/marketplacer/?lng=en)]",
+    "enabled": true
+  },
+  {
+    "company": "Koala",
+    "website": "https://au.koala.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.koala.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.koala.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://au.koala.com/ -> reachable page https://careers.koala.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Hnry",
+    "website": "https://hnry.com.au",
+    "platform": "careers_page",
+    "identifier": "https://hnry.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://hnry.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://hnry.com.au/ -> reachable page https://hnry.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Shippit",
+    "website": "https://www.shippit.com",
+    "platform": "careers_page",
+    "identifier": "https://www.shippit.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.shippit.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Clipchamp",
+    "website": "https://clipchamp.com",
+    "platform": "careers_page",
+    "identifier": "https://clipchamp.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://clipchamp.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Practice Ignition",
+    "website": "https://www.ignitionapp.com",
+    "platform": "careers_page",
+    "identifier": "https://www.ignitionapp.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.ignitionapp.com/careers (Ashby), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Up",
+    "website": "https://up.com.au",
+    "platform": "greenhouse",
+    "identifier": "ferocia",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via greenhouse: 5 open posting(s), 0 entry-level/IT relevant [via reachable page https://up.com.au/ -> Greenhouse referenced by https://up.com.au/careers/ (https://job-boards.greenhouse.io/ferocia/jobs/4504801008)]",
+    "enabled": true
+  },
+  {
+    "company": "Slyp",
+    "website": "https://www.slyp.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.slyp.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.slyp.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "MYOB",
+    "website": "https://www.myob.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.myob.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.myob.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.myob.com/ -> reachable page https://careers.myob.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Vend",
+    "website": "https://www.vendhq.com",
+    "platform": "careers_page",
+    "identifier": "https://www.vendhq.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.vendhq.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Kounta",
+    "website": "https://www.kounta.com",
+    "platform": "careers_page",
+    "identifier": "https://www.kounta.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.kounta.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Kasada",
+    "website": "https://www.kasada.io",
+    "platform": "lever",
+    "identifier": "kasada",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 2 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.kasada.io/ -> Lever referenced by https://www.kasada.io/careers (https://jobs.lever.co/kasada/0b29a8a3-4fa6-487a-901d-f4637deefba5)]",
+    "enabled": true
+  },
+  {
+    "company": "Assetnote",
+    "website": "https://www.assetnote.io",
+    "platform": "careers_page",
+    "identifier": "https://www.assetnote.io/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.assetnote.io/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Daitum",
+    "website": "https://daitum.com",
+    "platform": "careers_page",
+    "identifier": "https://daitum.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://daitum.com/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://daitum.com/ -> reachable page https://daitum.com/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Sekuro",
+    "website": "https://sekuro.io",
+    "platform": "careers_page",
+    "identifier": "https://sekuro.io/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://sekuro.io/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "CyberCX",
+    "website": "https://cybercx.com.au",
+    "platform": "careers_page",
+    "identifier": "https://cybercx.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://cybercx.com.au/careers/ (JobAdder), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://cybercx.com.au/ -> JobAdder referenced by https://cybercx.com.au/careers/ (https://clientapps.jobadder.com/63623/cybercx)]",
+    "enabled": true
+  },
+  {
+    "company": "Airtasker",
+    "website": "https://www.airtasker.com",
+    "platform": "ashby",
+    "identifier": "airtasker",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via ashby: 6 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.airtasker.com/ -> Ashby referenced by https://www.airtasker.com/careers (https://jobs.ashbyhq.com/airtasker/form/airtasker-talent-community)]",
+    "enabled": true
+  },
+  {
+    "company": "Deputy AU",
+    "website": "",
+    "platform": "lever",
+    "identifier": "deputy",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21 via lever: 11 open posting(s), 1 entry-level/IT relevant",
+    "enabled": true
+  },
+  {
+    "company": "Aura Information Security",
+    "website": "https://www.aurainfosec.com",
+    "platform": "careers_page",
+    "identifier": "https://www.aurainfosec.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.aurainfosec.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Australian National University",
+    "website": "https://www.anu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.anu.edu.au/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.anu.edu.au/jobs, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "University of Canberra",
+    "website": "https://www.canberra.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://uctalent.canberra.edu.au/cw/en/listing",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://uctalent.canberra.edu.au/cw/en/listing (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.canberra.edu.au/future-students/careers-advisors-and-agents -> PageUp referenced by https://uctalent.canberra.edu.au/cw/en/listing (https://secure.dc2.pageuppeople.com/apply/737/aw/applicationForm/default.asp)]",
+    "enabled": true
+  },
+  {
+    "company": "Suncorp Group",
+    "website": "https://www.suncorpgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.suncorpgroup.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.suncorpgroup.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Bupa Australia",
+    "website": "https://www.bupa.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.bupa.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.bupa.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Ramsay Health Care",
+    "website": "https://www.ramsayhealth.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.ramsayhealth.com.au/en/ramsay-careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ramsayhealth.com.au/en/ramsay-careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ramsayhealth.com.au/ -> reachable page https://www.ramsayhealth.com.au/en/ramsay-careers/]",
+    "enabled": true
+  },
+  {
+    "company": "CSIRO",
+    "website": "https://www.csiro.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.csiro.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.csiro.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.csiro.au/ -> SuccessFactors referenced by https://jobs.csiro.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Southern Cross University",
+    "website": "https://www.scu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.scu.edu.au/about/jobs-at-southern-cross/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.scu.edu.au/about/jobs-at-southern-cross/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.scu.edu.au/ -> reachable page https://www.scu.edu.au/about/jobs-at-southern-cross/]",
+    "enabled": true
+  },
+  {
+    "company": "University of Sydney",
+    "website": "https://www.sydney.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sydney.edu.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.sydney.edu.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "University of Wollongong",
+    "website": "https://www.uow.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.uow.edu.au/alumni/your-career-journey/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.uow.edu.au/alumni/your-career-journey/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.uow.edu.au/ -> reachable page https://www.uow.edu.au/alumni/your-career-journey/]",
+    "enabled": true
+  },
+  {
+    "company": "Western Sydney University",
+    "website": "https://www.westernsydney.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.westernsydney.edu.au",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.westernsydney.edu.au, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.westernsydney.edu.au/ -> reachable page https://careers.westernsydney.edu.au]",
+    "enabled": true
+  },
+  {
+    "company": "Charles Darwin University",
+    "website": "https://www.cdu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cdu.edu.au/careers-cdu",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cdu.edu.au/careers-cdu, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cdu.edu.au/ -> reachable page https://www.cdu.edu.au/careers-cdu]",
+    "enabled": true
+  },
+  {
+    "company": "Bond University",
+    "website": "https://www.bond.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.bond.edu.au/thinking-steps/health-matters/how-georgias-career-detour-led-her-to-purpose-medicine",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.bond.edu.au/thinking-steps/health-matters/how-georgias-career-detour-led-her-to-purpose-medicine, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.bond.edu.au/ -> reachable page https://www.bond.edu.au/thinking-steps/health-matters/how-georgias-career-detour-led-her-to-purpose-medicine]",
+    "enabled": true
+  },
+  {
+    "company": "University of Queensland",
+    "website": "https://www.uq.edu.au",
+    "platform": "workday",
+    "identifier": "https://uq.wd3.myworkdayjobs.com/uq/uqcareers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.uq.edu.au/ -> Workday referenced by https://about.uq.edu.au/careers (https://uq.wd3.myworkdayjobs.com/uqcareers)]",
+    "enabled": true
+  },
+  {
+    "company": "University of Southern Queensland",
+    "website": "https://www.unisq.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.unisq.edu.au/study/career-finder",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.unisq.edu.au/study/career-finder, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.unisq.edu.au/ -> reachable page https://www.unisq.edu.au/study/career-finder]",
+    "enabled": true
+  },
+  {
+    "company": "University of the Sunshine Coast",
+    "website": "https://www.usc.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.usc.edu.au/jobs/search",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.usc.edu.au/jobs/search (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.usc.edu.au/about/careers-at-unisc -> PageUp referenced by https://careers.usc.edu.au/jobs/search (https://secure.dc2.pageuppeople.com/apply/1167/aw/applicationForm/default.asp)]",
+    "enabled": true
+  },
+  {
+    "company": "Flinders University",
+    "website": "https://www.flinders.edu.au",
+    "platform": "workday",
+    "identifier": "https://flinders.wd3.myworkdayjobs.com/flinders/flinders_employment",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 36 open posting(s), 1 entry-level/IT relevant [via reachable page https://www.flinders.edu.au/engage/employment -> Workday referenced by https://www.flinders.edu.au/employment (https://flinders.wd3.myworkdayjobs.com/flinders_employment)]",
+    "enabled": true
+  },
+  {
+    "company": "Torrens University Australia",
+    "website": "https://www.torrens.edu.au",
+    "platform": "workday",
+    "identifier": "https://strayer.wd1.myworkdayjobs.com/strayer/ANZ_TUA_External1",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.torrens.edu.au/ -> Workday referenced by https://www.torrens.edu.au/about/career-opportunities (https://strayer.wd1.myworkdayjobs.com/en-US/ANZ_TUA_External1)]",
+    "enabled": true
+  },
+  {
+    "company": "University of Adelaide",
+    "website": "https://www.adelaide.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.adelaide.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.adelaide.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://internal-jobs.adelaide.edu.au/jobs/search/ -> PageUp referenced by https://careers.adelaide.edu.au/ (https://careers-static.pageuppeople.com/jobs-shared-010005202249131221250017020413143166133192.css)]",
+    "enabled": true
+  },
+  {
+    "company": "Federation University Australia",
+    "website": "https://www.federation.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.federation.edu.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.federation.edu.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "RMIT University",
+    "website": "https://www.rmit.edu.au",
+    "platform": "workday",
+    "identifier": "https://rmit.wd3.myworkdayjobs.com/rmit/RMIT_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.rmit.edu.au/study-with-us/career-advisers -> Workday referenced by https://www.rmit.edu.au/careers (https://rmit.wd3.myworkdayjobs.com/RMIT_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Swinburne University of Technology",
+    "website": "https://www.swinburne.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.swinburne.edu.au/life-at-swinburne/careers-employment",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.swinburne.edu.au/life-at-swinburne/careers-employment, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.swinburne.edu.au/ -> reachable page https://www.swinburne.edu.au/life-at-swinburne/careers-employment]",
+    "enabled": true
+  },
+  {
+    "company": "Victoria University",
+    "website": "https://www.vu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.vu.edu.au/about-vu/strategy-leadership-governance/jobs-at-vu",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.vu.edu.au/about-vu/strategy-leadership-governance/jobs-at-vu (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.vu.edu.au/study-at-vu/information-for/school-teachers-career-practitioners -> Oracle Cloud Recruiting referenced by https://www.vu.edu.au/about-vu/strategy-leadership-governance/jobs-at-vu (https://fa-ercy-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/requisitions?)]",
+    "enabled": true
+  },
+  {
+    "company": "University of Western Australia",
+    "website": "https://www.uwa.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.uwa.edu.au/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.uwa.edu.au/jobs, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Bank of Queensland",
+    "website": "https://www.boq.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.boq.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.boq.com.au/careers (Workday), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "AMP Limited",
+    "website": "https://www.amp.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.amp.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.amp.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Heritage Bank",
+    "website": "https://www.heritage.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.heritage.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.heritage.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Commonwealth Bank of Australia",
+    "website": "https://www.commbank.com.au",
+    "platform": "workday",
+    "identifier": "https://cba.wd3.myworkdayjobs.com/cba/CommBank_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.commbank.com.au/ -> Workday referenced by https://www.commbank.com.au/about-us/careers/graduate-intern-programs.html (https://cba.wd3.myworkdayjobs.com/en-US/CommBank_Careers/job/Sydney-CBD-Area/XMLNAME-2026-27-CommBank-Summer-Intern-Program_REQ263617-2?q=grad&locationCountry=d903bb3fedad45039383f6de334ad4db)]",
+    "enabled": true
+  },
+  {
+    "company": "ANZ Bank",
+    "website": "https://www.anz.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.anz.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.anz.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.anz.com.au/ -> reachable page https://www.anz.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Westpac Banking Corporation",
+    "website": "https://www.westpac.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.westpac.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.westpac.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "National Australia Bank",
+    "website": "https://www.nab.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.nab.com.au/jobs/senior-associate-credit-research-nsw-sydney-cbd-nsw-australia",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via its own careers page (https://careers.nab.com.au/jobs/senior-associate-credit-research-nsw-sydney-cbd-nsw-australia): 1 open posting(s), 0 entry-level/IT relevant. [via reachable page https://careers.nab.com.au/en/listing/ -> structured job data on https://careers.nab.com.au/jobs/senior-associate-credit-research-nsw-sydney-cbd-nsw-australia]",
+    "enabled": true
+  },
+  {
+    "company": "Macquarie Group",
+    "website": "https://www.macquarie.com",
+    "platform": "careers_page",
+    "identifier": "https://www.macquarie.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.macquarie.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.macquarie.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Telstra Corporation",
+    "website": "https://www.telstra.com.au",
+    "platform": "workday",
+    "identifier": "https://telstra.wd3.myworkdayjobs.com/telstra/Telstra_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.telstra.com.au/ -> Workday referenced by https://www.telstra.com.au/careers (https://telstra.wd3.myworkdayjobs.com/Telstra_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "TPG Telecom",
+    "website": "https://www.tpgtelecom.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.tpgtelecom.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.tpgtelecom.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Vocus Group",
+    "website": "https://www.vocus.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.vocus.com.au/about-vocus/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.vocus.com.au/about-vocus/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.vocus.com.au/ -> reachable page https://www.vocus.com.au/about-vocus/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Aussie Broadband",
+    "website": "https://www.aussiebroadband.com.au",
+    "platform": "workday",
+    "identifier": "https://aussiebroadband.wd3.myworkdayjobs.com/aussiebroadband/External",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 12 open posting(s), 1 entry-level/IT relevant [via reachable page https://www.aussiebroadband.com.au/ -> Workday referenced by https://www.aussiebroadband.com.au/careers/ (https://aussiebroadband.wd3.myworkdayjobs.com/External)]",
+    "enabled": true
+  },
+  {
+    "company": "Superloop",
+    "website": "https://www.superloop.com",
+    "platform": "careers_page",
+    "identifier": "https://www.superloop.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.superloop.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Wesfarmers",
+    "website": "https://www.wesfarmers.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.wesfarmers.com.au/util/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.wesfarmers.com.au/util/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.wesfarmers.com.au/ -> reachable page https://www.wesfarmers.com.au/util/careers]",
+    "enabled": true
+  },
+  {
+    "company": "JB Hi-Fi",
+    "website": "https://www.jbhifi.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.jbhifi.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.jbhifi.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Harvey Norman",
+    "website": "https://www.harveynorman.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.harveynorman.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.harveynorman.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Kmart Australia",
+    "website": "https://www.kmart.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.kmart.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.kmart.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Chemist Warehouse",
+    "website": "https://www.chemistwarehouse.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.chemistwarehouse.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.chemistwarehouse.com.au/careers (SuccessFactors), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "NBN Co",
+    "website": "https://www.nbnco.com.au",
+    "platform": "workday",
+    "identifier": "https://nbn.wd3.myworkdayjobs.com/nbn/nbncareers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.nbnco.com.au/ -> Workday referenced by https://www.nbnco.com.au/corporate-information/careers (https://nbn.wd3.myworkdayjobs.com/nbncareers)]",
+    "enabled": true
+  },
+  {
+    "company": "Accenture Australia",
+    "website": "https://www.accenture.com/au-en",
+    "platform": "workday",
+    "identifier": "https://accenture.wd103.myworkdayjobs.com/accenture/AccentureCareers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.accenture.com/ -> Workday referenced by https://www.accenture.com/au-en/careers (https://accenture.wd103.myworkdayjobs.com/AccentureCareers/userHome&#34;,&#34;analytics-engagement&#34;:&#34;true&#34;,&#34;analytics-link-type&#34;:&#34;engagement&#34;,&#34;analytics-link-name&#34;:&#34;Access)]",
+    "enabled": true
+  },
+  {
+    "company": "Deloitte Australia",
+    "website": "https://www.deloitte.com/au/en",
+    "platform": "careers_page",
+    "identifier": "https://www.deloitte.com/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.deloitte.com/jobs (Workday), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "EY Australia",
+    "website": "https://www.ey.com/en_au",
+    "platform": "careers_page",
+    "identifier": "https://careers.ey.com/en_au/lp/TC/f7abb34d58e4b33e/?locale=en_US",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.ey.com/en_au/lp/TC/f7abb34d58e4b33e/?locale=en_US (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ey.com/ -> SuccessFactors referenced by https://careers.ey.com/en_au/lp/TC/f7abb34d58e4b33e/?locale=en_US (https://performancemanager5.successfactors.eu/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Data#3",
+    "website": "https://www.data3.com",
+    "platform": "careers_page",
+    "identifier": "https://www.data3.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.data3.com/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.data3.com/ -> reachable page https://www.data3.com/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "IBM Australia",
+    "website": "https://www.ibm.com/au-en",
+    "platform": "careers_page",
+    "identifier": "https://www.ibm.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.ibm.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "SEEK Limited",
+    "website": "https://www.seek.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.seek.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.seek.com.au/ (JobAdder), but job data is not machine-readable \u2014 check it by hand. [via JobAdder referenced by https://www.seek.com.au/ (https://jobadder.com/)]",
+    "enabled": true
+  },
+  {
+    "company": "WiseTech Global",
+    "website": "https://www.wisetechglobal.com",
+    "platform": "careers_page",
+    "identifier": "https://www.wisetechglobal.com/careers/join-us/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.wisetechglobal.com/careers/join-us/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.wisetechglobal.com/ -> reachable page https://www.wisetechglobal.com/careers/join-us/]",
+    "enabled": true
+  },
+  {
+    "company": "NEXTDC",
+    "website": "https://www.nextdc.com",
+    "platform": "careers_page",
+    "identifier": "https://www.nextdc.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.nextdc.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Megaport",
+    "website": "https://www.megaport.com",
+    "platform": "lever",
+    "identifier": "megaport",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 44 open posting(s), 1 entry-level/IT relevant [via reachable page https://www.megaport.com/ -> Lever referenced by https://www.megaport.com/careers (https://jobs.lever.co/megaport)]",
+    "enabled": true
+  },
+  {
+    "company": "Australia Post",
+    "website": "https://auspost.com.au",
+    "platform": "careers_page",
+    "identifier": "https://auspost.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://auspost.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Rio Tinto",
+    "website": "https://www.riotinto.com",
+    "platform": "careers_page",
+    "identifier": "https://www.riotinto.com/en/operations/anz/rio-tinto-into/into-wa-jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.riotinto.com/en/operations/anz/rio-tinto-into/into-wa-jobs, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.riotinto.com/ -> reachable page https://www.riotinto.com/en/operations/anz/rio-tinto-into/into-wa-jobs]",
+    "enabled": true
+  },
+  {
+    "company": "NIB Holdings",
+    "website": "https://www.nib.com.au",
+    "platform": "workday",
+    "identifier": "https://nib.wd105.myworkdayjobs.com/nib/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.nib.com.au/ -> Workday referenced by https://www.nib.com.au/careers (https://nib.wd105.myworkdayjobs.com/careers)]",
+    "enabled": true
+  },
+  {
+    "company": "HCF",
+    "website": "https://www.hcf.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.hcf.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.hcf.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "UniSuper",
+    "website": "https://www.unisuper.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.unisuper.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.unisuper.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Toll Group",
+    "website": "https://www.tollgroup.com",
+    "platform": "workday",
+    "identifier": "https://tollgroup.wd5.myworkdayjobs.com/tollgroup/TollGroup",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.tollgroup.com/solutions/supply-chain-logistics/recruitment-labour-hire -> Workday referenced by https://www.careers.tollgroup.com/ (https://tollgroup.wd5.myworkdayjobs.com/en-US/TollGroup)]",
+    "enabled": true
+  },
+  {
+    "company": "Linfox",
+    "website": "https://www.linfox.com",
+    "platform": "careers_page",
+    "identifier": "https://www.linfox.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.linfox.com/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://www.linfox.com/ (https://careers.static.pageuppeople.com/Widgets/v3.js)]",
+    "enabled": true
+  },
+  {
+    "company": "CSL Limited",
+    "website": "https://www.csl.com",
+    "platform": "workday",
+    "identifier": "https://csl.wd1.myworkdayjobs.com/csl/CSL_External",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.csl.com/careers -> Workday referenced by https://www.csl.com/careers/explore-careers-at-csl (https://csl.wd1.myworkdayjobs.com/en-EN/CSL_External)]",
+    "enabled": true
+  },
+  {
+    "company": "Atlassian",
+    "website": "https://www.atlassian.com",
+    "platform": "careers_page",
+    "identifier": "https://www.atlassian.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.atlassian.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Envato",
+    "website": "https://www.envato.com",
+    "platform": "lever",
+    "identifier": "envato-2",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 4 open posting(s), 0 entry-level/IT relevant [via Lever referenced by https://www.envato.com/ (https://jobs.lever.co/envato-2/)]",
+    "enabled": true
+  },
+  {
+    "company": "Latitude Financial Services",
+    "website": "https://www.latitudefinancial.com.au",
+    "platform": "workday",
+    "identifier": "https://latitudefinancial.wd3.myworkdayjobs.com/latitudefinancial/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.latitudefinancial.com.au/ -> Workday referenced by https://www.latitudefinancial.com.au/careers (https://latitudefinancial.wd3.myworkdayjobs.com/careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Pepper Money",
+    "website": "https://www.peppermoney.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.peppermoney.com.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.peppermoney.com.au/about/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Hays Recruitment Australia",
+    "website": "https://www.hays.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.hays.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.hays.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.hays.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Worley",
+    "website": "https://www.worley.com",
+    "platform": "careers_page",
+    "identifier": "https://www.worley.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.worley.com/, but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://jobs.worley.com/careers?start=0&amp;pid=1133910366625&amp;sort_by=hot&amp;filter_seniority=0 -> robots.txt disallows https://jobs.worley.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Great Southern Bank",
+    "website": "https://www.greatsouthernbank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.greatsouthernbank.com.au/about/careers/search-for-a-job",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.greatsouthernbank.com.au/about/careers/search-for-a-job (Cornerstone), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.greatsouthernbank.com.au/about/careers -> Cornerstone referenced by https://www.greatsouthernbank.com.au/about/careers/search-for-a-job (https://uk.api.csod.com/)]",
+    "enabled": true
+  },
+  {
+    "company": "Teachers Mutual Bank",
+    "website": "https://www.tmbl.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.tmbl.com.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.tmbl.com.au/about/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Beyond Bank Australia",
+    "website": "https://www.beyondbank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.beyondbank.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.beyondbank.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.beyondbank.com.au/ -> reachable page https://www.beyondbank.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Newcastle Permanent",
+    "website": "https://www.newcastlepermanent.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.newcastlepermanent.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.newcastlepermanent.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Bank Australia",
+    "website": "https://www.bankaust.com.au",
+    "platform": "careers_page",
+    "identifier": "https://bankaust.com.au/page/search-bank-australia-jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://bankaust.com.au/page/search-bank-australia-jobs (Elmo), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.bankaust.com.au/careers -> Elmo referenced by https://bankaust.com.au/page/search-bank-australia-jobs (https://bankaust.elmotalent.com.au/js/iframeResizer.min.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Geoscience Australia",
+    "website": "https://www.ga.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.ga.gov.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ga.gov.au/about/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ga.gov.au/ -> reachable page https://www.ga.gov.au/about/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Reserve Bank of Australia",
+    "website": "https://www.rba.gov.au",
+    "platform": "workday",
+    "identifier": "https://rba.wd105.myworkdayjobs.com/rba/RBA_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 19 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://www.rba.gov.au/ (https://rba.wd105.myworkdayjobs.com/en-US/RBA_Careers/)]",
+    "enabled": true
+  },
+  {
+    "company": "Tesserent (Thales Cyber Services ANZ)",
+    "website": "https://tesserent.com",
+    "platform": "careers_page",
+    "identifier": "https://tesserent.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://tesserent.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Fortescue",
+    "website": "https://www.fortescue.com/en",
+    "platform": "careers_page",
+    "identifier": "https://careers.fortescue.com/en/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.fortescue.com/en/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.fortescue.com/ -> SuccessFactors referenced by https://careers.fortescue.com/en/ (https://career10.successfactors.com/careers?company=FMGL&amp;site=&amp;loginFlowRequired=true)]",
+    "enabled": true
+  },
+  {
+    "company": "Boeing Australia",
+    "website": "https://www.boeing.com.au",
+    "platform": "workday",
+    "identifier": "https://boeing.wd1.myworkdayjobs.com/boeing/EXTERNAL_CAREERS",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.boeing.com.au/career -> Workday referenced by https://www.boeing.com.au/careers (https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/login)]",
+    "enabled": true
+  },
+  {
+    "company": "Lockheed Martin Australia",
+    "website": "https://www.lockheedmartin.com/en-au/index.html",
+    "platform": "careers_page",
+    "identifier": "https://www.lockheedmartin.com/en-us/careers/life-at-lm.html",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.lockheedmartin.com/en-us/careers/life-at-lm.html, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.lockheedmartin.com/en-us/careers/life-at-lm.html -> robots.txt disallows https://www.lockheedmartin.com/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Allianz Australia",
+    "website": "https://www.allianz.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.allianz.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.allianz.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Zurich Australia",
+    "website": "https://www.zurich.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.zurich.com.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.zurich.com.au/about/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Newmont Australia",
+    "website": "https://www.newmont.com",
+    "platform": "careers_page",
+    "identifier": "https://jobs.newmont.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.newmont.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.newmont.com/ -> reachable page https://jobs.newmont.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Australian Unity",
+    "website": "https://www.australianunity.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.australianunity.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.australianunity.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://talent.australianunity.com.au/careers/join -> SuccessFactors referenced by https://careers.australianunity.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "GMHBA",
+    "website": "https://www.gmhba.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.gmhba.com.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.gmhba.com.au/about/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.gmhba.com.au/ -> reachable page https://www.gmhba.com.au/about/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Alcoa Australia",
+    "website": "https://www.alcoa.com/australia/en",
+    "platform": "workday",
+    "identifier": "https://alcoa.wd5.myworkdayjobs.com/alcoa/Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.alcoa.com/ -> Workday referenced by https://www.alcoa.com/careers/en (https://alcoa.wd5.myworkdayjobs.com/Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Glencore Australia",
+    "website": "https://www.glencore.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.glencore.com.au/operations-and-projects/coal/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.glencore.com.au/operations-and-projects/coal/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.glencore.com.au/ -> reachable page https://www.glencore.com.au/operations-and-projects/coal/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Endeavour Group",
+    "website": "https://www.endeavourgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.endeavourgroup.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.endeavourgroup.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "The Good Guys",
+    "website": "https://www.thegoodguys.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.thegoodguys.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.thegoodguys.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Australian Securities and Investments Commission",
+    "website": "https://asic.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://asic.gov.au/about-asic/careers-at-asic/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://asic.gov.au/about-asic/careers-at-asic/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://asic.gov.au/ -> reachable page https://asic.gov.au/about-asic/careers-at-asic/]",
+    "enabled": true
+  },
+  {
+    "company": "IP Australia",
+    "website": "https://www.ipaustralia.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.ipaustralia.gov.au/careers/why-work-with-us",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ipaustralia.gov.au/careers/why-work-with-us, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ipaustralia.gov.au/ -> reachable page https://www.ipaustralia.gov.au/careers/why-work-with-us]",
+    "enabled": true
+  },
+  {
+    "company": "Amcor",
+    "website": "https://www.amcor.com",
+    "platform": "careers_page",
+    "identifier": "https://www.amcor.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.amcor.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.amcor.com/ -> robots.txt disallows https://www.amcor.com/careers/job-search]",
+    "enabled": true
+  },
+  {
+    "company": "Ansell",
+    "website": "https://www.ansell.com",
+    "platform": "careers_page",
+    "identifier": "https://www.ansell.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.ansell.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "APA Group",
+    "website": "https://www.apa.com.au",
+    "platform": "workday",
+    "identifier": "https://apa.wd105.myworkdayjobs.com/apa/APA-Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 16 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://www.apa.com.au/ (https://apa.wd105.myworkdayjobs.com/APA-Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Eagers Automotive",
+    "website": "https://www.eagersautomotive.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.eagersautomotive.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.eagersautomotive.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.eagersautomotive.com.au/ -> SuccessFactors referenced by https://careers.eagersautomotive.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Altium",
+    "website": "https://www.altium.com",
+    "platform": "careers_page",
+    "identifier": "https://www.altium.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.altium.com/careers (SmartRecruiters), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Appen",
+    "website": "https://appen.com",
+    "platform": "careers_page",
+    "identifier": "https://appen.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://appen.com/careers (Lever), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Aurizon",
+    "website": "https://www.aurizon.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.aurizon.com.au/careers/job-opportunities",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.aurizon.com.au/careers/job-opportunities (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.aurizon.com.au/careers/working-at-aurizon -> PageUp referenced by https://www.aurizon.com.au/careers/job-opportunities (https://careers.pageuppeople.com/493/new/en/subscribe)]",
+    "enabled": true
+  },
+  {
+    "company": "Bapcor",
+    "website": "https://www.bapcor.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.bapcor.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.bapcor.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "BlueScope Steel",
+    "website": "https://www.bluescope.com",
+    "platform": "careers_page",
+    "identifier": "https://www.bluescope.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.bluescope.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Boral",
+    "website": "https://www.boral.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.boral.com.au/build-your-career-boral",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.boral.com.au/build-your-career-boral, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.boral.com.au/ -> reachable page https://www.boral.com.au/build-your-career-boral]",
+    "enabled": true
+  },
+  {
+    "company": "Cleanaway Waste Management",
+    "website": "https://www.cleanaway.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cleanaway.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cleanaway.com.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://www.cleanaway.com.au/ (https://careers.pageuppeople.com/621/cw/en/listing/)]",
+    "enabled": true
+  },
+  {
+    "company": "Charter Hall Group",
+    "website": "https://www.charterhall.com.au",
+    "platform": "workday",
+    "identifier": "https://charterhall.wd3.myworkdayjobs.com/charterhall/Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 6 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.charterhall.com.au/ -> Workday referenced by https://www.charterhall.com.au/why-charter-hall/people-and-values/work-with-us (https://charterhall.wd3.myworkdayjobs.com/Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "CIMIC Group",
+    "website": "https://www.cimic.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cimic.com.au/careers/job-search",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cimic.com.au/careers/job-search (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cimic.com.au/ -> Oracle Cloud Recruiting referenced by https://www.cimic.com.au/careers/job-search (https://elgl.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001)]",
+    "enabled": true
+  },
+  {
+    "company": "Corporate Travel Management",
+    "website": "https://www.travelctm.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.travelctm.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.travelctm.com/ (iCIMS), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.travelctm.com/ -> iCIMS referenced by https://careers.travelctm.com/ (https://employees-ctm.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889838)]",
+    "enabled": true
+  },
+  {
+    "company": "Elders Limited",
+    "website": "https://elders.com.au",
+    "platform": "workday",
+    "identifier": "https://elderslimited.wd3.myworkdayjobs.com/elderslimited/Elders",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://elders.com.au/ -> Workday referenced by https://elders.com.au/about-us/careers/roles-at-elders/ (https://elderslimited.wd3.myworkdayjobs.com/Elders)]",
+    "enabled": true
+  },
+  {
+    "company": "Evolution Mining",
+    "website": "https://evolutionmining.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.evolutionmining.com.au/go/Current-Opportunities/7876910/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.evolutionmining.com.au/go/Current-Opportunities/7876910/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://evolutionmining.com.au/ -> SuccessFactors referenced by https://careers.evolutionmining.com.au/go/Current-Opportunities/7876910/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Fisher and Paykel Healthcare",
+    "website": "https://www.fphcare.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.fphcare.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.fphcare.com.au/careers (SuccessFactors), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Healius",
+    "website": "https://www.healius.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.healius.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.healius.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.healius.com.au/ -> reachable page https://careers.healius.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Iluka Resources",
+    "website": "https://www.iluka.com",
+    "platform": "workday",
+    "identifier": "https://iluka.wd3.myworkdayjobs.com/iluka/ilukacareers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 3 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.iluka.com/ -> Workday referenced by https://www.iluka.com/careers/ (https://iluka.wd3.myworkdayjobs.com/ilukacareers)]",
+    "enabled": true
+  },
+  {
+    "company": "Incitec Pivot",
+    "website": "https://www.incitecpivot.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.incitecpivot.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.incitecpivot.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.incitecpivot.com.au/careers/opportunities-for-incitec-pivot/incitec-pivot-career-opportunities/ -> SuccessFactors referenced by https://careers.incitecpivot.com.au/ (https://career4.successfactors.com/career?company=IncitecPivot)]",
+    "enabled": true
+  },
+  {
+    "company": "Newcrest Mining",
+    "website": "https://www.newcrest.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.newcrest.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.newcrest.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Orica",
+    "website": "https://www.orica.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.orica.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.orica.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.orica.com/careers -> SuccessFactors referenced by https://careers.orica.com/ (https://performancemanager4.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "PointsBet Holdings",
+    "website": "https://www.pointsbet.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.pointsbet.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.pointsbet.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Platinum Asset Management",
+    "website": "https://www.platinum.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.platinum.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.platinum.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.platinum.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Pinnacle Investment Management",
+    "website": "https://pinnacleinvestment.com",
+    "platform": "careers_page",
+    "identifier": "https://pinnacleinvestment.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://pinnacleinvestment.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "PolyNovo",
+    "website": "https://polynovo.com",
+    "platform": "greenhouse",
+    "identifier": "polynovo",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via greenhouse: 14 open posting(s), 0 entry-level/IT relevant [via Greenhouse referenced by https://polynovo.com/ (https://boards.anz.greenhouse.io/embed/job_board/js?for=polynovo)]",
+    "enabled": true
+  },
+  {
+    "company": "Qube Holdings",
+    "website": "https://qube.com.au",
+    "platform": "careers_page",
+    "identifier": "https://qube.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://qube.com.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://qube.com.au/ (https://careers.pageuppeople.com/957/cw/en/listing/)]",
+    "enabled": true
+  },
+  {
+    "company": "Reliance Worldwide Corporation",
+    "website": "https://www.rwc.com",
+    "platform": "careers_page",
+    "identifier": "https://www.rwc.com/career-opportunities",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.rwc.com/career-opportunities (Recruitee), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.rwc.com/careers -> Recruitee referenced by https://www.rwc.com/career-opportunities (https://rwc.recruitee.com/#section-214642)]",
+    "enabled": true
+  },
+  {
+    "company": "Scentre Group",
+    "website": "https://www.scentregroup.com",
+    "platform": "careers_page",
+    "identifier": "https://www.scentregroup.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.scentregroup.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Stockland",
+    "website": "https://www.stockland.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.stockland.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.stockland.com.au/careers (SuccessFactors), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Star Entertainment Group",
+    "website": "https://www.starentertainmentgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.starentertainmentgroup.com.au/careers-training/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.starentertainmentgroup.com.au/careers-training/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.starentertainmentgroup.com.au/ -> reachable page https://www.starentertainmentgroup.com.au/careers-training/]",
+    "enabled": true
+  },
+  {
+    "company": "Santos",
+    "website": "https://www.santos.com",
+    "platform": "careers_page",
+    "identifier": "https://www.santos.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.santos.com/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.santos.com/ -> reachable page https://www.santos.com/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Super Retail Group",
+    "website": "https://superretailgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://superretailgroup.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://superretailgroup.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://superretailgroup.com.au/ -> reachable page https://superretailgroup.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Seven Group Holdings",
+    "website": "https://www.sghl.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sghl.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.sghl.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Transurban Group",
+    "website": "https://www.transurban.com",
+    "platform": "workday",
+    "identifier": "https://transurban.wd3.myworkdayjobs.com/transurban/TU_AU",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 9 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.transurban.com/ -> Workday referenced by https://careers.transurban.com (https://transurban.wd3.myworkdayjobs.com/TU_AU/)]",
+    "enabled": true
+  },
+  {
+    "company": "Treasury Wine Estates",
+    "website": "https://www.tweglobal.com",
+    "platform": "careers_page",
+    "identifier": "https://www.tweglobal.com/en-au/life-at-twe/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.tweglobal.com/en-au/life-at-twe/ (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.tweglobal.com/ -> Oracle Cloud Recruiting referenced by https://www.tweglobal.com/en-au/life-at-twe/ (https://ebpm.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1)]",
+    "enabled": true
+  },
+  {
+    "company": "Vicinity Centres",
+    "website": "https://www.vicinity.com.au",
+    "platform": "workday",
+    "identifier": "https://vicinity.wd3.myworkdayjobs.com/vicinity/VicinityExternalCareers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 10 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.vicinity.com.au/ -> Workday referenced by https://www.vicinity.com.au/about-us/careers (https://vicinity.wd3.myworkdayjobs.com/VicinityExternalCareers)]",
+    "enabled": true
+  },
+  {
+    "company": "Viva Energy Group",
+    "website": "https://www.vivaenergy.com.au",
+    "platform": "smartrecruiters",
+    "identifier": "VivaEnergyAustralia",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via smartrecruiters: 22 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.vivaenergy.com.au/careers -> SmartRecruiters referenced by https://www.vivaenergy.com.au/career-opportunities (https://jobs.smartrecruiters.com/VivaEnergyAustralia/)]",
+    "enabled": true
+  },
+  {
+    "company": "Woodside Energy",
+    "website": "https://www.woodside.com",
+    "platform": "careers_page",
+    "identifier": "https://www.woodside.com/careers/current-vacancies",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.woodside.com/careers/current-vacancies (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.woodside.com/careers -> SuccessFactors referenced by https://www.woodside.com/careers/current-vacancies (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Yancoal Australia",
+    "website": "https://www.yancoal.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.yancoal.com.au/go/Career-Opportunities/7877410/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.yancoal.com.au/go/Career-Opportunities/7877410/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.yancoal.com.au/ -> SuccessFactors referenced by https://careers.yancoal.com.au/go/Career-Opportunities/7877410/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "David Jones",
+    "website": "https://www.davidjones.com",
+    "platform": "careers_page",
+    "identifier": "https://www.davidjones.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.davidjones.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Myer Holdings",
+    "website": "https://www.myer.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.myer.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.myer.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Cotton On Group",
+    "website": "https://cottonongroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://cottonongroup.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://cottonongroup.com.au/ (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via Oracle Cloud Recruiting referenced by https://cottonongroup.com.au/ (https://ekxm.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX)]",
+    "enabled": true
+  },
+  {
+    "company": "Australian Broadcasting Corporation",
+    "website": "https://www.abc.net.au",
+    "platform": "careers_page",
+    "identifier": "https://www.abc.net.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.abc.net.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "SBS Australia",
+    "website": "https://www.sbs.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.sbs.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.sbs.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.sbs.com.au/ -> reachable page https://careers.sbs.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "TAFE NSW",
+    "website": "https://www.tafensw.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.tafensw.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.tafensw.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.tafensw.edu.au/jobs -> PageUp referenced by https://careers.tafensw.edu.au/ (https://publicstorage.dc2.pageuppeople.com/1155/ClientPublicFile/358a0064-6900-4567-9519-c00f1a4e1c82.pdf)]",
+    "enabled": true
+  },
+  {
+    "company": "TAFE Queensland",
+    "website": "https://tafeqld.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://tafeqld.edu.au/courses/course-types/career-tasters",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://tafeqld.edu.au/courses/course-types/career-tasters, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://tafeqld.edu.au/ -> reachable page https://tafeqld.edu.au/courses/course-types/career-tasters]",
+    "enabled": true
+  },
+  {
+    "company": "TAFE SA",
+    "website": "https://www.tafesa.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.tafesa.edu.au/about-tafesa/jobs-at-tafesa",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.tafesa.edu.au/about-tafesa/jobs-at-tafesa, but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://careers.tafesa.edu.au/jobs/search -> robots.txt disallows https://careers.tafesa.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Wipro Australia",
+    "website": "https://www.wipro.com/en-ANZ",
+    "platform": "careers_page",
+    "identifier": "https://careers.wipro.com",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.wipro.com (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.wipro.com/ -> SuccessFactors referenced by https://careers.wipro.com (https://hcm55.sapsf.eu/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Cognizant Australia",
+    "website": "https://www.cognizant.com/au/en",
+    "platform": "careers_page",
+    "identifier": "https://www.cognizant.com/anz/en/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cognizant.com/anz/en/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cognizant.com/ -> reachable page https://www.cognizant.com/anz/en/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Melbourne Polytechnic",
+    "website": "https://www.melbournepolytechnic.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.melbournepolytechnic.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.melbournepolytechnic.edu.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.melbournepolytechnic.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Versent",
+    "website": "https://versent.com.au",
+    "platform": "workday",
+    "identifier": "https://aett.wd3.myworkdayjobs.com/aett/Versent",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 12 open posting(s), 0 entry-level/IT relevant [via reachable page https://versent.com.au/ -> Workday referenced by https://versent.com.au/careers/ (https://aett.wd3.myworkdayjobs.com/Versent)]",
+    "enabled": true
+  },
+  {
+    "company": "Cevo",
+    "website": "https://cevo.com.au",
+    "platform": "careers_page",
+    "identifier": "https://cevo.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://cevo.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://cevo.com.au/ -> reachable page https://cevo.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Eliiza",
+    "website": "https://eliiza.com.au",
+    "platform": "careers_page",
+    "identifier": "https://eliiza.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://eliiza.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "MoneyMe",
+    "website": "https://www.moneyme.com.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.moneyme.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.moneyme.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.moneyme.com.au/ -> reachable page https://jobs.moneyme.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Wisr",
+    "website": "https://wisr.com.au",
+    "platform": "lever",
+    "identifier": "wisr",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 0 open posting(s), 0 entry-level/IT relevant [via reachable page https://wisr.com.au/ -> Lever referenced by https://wisr.com.au/careers (https://jobs.lever.co/wisr)]",
+    "enabled": true
+  },
+  {
+    "company": "Zepto",
+    "website": "https://zepto.com.au",
+    "platform": "careers_page",
+    "identifier": "https://zepto.com.au/insights/partnering-with-employment-hero-and-ozedi",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://zepto.com.au/insights/partnering-with-employment-hero-and-ozedi, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://zepto.com.au/ -> reachable page https://zepto.com.au/insights/partnering-with-employment-hero-and-ozedi]",
+    "enabled": true
+  },
+  {
+    "company": "Till Payments",
+    "website": "https://tillpayments.com",
+    "platform": "careers_page",
+    "identifier": "https://tillpayments.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://tillpayments.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Class",
+    "website": "https://www.class.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.class.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.class.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Beforepay Group",
+    "website": "https://www.beforepaygroup.com",
+    "platform": "careers_page",
+    "identifier": "https://www.beforepaygroup.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.beforepaygroup.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "ELMO Software",
+    "website": "https://elmosoftware.com.au",
+    "platform": "careers_page",
+    "identifier": "https://elmosoftware.com.au/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://elmosoftware.com.au/jobs, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Nitro Software",
+    "website": "https://www.gonitro.com",
+    "platform": "careers_page",
+    "identifier": "https://www.gonitro.com/about/careers?hsLang=en",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.gonitro.com/about/careers?hsLang=en, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.gonitro.com/ -> reachable page https://www.gonitro.com/about/careers?hsLang=en]",
+    "enabled": true
+  },
+  {
+    "company": "BigCommerce",
+    "website": "https://www.bigcommerce.com.au",
+    "platform": "workday",
+    "identifier": "https://bigcommerce.wd12.myworkdayjobs.com/bigcommerce/Commerce",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.bigcommerce.com.au/ -> Workday referenced by https://www.bigcommerce.com.au/jobs (https://bigcommerce.wd12.myworkdayjobs.com/Commerce/)]",
+    "enabled": true
+  },
+  {
+    "company": "MedAdvisor",
+    "website": "https://www.mymedadvisor.com",
+    "platform": "careers_page",
+    "identifier": "https://www.mymedadvisor.com/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.mymedadvisor.com/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Sydney Water",
+    "website": "https://www.sydneywater.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sydneywater.com.au/about-us/our-people/careers.html",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.sydneywater.com.au/about-us/our-people/careers.html, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.sydneywater.com.au/ -> reachable page https://www.sydneywater.com.au/about-us/our-people/careers.html]",
+    "enabled": true
+  },
+  {
+    "company": "Melbourne Water",
+    "website": "https://www.melbournewater.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.melbournewater.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.melbournewater.com.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://www.melbournewater.com.au/ (https://careers.pageuppeople.com/391/cw/en/listing/)]",
+    "enabled": true
+  },
+  {
+    "company": "Victorian Department of Health",
+    "website": "https://www.health.vic.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.health.vic.gov.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.health.vic.gov.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.health.vic.gov.au/]",
+    "enabled": true
+  },
+  {
+    "company": "WorkSafe Victoria",
+    "website": "https://www.worksafe.vic.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.worksafe.vic.gov.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.worksafe.vic.gov.au/careers (SuccessFactors), but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Airservices Australia",
+    "website": "https://www.airservices.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.airservices.gov.au/careers/life-at-airservices/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.airservices.gov.au/careers/life-at-airservices/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.airservices.gov.au/ -> reachable page https://www.airservices.gov.au/careers/life-at-airservices/]",
+    "enabled": true
+  },
+  {
+    "company": "Sydney Airport",
+    "website": "https://www.sydneyairport.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sydneyairport.com.au/corporate/join-us/job-opportunities",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.sydneyairport.com.au/corporate/join-us/job-opportunities, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.sydneyairport.com.au/ -> reachable page https://www.sydneyairport.com.au/corporate/join-us/job-opportunities]",
+    "enabled": true
+  },
+  {
+    "company": "Australian Federal Police",
+    "website": "https://www.afp.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.afp.gov.au/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.afp.gov.au/jobs (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.afp.gov.au/ -> SuccessFactors referenced by https://www.afp.gov.au/jobs (https://career10preview.sapsf.com/career?career_company=digitaltraT2&amp;lang=en_GB&amp;company=digitaltraT2&amp;site=&amp;loginFlowRequired=true)]",
+    "enabled": true
+  },
+  {
+    "company": "Clean Energy Regulator",
+    "website": "https://www.cleanenergyregulator.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cleanenergyregulator.gov.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.cleanenergyregulator.gov.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "St.George Bank",
+    "website": "https://www.stgeorge.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.stgeorge.com.au/about/careers?fid=GL:GF:None:stg:www:about:careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.stgeorge.com.au/about/careers?fid=GL:GF:None:stg:www:about:careers (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.stgeorge.com.au/ -> Oracle Cloud Recruiting referenced by https://www.stgeorge.com.au/about/careers?fid=GL:GF:None:stg:www:about:careers (https://ebuu.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX)]",
+    "enabled": true
+  },
+  {
+    "company": "Bankwest",
+    "website": "https://www.bankwest.com.au",
+    "platform": "workday",
+    "identifier": "https://cba.wd3.myworkdayjobs.com/cba/Bankwest_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.bankwest.com.au/ -> Workday referenced by https://www.bankwest.com.au/about-us/careers (https://cba.wd3.myworkdayjobs.com/Bankwest_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "ING Australia",
+    "website": "https://www.ing.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.ing.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.ing.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "ME Bank",
+    "website": "https://www.mebank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.mebank.com.au/about-us/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.mebank.com.au/about-us/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.mebank.com.au/ -> reachable page https://www.mebank.com.au/about-us/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "P&N Bank",
+    "website": "https://www.pnbank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.pnbank.com.au/careers/find-your-dream-job/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.pnbank.com.au/careers/find-your-dream-job/ (JobAdder), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.pnbank.com.au/careers/ -> JobAdder referenced by https://www.pnbank.com.au/careers/find-your-dream-job/ (https://jobadder.com/widgets/v1/jobs.min.js)]",
+    "enabled": true
+  },
+  {
+    "company": "MyState Bank",
+    "website": "https://mystate.com.au",
+    "platform": "careers_page",
+    "identifier": "https://mystate.com.au/about-us/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://mystate.com.au/about-us/careers/ (LiveHire), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://mystate.com.au/ -> LiveHire referenced by https://mystate.com.au/about-us/careers/ (https://www.livehire.com/widgets/job-listings/mystatelimited)]",
+    "enabled": true
+  },
+  {
+    "company": "Bendigo Health",
+    "website": "https://bendigohealth.org.au",
+    "platform": "careers_page",
+    "identifier": "https://bendigohealth.org.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://bendigohealth.org.au/careers/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://bendigohealth.org.au/ -> SuccessFactors referenced by https://bendigohealth.org.au/careers/ (https://career10.successfactors.com/career?company=lmhn&site=&lang=en_GB&requestParams=&login_ns=register&jobPipeline=Other&clientId=jobs2web&navBarLevel=MY%5fPROFILE&_s.crb=vQuzLjsLrw8ACIK1FdtEeU%2b4gy0TRq8K17W2jp6%2bd3M%3d)]",
+    "enabled": true
+  },
+  {
+    "company": "Epworth HealthCare",
+    "website": "https://www.epworth.org.au",
+    "platform": "smartrecruiters",
+    "identifier": "Epworth",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via smartrecruiters: 65 open posting(s), 2 entry-level/IT relevant [via reachable page https://www.epworth.org.au/careers -> SmartRecruiters referenced by https://www.epworth.org.au/careers/future-employees (https://careers.smartrecruiters.com/Epworth)]",
+    "enabled": true
+  },
+  {
+    "company": "St Vincent's Health Australia",
+    "website": "https://www.svha.org.au",
+    "platform": "workday",
+    "identifier": "https://svha.wd3.myworkdayjobs.com/svha/SVHA_SVHA",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.svha.org.au/ -> Workday referenced by https://www.svha.org.au/careers/current-vacancies (https://svha.wd3.myworkdayjobs.com/SVHA_SVHA)]",
+    "enabled": true
+  },
+  {
+    "company": "Icon Cancer Centre",
+    "website": "https://iconcancercentre.com.au",
+    "platform": "careers_page",
+    "identifier": "https://iconcancercentre.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://iconcancercentre.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://iconcancercentre.com.au/ -> reachable page https://iconcancercentre.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Peoplecare",
+    "website": "https://www.peoplecare.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.peoplecare.com.au/about-us/careers/jobs/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.peoplecare.com.au/about-us/careers/jobs/ (Elmo), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.peoplecare.com.au/about-us/careers/ -> Elmo referenced by https://www.peoplecare.com.au/about-us/careers/jobs/ (https://peoplecare.elmotalent.com.au/careers/careers/jobs?layout=iframe)]",
+    "enabled": true
+  },
+  {
+    "company": "Programmed Group",
+    "website": "https://programmed.com.au",
+    "platform": "careers_page",
+    "identifier": "https://programmed.com.au/service/staffing-services/first-nations-employment-services/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://programmed.com.au/service/staffing-services/first-nations-employment-services/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://programmed.com.au/ -> PageUp referenced by https://programmed.com.au/service/staffing-services/first-nations-employment-services/ (https://secure.dc2.pageuppeople.com/apply/432/aw/applicationForm/default.asp)]",
+    "enabled": true
+  },
+  {
+    "company": "Aurora Energy",
+    "website": "https://www.auroraenergy.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.auroraenergy.com.au/about/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.auroraenergy.com.au/about/careers (LiveHire), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.auroraenergy.com.au/ -> LiveHire referenced by https://www.auroraenergy.com.au/about/careers (https://www.livehire.com/widgets/job-listings/auroraenergy/public)]",
+    "enabled": true
+  },
+  {
+    "company": "EnergyAustralia",
+    "website": "https://www.energyaustralia.com.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.energyaustralia.com.au/go/View-All-Jobs/9778566/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.energyaustralia.com.au/go/View-All-Jobs/9778566/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.energyaustralia.com.au/about-us/careers -> SuccessFactors referenced by https://jobs.energyaustralia.com.au/go/View-All-Jobs/9778566/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Red Energy",
+    "website": "https://www.redenergy.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.redenergy.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.redenergy.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.redenergy.com.au/ -> reachable page https://www.redenergy.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Vinidex",
+    "website": "https://www.vinidex.com.au",
+    "platform": "workday",
+    "identifier": "https://aliaxis.wd3.myworkdayjobs.com/aliaxis/Aliaxis_APAC",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 16 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.vinidex.com.au/ -> Workday referenced by https://www.vinidex.com.au/careers/ (https://aliaxis.wd3.myworkdayjobs.com/Aliaxis_APAC)]",
+    "enabled": true
+  },
+  {
+    "company": "Blackmores",
+    "website": "https://www.blackmores.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.blackmores.com.au/about-us/our-careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.blackmores.com.au/about-us/our-careers (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.blackmores.com.au/ -> Oracle Cloud Recruiting referenced by https://www.blackmores.com.au/about-us/our-careers (https://hcpo.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/)]",
+    "enabled": true
+  },
+  {
+    "company": "Breville Group",
+    "website": "https://brevillegroup.com",
+    "platform": "careers_page",
+    "identifier": "https://brevillegroup.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://brevillegroup.com/careers/ (Cornerstone), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://brevillegroup.com/ -> Cornerstone referenced by https://brevillegroup.com/careers/ (https://brevillesage.csod.com/ux/ats/careersite/1/home?c=brevillesage)]",
+    "enabled": true
+  },
+  {
+    "company": "Southern Cross Austereo",
+    "website": "https://www.sca.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sca.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.sca.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.sca.com.au/ -> reachable page https://www.sca.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Youi Insurance",
+    "website": "https://www.youi.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.youi.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.youi.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Budget Direct",
+    "website": "https://www.budgetdirect.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.budgetdirect.com.au/about-us/careers.html",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.budgetdirect.com.au/about-us/careers.html, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.budgetdirect.com.au/ -> reachable page https://www.budgetdirect.com.au/about-us/careers.html]",
+    "enabled": true
+  },
+  {
+    "company": "RACV",
+    "website": "https://www.racv.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.racv.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.racv.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.racv.com.au/ -> SuccessFactors referenced by https://careers.racv.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "RACQ",
+    "website": "https://www.racq.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.racq.com.au/about-us/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.racq.com.au/about-us/careers (Taleo), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.racq.com.au/ -> Taleo referenced by https://www.racq.com.au/about-us/careers (https://racq.taleo.net/careersection/RACQ_External/jobsearch.ftl)]",
+    "enabled": true
+  },
+  {
+    "company": "NRMA",
+    "website": "https://www.mynrma.com.au",
+    "platform": "careers_page",
+    "identifier": "https://career.mynrma.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://career.mynrma.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.mynrma.com.au/ -> reachable page https://career.mynrma.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "RAA",
+    "website": "https://www.raa.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.raa.com.au/about-raa/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.raa.com.au/about-raa/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.raa.com.au/ -> reachable page https://www.raa.com.au/about-raa/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Hostplus",
+    "website": "https://hostplus.com.au",
+    "platform": "careers_page",
+    "identifier": "https://hostplus.com.au/about-us/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://hostplus.com.au/about-us/careers (LiveHire), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://hostplus.com.au/members/manage-your-super/life-changes/when-you-change-jobs -> LiveHire referenced by https://hostplus.com.au/about-us/careers (https://www.livehire.com/careers/hostplus&#34)]",
+    "enabled": true
+  },
+  {
+    "company": "Rest Super",
+    "website": "https://rest.com.au",
+    "platform": "careers_page",
+    "identifier": "https://rest.com.au/why-rest/about-rest/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://rest.com.au/why-rest/about-rest/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://rest.com.au/ -> reachable page https://rest.com.au/why-rest/about-rest/careers]",
+    "enabled": true
+  },
+  {
+    "company": "HESTA",
+    "website": "https://www.hesta.com.au",
+    "platform": "careers_page",
+    "identifier": "https://peopleconnect.hesta.com.au/go/All-Available-Jobs/4609310/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://peopleconnect.hesta.com.au/go/All-Available-Jobs/4609310/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.hesta.com.au/members/your-superannuation/changing-jobs -> SuccessFactors referenced by https://peopleconnect.hesta.com.au/go/All-Available-Jobs/4609310/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Cbus Super",
+    "website": "https://www.cbussuper.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cbussuper.com.au/about-us/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cbussuper.com.au/about-us/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cbussuper.com.au/ -> reachable page https://www.cbussuper.com.au/about-us/careers]",
+    "enabled": true
+  },
+  {
+    "company": "OpenLearning",
+    "website": "https://openlearning.com",
+    "platform": "careers_page",
+    "identifier": "https://openlearning.com/jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://openlearning.com/jobs, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Cluey Learning",
+    "website": "https://clueylearning.com.au",
+    "platform": "careers_page",
+    "identifier": "https://clueylearning.com.au/about/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://clueylearning.com.au/about/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://clueylearning.com.au/ -> reachable page https://clueylearning.com.au/about/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Mathspace",
+    "website": "https://mathspace.co",
+    "platform": "careers_page",
+    "identifier": "https://mathspace.co/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://mathspace.co/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Education Perfect",
+    "website": "https://www.educationperfect.com",
+    "platform": "careers_page",
+    "identifier": "https://www.educationperfect.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.educationperfect.com/careers/ (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.educationperfect.com/ -> Workable referenced by https://www.educationperfect.com/careers/ (https://www.workable.com/assets/embed.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Schoolbox",
+    "website": "https://schoolbox.com.au",
+    "platform": "careers_page",
+    "identifier": "https://schoolbox.com.au/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://schoolbox.com.au/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://schoolbox.com.au/ -> reachable page https://schoolbox.com.au/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Sentral Education",
+    "website": "https://www.sentral.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.sentral.com.au/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-21: careers page verified at https://www.sentral.com.au/careers, but job data is not machine-readable \u2014 check it by hand.",
+    "enabled": true
+  },
+  {
+    "company": "Smartgroup Corporation",
+    "website": "https://www.smartgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.smartgroup.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.smartgroup.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://www.smartgroup.com.au/ (https://career10.successfactors.com/career?company=smartgroup)]",
+    "enabled": true
+  },
+  {
+    "company": "McMillan Shakespeare",
+    "website": "https://mmsg.com.au",
+    "platform": "workday",
+    "identifier": "https://mmsg.wd3.myworkdayjobs.com/mmsg/MMSG-Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 29 open posting(s), 0 entry-level/IT relevant [via reachable page https://mmsg.com.au/ -> Workday referenced by https://mmsg.com.au/careers (https://mmsg.wd3.myworkdayjobs.com/MMSG-Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Eclipx Group",
+    "website": "https://www.fleetpartners.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.fleetpartners.com.au/about-us/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.fleetpartners.com.au/about-us/careers (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.fleetpartners.com.au/ -> Workable referenced by https://www.fleetpartners.com.au/about-us/careers (https://apply.workable.com/fleetpartners/?lng=en)]",
+    "enabled": true
+  },
+  {
+    "company": "Xplor Technologies",
+    "website": "https://www.xplortechnologies.com",
+    "platform": "smartrecruiters",
+    "identifier": "Xplor",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via smartrecruiters: 100 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.xplortechnologies.com/ -> SmartRecruiters referenced by https://www.xplortechnologies.com/careers (https://careers.smartrecruiters.com/Xplor)]",
+    "enabled": true
+  },
+  {
+    "company": "Vix Technology",
+    "website": "https://vixtechnology.com",
+    "platform": "careers_page",
+    "identifier": "https://vixtechnology.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://vixtechnology.com/careers/ (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://vixtechnology.com/ -> Workable referenced by https://vixtechnology.com/careers/ (https://apply.workable.com/vix-technology/)]",
+    "enabled": true
+  },
+  {
+    "company": "Monadelphous Group",
+    "website": "https://www.monadelphous.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.monadelphous.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.monadelphous.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.monadelphous.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Perenti",
+    "website": "https://www.perentigroup.com",
+    "platform": "careers_page",
+    "identifier": "https://jobs.perentigroup.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.perentigroup.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.perentigroup.com/careers -> SuccessFactors referenced by https://jobs.perentigroup.com/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Mastermyne",
+    "website": "https://mastermyne.com.au",
+    "platform": "careers_page",
+    "identifier": "https://mastermyne.com.au/careers/work-with-us/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://mastermyne.com.au/careers/work-with-us/, but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://jobs.mastermyne.com.au -> robots.txt disallows https://jobs.mastermyne.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "GHD Group",
+    "website": "https://www.ghd.com/en-au",
+    "platform": "careers_page",
+    "identifier": "https://www.ghd.com/en/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ghd.com/en/careers (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ghd.com/ -> Oracle Cloud Recruiting referenced by https://www.ghd.com/en/careers (https://ejov.fa.ca2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX/jobs?lastSelectedFacet=CATEGORIES&amp;selectedCategoriesFacet=300037864399847&amp;utm_campaign=Careers&amp;utm_medium=Page&amp;utm_source=Website-common-CTA)]",
+    "enabled": true
+  },
+  {
+    "company": "Aurecon",
+    "website": "https://www.aurecongroup.com",
+    "platform": "workday",
+    "identifier": "https://aurecongroup.wd3.myworkdayjobs.com/aurecongroup/aurecon",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://www.aurecongroup.com/ (https://aurecongroup.wd3.myworkdayjobs.com/aurecon)]",
+    "enabled": true
+  },
+  {
+    "company": "SMEC",
+    "website": "https://www.smec.com/au",
+    "platform": "workday",
+    "identifier": "https://surbanajurong.wd3.myworkdayjobs.com/surbanajurong/careersatsmec",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://www.smec.com/ (https://surbanajurong.wd3.myworkdayjobs.com/careersatsmec)]",
+    "enabled": true
+  },
+  {
+    "company": "Arup Australia",
+    "website": "https://www.arup.com/en-us/contact-us/australia",
+    "platform": "careers_page",
+    "identifier": "https://www.arup.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.arup.com/careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.arup.com/ -> reachable page https://www.arup.com/careers/]",
+    "enabled": true
+  },
+  {
+    "company": "Jacobs Australia",
+    "website": "https://www.jacobs.com/locations/asia-pacific/australia",
+    "platform": "careers_page",
+    "identifier": "https://www.jacobs.com/careers-jacobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.jacobs.com/careers-jacobs, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.jacobs.com/ -> reachable page https://www.jacobs.com/careers-jacobs]",
+    "enabled": true
+  },
+  {
+    "company": "Mott MacDonald Australia",
+    "website": "https://www.mottmac.com/en",
+    "platform": "careers_page",
+    "identifier": "https://www.mottmac.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.mottmac.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.mottmac.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Silver Chef",
+    "website": "https://www.silverchef.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.silverchef.com.au/pages/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.silverchef.com.au/pages/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.silverchef.com.au/ -> reachable page https://www.silverchef.com.au/pages/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Linktree",
+    "website": "https://linktr.ee",
+    "platform": "careers_page",
+    "identifier": "https://jobs.linktr.ee/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.linktr.ee/, but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://linktr.ee/careers/jobs -> robots.txt disallows https://linktr.ee/about-us/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Go1",
+    "website": "https://go1.com",
+    "platform": "careers_page",
+    "identifier": "https://go1.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://go1.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://go1.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Rokt",
+    "website": "https://www.rokt.com",
+    "platform": "careers_page",
+    "identifier": "https://www.rokt.com/company/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.rokt.com/company/careers (Workable), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.rokt.com/ -> Workable referenced by https://www.rokt.com/company/careers (https://www.workable.com/assets/embed.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Zoomo",
+    "website": "https://www.ridezoomo.com",
+    "platform": "careers_page",
+    "identifier": "https://www.ridezoomo.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ridezoomo.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ridezoomo.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Lendi",
+    "website": "https://lendigroup.com.au",
+    "platform": "smartrecruiters",
+    "identifier": "LendiGroup1",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via smartrecruiters: 100 open posting(s), 0 entry-level/IT relevant [via SmartRecruiters referenced by https://lendigroup.com.au/ (https://careers.smartrecruiters.com/LendiGroup1)]",
+    "enabled": true
+  },
+  {
+    "company": "Pearler",
+    "website": "https://www.pearler.com",
+    "platform": "careers_page",
+    "identifier": "https://www.pearler.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.pearler.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.pearler.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Medibank",
+    "website": "https://www.medibank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.medibank.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.medibank.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.medibank.com.au/ -> reachable page https://careers.medibank.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Uno",
+    "website": "https://www.unohomeloans.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.unohomeloans.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.unohomeloans.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.unohomeloans.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Pixevety",
+    "website": "https://pixevety.com",
+    "platform": "careers_page",
+    "identifier": "https://pixevety.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://pixevety.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://pixevety.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Cydarm",
+    "website": "https://www.cydarm.com",
+    "platform": "careers_page",
+    "identifier": "https://www.cydarm.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cydarm.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cydarm.com/]",
+    "enabled": true
+  },
+  {
+    "company": "HackHunter",
+    "website": "https://hackhunter.io",
+    "platform": "careers_page",
+    "identifier": "https://hackhunter.io/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://hackhunter.io/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://hackhunter.io/]",
+    "enabled": true
+  },
+  {
+    "company": "Internet 2.0",
+    "website": "https://internet2-0.com",
+    "platform": "careers_page",
+    "identifier": "https://internet2-0.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://internet2-0.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://internet2-0.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Macquarie University",
+    "website": "https://www.mq.edu.au",
+    "platform": "workday",
+    "identifier": "https://mq.wd3.myworkdayjobs.com/mq/CareersatMQ",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 30 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://jobs.mq.edu.au/ (https://mq.wd3.myworkdayjobs.com/CareersatMQ)]",
+    "enabled": true
+  },
+  {
+    "company": "Optus",
+    "website": "https://www.optus.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.optus.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.optus.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.optus.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "QBE Insurance Group",
+    "website": "https://www.qbe.com/au",
+    "platform": "careers_page",
+    "identifier": "https://careers.qbe.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.qbe.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.qbe.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Insurance Australia Group",
+    "website": "https://www.iag.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.iag.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.iag.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.iag.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "University of New South Wales",
+    "website": "https://www.unsw.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.jobs.unsw.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.jobs.unsw.edu.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.unsw.edu.au/ -> reachable page https://www.jobs.unsw.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "University of Technology Sydney",
+    "website": "https://www.uts.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.uts.edu.au/for-students/experience-uts/undergraduate/how-do-i-find-right-career-and-course-me",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.uts.edu.au/for-students/experience-uts/undergraduate/how-do-i-find-right-career-and-course-me, but job data is not machine-readable \u2014 check it by hand. [via robots.txt disallows https://neo.uts.edu.au/ -> robots.txt disallows https://recruitment.uts.edu.au/OA_HTML/RF.jsp?function_id=14296&amp;resp_id=23350&amp;resp_appl_id=800&amp;security_group_id=0&amp;lang_code=US&amp;params=1MRbeqL8d4H-45F7eWg8tcMZi9yxQo7E2xB8NXRsSOlGRIRQXIcwO8OMC-ZaHNY2&amp;oas=BGBPtyycAC0jP53NIJF7Bw..]",
+    "enabled": true
+  },
+  {
+    "company": "CQUniversity",
+    "website": "https://www.cqu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.cqu.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.cqu.edu.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://careers.cqu.edu.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "James Cook University",
+    "website": "https://www.jcu.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.jcu.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.jcu.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://careers.jcu.edu.au/ (https://secure.dc2.pageuppeople.com/apply/1153/aw/applicationForm/)]",
+    "enabled": true
+  },
+  {
+    "company": "University of South Australia",
+    "website": "https://www.unisa.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.unisa.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.unisa.edu.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.unisa.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "University of Tasmania",
+    "website": "https://www.utas.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.utas.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.utas.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://careers.utas.edu.au/ (https://careers-static.pageuppeople.com/jobs-shared-010005202249131221250017020413143166133192.css)]",
+    "enabled": true
+  },
+  {
+    "company": "Deakin University",
+    "website": "https://www.deakin.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.deakin.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.deakin.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://careers.deakin.edu.au/ (https://careers-static.pageuppeople.com/jobs-shared-010005202249131221250017020413143166133192.css)]",
+    "enabled": true
+  },
+  {
+    "company": "La Trobe University",
+    "website": "https://www.latrobe.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.latrobe.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.latrobe.edu.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://jobs.latrobe.edu.au/ (https://careers-static.pageuppeople.com/jobs-shared-010005202249131221250017020413143166133192.css)]",
+    "enabled": true
+  },
+  {
+    "company": "Curtin University",
+    "website": "https://www.curtin.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.curtin.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.curtin.edu.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.curtin.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Murdoch University",
+    "website": "https://www.murdoch.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.murdoch.edu.au/explore/support-services/careers-and-employability",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.murdoch.edu.au/explore/support-services/careers-and-employability, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.murdoch.edu.au/ -> reachable page https://www.murdoch.edu.au/explore/support-services/careers-and-employability]",
+    "enabled": true
+  },
+  {
+    "company": "Bendigo and Adelaide Bank",
+    "website": "https://www.bendigoadelaide.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.bendigoadelaide.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.bendigoadelaide.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.bendigoadelaide.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "HSBC Bank Australia",
+    "website": "https://www.hsbc.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.hsbc.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.hsbc.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.hsbc.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Woolworths Group",
+    "website": "https://www.woolworthsgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.woolworthsgroup.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.woolworthsgroup.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.woolworthsgroup.com.au/ -> reachable page https://careers.woolworthsgroup.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Coles Group",
+    "website": "https://www.colesgroup.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.colesgroup.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.colesgroup.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.colesgroup.com.au/ -> SuccessFactors referenced by https://careers.colesgroup.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Officeworks",
+    "website": "https://www.officeworks.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.officeworks.com.au/information/careers?cm_sp=all:footer::about-us::careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.officeworks.com.au/information/careers?cm_sp=all:footer::about-us::careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.officeworks.com.au/ -> reachable page https://www.officeworks.com.au/information/careers?cm_sp=all:footer::about-us::careers]",
+    "enabled": true
+  },
+  {
+    "company": "Metcash",
+    "website": "https://www.metcash.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.metcash.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.metcash.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.metcash.com/ -> SuccessFactors referenced by https://careers.metcash.com/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "DXC Technology Australia",
+    "website": "https://dxc.com/au/en",
+    "platform": "careers_page",
+    "identifier": "https://careers.dxc.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.dxc.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://dxc.com/ -> reachable page https://careers.dxc.com/]",
+    "enabled": true
+  },
+  {
+    "company": "REA Group",
+    "website": "https://www.realestate.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.realestate.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.realestate.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.realestate.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "carsales.com",
+    "website": "https://www.carsales.com.au",
+    "platform": "smartrecruiters",
+    "identifier": "carsales",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via smartrecruiters: 39 open posting(s), 0 entry-level/IT relevant [via reachable page https://careers.carsales.com.au/ -> SmartRecruiters referenced by https://careers.carsales.com.au/apply-now/ (https://jobs.smartrecruiters.com/carsales/744000142781029)]",
+    "enabled": true
+  },
+  {
+    "company": "Computershare",
+    "website": "https://www.computershare.com/au",
+    "platform": "careers_page",
+    "identifier": "https://www.computershare.com/corporate/careers/join-our-team",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.computershare.com/corporate/careers/join-our-team (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page http://careers.computershare.com -> Oracle Cloud Recruiting referenced by https://www.computershare.com/corporate/careers/join-our-team (https://fa-evdq-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/computersharecareers)]",
+    "enabled": true
+  },
+  {
+    "company": "BHP",
+    "website": "https://www.bhp.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.bhp.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.bhp.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://careers.bhp.com/ (https://performancemanager8.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Origin Energy",
+    "website": "https://www.originenergy.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.originenergy.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.originenergy.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://careers.originenergy.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Nine Entertainment",
+    "website": "https://www.nine.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.nine.com.au/lifestyle/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.nine.com.au/lifestyle/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.nine.com.au/ -> reachable page https://www.nine.com.au/lifestyle/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Virgin Australia",
+    "website": "https://www.virginaustralia.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.virginaustralia.com/jobs/executive-assistant-brisbane-qld-australia",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via its own careers page (https://careers.virginaustralia.com/jobs/executive-assistant-brisbane-qld-australia): 1 open posting(s), 0 entry-level/IT relevant. [via reachable page https://careers.virginaustralia.com/ -> structured job data on https://careers.virginaustralia.com/jobs/executive-assistant-brisbane-qld-australia]",
+    "enabled": true
+  },
+  {
+    "company": "Aristocrat Leisure",
+    "website": "https://www.aristocrat.com",
+    "platform": "workday",
+    "identifier": "https://aristocrat.wd3.myworkdayjobs.com/aristocrat/AristocratExternalCareersSite",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via Workday referenced by https://www.aristocrat.com/ (https://aristocrat.wd3.myworkdayjobs.com/AristocratExternalCareersSite)]",
+    "enabled": true
+  },
+  {
+    "company": "Cochlear",
+    "website": "https://www.cochlear.com",
+    "platform": "workday",
+    "identifier": "https://cochlear.wd3.myworkdayjobs.com/cochlear/Cochlear_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 60 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.cochlear.com/au/en/corporate/careers -> Workday referenced by https://www.cochlear.com/au/en/corporate/careers/jobs-at-cochlear (https://cochlear.wd3.myworkdayjobs.com/Cochlear_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "ResMed",
+    "website": "https://www.resmed.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.resmed.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.resmed.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.resmed.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Downer EDI",
+    "website": "https://www.downergroup.com",
+    "platform": "careers_page",
+    "identifier": "https://www.downergroup.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.downergroup.com/ (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via Oracle Cloud Recruiting referenced by https://www.downergroup.com/ (https://fa-exfs-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CareersAtDowner/jobs)]",
+    "enabled": true
+  },
+  {
+    "company": "Serco Asia Pacific",
+    "website": "https://www.serco.com/aspac",
+    "platform": "careers_page",
+    "identifier": "https://careers.serco.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.serco.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.serco.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Randstad Australia",
+    "website": "https://www.randstad.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.randstad.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.randstad.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.randstad.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Service NSW",
+    "website": "https://www.service.nsw.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.service.nsw.gov.au/services/employment-and-industries",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.service.nsw.gov.au/services/employment-and-industries, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.service.nsw.gov.au/ -> reachable page https://www.service.nsw.gov.au/services/employment-and-industries]",
+    "enabled": true
+  },
+  {
+    "company": "Service Victoria",
+    "website": "https://service.vic.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://service.vic.gov.au/find-services/work-and-volunteering/digital-jobs",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://service.vic.gov.au/find-services/work-and-volunteering/digital-jobs, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://service.vic.gov.au/ -> reachable page https://service.vic.gov.au/find-services/work-and-volunteering/digital-jobs]",
+    "enabled": true
+  },
+  {
+    "company": "IMB Bank",
+    "website": "https://www.imb.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.imb.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.imb.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.imb.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "AARNet",
+    "website": "https://www.aarnet.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.aarnet.edu.au/work-with-us",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.aarnet.edu.au/work-with-us (LiveHire), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.aarnet.edu.au/ -> LiveHire referenced by https://www.aarnet.edu.au/work-with-us (https://www.livehire.com/widgets/job-listings/aarnet)]",
+    "enabled": true
+  },
+  {
+    "company": "BAE Systems Australia",
+    "website": "https://www.baesystems.com/en-aus/home",
+    "platform": "careers_page",
+    "identifier": "https://jobs.baesystems.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.baesystems.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://jobs.baesystems.com/]",
+    "enabled": true
+  },
+  {
+    "company": "South32",
+    "website": "https://www.south32.net",
+    "platform": "careers_page",
+    "identifier": "https://careers.south32.net/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.south32.net/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://careers.south32.net/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "ARB Corporation",
+    "website": "https://www.arb.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.arb.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.arb.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.arb.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Brambles",
+    "website": "https://www.brambles.com",
+    "platform": "workday",
+    "identifier": "https://brambles.wd5.myworkdayjobs.com/brambles/Brambles_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.brambles.com/ -> Workday referenced by https://careers.brambles.com/ (https://brambles.wd5.myworkdayjobs.com/Brambles_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "Codan",
+    "website": "https://codan.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.codan.com.au",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.codan.com.au (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://codan.com.au/ -> SuccessFactors referenced by https://careers.codan.com.au (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Challenger Limited",
+    "website": "https://www.challenger.com.au",
+    "platform": "workday",
+    "identifier": "https://challenger.wd3.myworkdayjobs.com/challenger/Challenger_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.challenger.com.au/ -> Workday referenced by https://www.challenger.com.au/about-us/careers (https://challenger.wd3.myworkdayjobs.com/Challenger_Careers)]",
+    "enabled": true
+  },
+  {
+    "company": "EML Payments",
+    "website": "https://www.emlpayments.com",
+    "platform": "careers_page",
+    "identifier": "https://www.emlpayments.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.emlpayments.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.emlpayments.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Flight Centre Travel Group",
+    "website": "https://www.flightcentre.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.flightcentre.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.flightcentre.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.flightcentre.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "GPT Group",
+    "website": "https://www.gpt.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.gpt.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.gpt.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.gpt.com.au/about-us/careers -> SuccessFactors referenced by https://careers.gpt.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "IDP Education",
+    "website": "https://www.idp.com/australia",
+    "platform": "careers_page",
+    "identifier": "https://careers.idp.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.idp.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.idp.com/ -> reachable page https://careers.idp.com/]",
+    "enabled": true
+  },
+  {
+    "company": "IGO Limited",
+    "website": "https://www.igo.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.igo.com.au/make-a-difference-with-igo",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.igo.com.au/make-a-difference-with-igo (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.igo.com.au/ -> PageUp referenced by https://careers.igo.com.au/make-a-difference-with-igo (https://igo-careers.careerpages.rec-marketing.dc2.pageuppeople.com/make-a-difference-with-igo)]",
+    "enabled": true
+  },
+  {
+    "company": "Iress",
+    "website": "https://www.iress.com",
+    "platform": "workday",
+    "identifier": "https://iress.wd3.myworkdayjobs.com/iress/IRESS_EXTERNAL",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 7 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.iress.com/ -> Workday referenced by https://www.iress.com/join-us/careers/ (https://iress.wd3.myworkdayjobs.com/en-US/IRESS_EXTERNAL)]",
+    "enabled": true
+  },
+  {
+    "company": "James Hardie Industries",
+    "website": "https://www.jameshardie.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.jameshardie.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.jameshardie.com.au/ (JobAdder), but job data is not machine-readable \u2014 check it by hand. [via JobAdder referenced by https://www.jameshardie.com.au/ (https://clientapps.jobadder.com/2959/james-hardie)]",
+    "enabled": true
+  },
+  {
+    "company": "Mineral Resources Limited",
+    "website": "https://www.mineralresources.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.mineralresources.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.mineralresources.com.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://careers.mineralresources.com.au/ (https://secure.dc2.pageuppeople.com/apply/741/aw/applicationForm/default.asp)]",
+    "enabled": true
+  },
+  {
+    "company": "Northern Star Resources",
+    "website": "https://www.nsrltd.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.nsrltd.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.nsrltd.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.nsrltd.com/ -> SuccessFactors referenced by https://careers.nsrltd.com/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Netwealth Group",
+    "website": "https://www.netwealth.com.au",
+    "platform": "ashby",
+    "identifier": "netwealth",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via ashby: 23 open posting(s), 1 entry-level/IT relevant [via reachable page https://www.netwealth.com.au/ -> Ashby referenced by https://www.netwealth.com.au/web/about-netwealth/careers/ (https://jobs.ashbyhq.com/netwealth)]",
+    "enabled": true
+  },
+  {
+    "company": "Orora Limited",
+    "website": "https://www.ororagroup.com",
+    "platform": "careers_page",
+    "identifier": "https://jobs.ororagroup.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.ororagroup.com/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://jobs.ororagroup.com/ (https://performancemanager4.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Pro Medicus",
+    "website": "https://www.promed.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.promed.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.promed.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.promed.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Perpetual Limited",
+    "website": "https://www.perpetual.com.au",
+    "platform": "workday",
+    "identifier": "https://perpetual.wd3.myworkdayjobs.com/perpetual/external",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 38 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.perpetual.com.au/ -> Workday referenced by https://www.perpetual.com.au/about/careers-at-perpetual/ (https://perpetual.wd3.myworkdayjobs.com/external)]",
+    "enabled": true
+  },
+  {
+    "company": "Reece Group",
+    "website": "https://www.reece.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.reece.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.reece.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.reece.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Tabcorp Holdings",
+    "website": "https://www.tabcorp.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.tabcorp.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.tabcorp.com.au/ (PageUp), but job data is not machine-readable \u2014 check it by hand. [via PageUp referenced by https://careers.tabcorp.com.au/ (https://careers.pageuppeople.com/547/cw/en/listing)]",
+    "enabled": true
+  },
+  {
+    "company": "Kogan.com",
+    "website": "https://www.kogan.com",
+    "platform": "lever",
+    "identifier": "kogan",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via lever: 20 open posting(s), 0 entry-level/IT relevant [via reachable page https://careers.kogan.com/ -> Lever referenced by https://careers.kogan.com/open-positions (https://jobs.lever.co/kogan)]",
+    "enabled": true
+  },
+  {
+    "company": "Box Hill Institute",
+    "website": "https://www.boxhill.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.boxhill.edu.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.boxhill.edu.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.boxhill.edu.au/]",
+    "enabled": true
+  },
+  {
+    "company": "North Metropolitan TAFE",
+    "website": "https://www.northmetrotafe.wa.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.northmetrotafe.wa.edu.au/english-employment-and-work-readiness-programs/adult-migrant-english-program-amep",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.northmetrotafe.wa.edu.au/english-employment-and-work-readiness-programs/adult-migrant-english-program-amep, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.northmetrotafe.wa.edu.au/ -> reachable page https://www.northmetrotafe.wa.edu.au/english-employment-and-work-readiness-programs/adult-migrant-english-program-amep]",
+    "enabled": true
+  },
+  {
+    "company": "South Metropolitan TAFE",
+    "website": "https://www.southmetrotafe.wa.edu.au",
+    "platform": "careers_page",
+    "identifier": "https://www.southmetrotafe.wa.edu.au/explore-careers-and-pathways/plan-your-study-pathway",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.southmetrotafe.wa.edu.au/explore-careers-and-pathways/plan-your-study-pathway, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.southmetrotafe.wa.edu.au/ -> reachable page https://www.southmetrotafe.wa.edu.au/explore-careers-and-pathways/plan-your-study-pathway]",
+    "enabled": true
+  },
+  {
+    "company": "Kogan Money",
+    "website": "https://koganmoney.com.au",
+    "platform": "careers_page",
+    "identifier": "https://koganmoney.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://koganmoney.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://koganmoney.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Booktopia",
+    "website": "https://www.booktopia.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.booktopia.com.au/work-with-us",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.booktopia.com.au/work-with-us, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.booktopia.com.au/ -> reachable page https://www.booktopia.com.au/work-with-us]",
+    "enabled": true
+  },
+  {
+    "company": "Ausgrid",
+    "website": "https://www.ausgrid.com.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.ausgrid.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.ausgrid.com.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://jobs.ausgrid.com.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Transport for NSW",
+    "website": "https://www.transport.nsw.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.nsw.gov.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.nsw.gov.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.nsw.gov.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Department of Home Affairs",
+    "website": "https://www.homeaffairs.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://jobs.homeaffairs.gov.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://jobs.homeaffairs.gov.au/ (SuccessFactors), but job data is not machine-readable \u2014 check it by hand. [via SuccessFactors referenced by https://jobs.homeaffairs.gov.au/ (https://performancemanager10.successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Austrade",
+    "website": "https://www.austrade.gov.au",
+    "platform": "careers_page",
+    "identifier": "https://www.austrade.gov.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.austrade.gov.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.austrade.gov.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Regional Australia Bank",
+    "website": "https://www.regionalaustraliabank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.regionalaustraliabank.com.au/about-us/careers-and-available-positions",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.regionalaustraliabank.com.au/about-us/careers-and-available-positions (Elmo), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.regionalaustraliabank.com.au/ -> Elmo referenced by https://www.regionalaustraliabank.com.au/about-us/careers-and-available-positions (https://regionalaustraliabank.elmotalent.com.au/js/iframeResizer.min.js)]",
+    "enabled": true
+  },
+  {
+    "company": "Defence Bank",
+    "website": "https://www.defencebank.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.defencebank.com.au/about-us/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.defencebank.com.au/about-us/careers/ (Elmo), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.defencebank.com.au/ -> Elmo referenced by https://www.defencebank.com.au/about-us/careers/ (https://defencebank.elmotalent.com.au/js/iframeResizer.min.js)]",
+    "enabled": true
+  },
+  {
+    "company": "StarTrack",
+    "website": "https://startrack.com.au",
+    "platform": "careers_page",
+    "identifier": "https://startrack.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://startrack.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://startrack.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Calvary Health Care",
+    "website": "https://www.calvarycare.org.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.calvarycare.org.au/jobs/search",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.calvarycare.org.au/jobs/search (PageUp), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.calvarycare.org.au/ -> PageUp referenced by https://careers.calvarycare.org.au/jobs/search (https://secure.dc2.pageuppeople.com/apply/1106/aw/applicationForm/default.asp)]",
+    "enabled": true
+  },
+  {
+    "company": "GenesisCare",
+    "website": "https://www.genesiscare.com/au",
+    "platform": "workday",
+    "identifier": "https://genesiscare.wd1.myworkdayjobs.com/genesiscare/Genesiscare_Careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via workday: 40 open posting(s), 0 entry-level/IT relevant [via reachable page https://www.genesiscare.com/ -> Workday referenced by https://www.genesiscare.com/au/working-with-genesiscare (https://genesiscare.wd1.myworkdayjobs.com/Genesiscare_Careers?locationCountry=d903bb3fedad45039383f6de334ad4db)]",
+    "enabled": true
+  },
+  {
+    "company": "ahm Health Insurance",
+    "website": "https://www.ahm.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.ahm.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.ahm.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.ahm.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Alinta Energy",
+    "website": "https://www.alintaenergy.com.au",
+    "platform": "careers_page",
+    "identifier": "https://careers.alintaenergy.com.au/jobs/modern-slavery-compliance-manager-sydney-nsw-australia",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23 via its own careers page (https://careers.alintaenergy.com.au/jobs/modern-slavery-compliance-manager-sydney-nsw-australia): 1 open posting(s), 0 entry-level/IT relevant. [via reachable page https://careers.alintaenergy.com.au/ -> structured job data on https://careers.alintaenergy.com.au/jobs/modern-slavery-compliance-manager-sydney-nsw-australia]",
+    "enabled": true
+  },
+  {
+    "company": "Simply Energy",
+    "website": "https://www.simplyenergy.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.simplyenergy.com.au/about-us/careers",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.simplyenergy.com.au/about-us/careers, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.simplyenergy.com.au/ -> reachable page https://www.simplyenergy.com.au/about-us/careers]",
+    "enabled": true
+  },
+  {
+    "company": "Nexans Olex",
+    "website": "https://www.nexans.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.nexans.com.au/en/Company/career0.html",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.nexans.com.au/en/Company/career0.html, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.nexans.com.au/ -> reachable page https://www.nexans.com.au/en/Company/career0.html]",
+    "enabled": true
+  },
+  {
+    "company": "The a2 Milk Company",
+    "website": "https://thea2milkcompany.com",
+    "platform": "careers_page",
+    "identifier": "https://careers.thea2milkcompany.com/careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://careers.thea2milkcompany.com/careers/ (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://careers.thea2milkcompany.com -> Oracle Cloud Recruiting referenced by https://careers.thea2milkcompany.com/careers/ (https://fa-epqf-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2001/jobs)]",
+    "enabled": true
+  },
+  {
+    "company": "Amotiv",
+    "website": "https://amotiv.com",
+    "platform": "careers_page",
+    "identifier": "https://amotiv.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://amotiv.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://amotiv.com/]",
+    "enabled": true
+  },
+  {
+    "company": "CarsGuide",
+    "website": "https://www.carsguide.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.carsguide.com.au/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.carsguide.com.au/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.carsguide.com.au/]",
+    "enabled": true
+  },
+  {
+    "company": "Cover-More Group",
+    "website": "https://www.covermoregroup.com",
+    "platform": "careers_page",
+    "identifier": "https://www.covermoregroup.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.covermoregroup.com/ (Elmo), but job data is not machine-readable \u2014 check it by hand. [via Elmo referenced by https://www.covermoregroup.com/ (https://covermore.elmotalent.com.au/careers/careers/jobs)]",
+    "enabled": true
+  },
+  {
+    "company": "Aware Super",
+    "website": "https://aware.com.au",
+    "platform": "careers_page",
+    "identifier": "https://aware.com.au/member/about-us/careers-and-jobs-at-aware-super",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://aware.com.au/member/about-us/careers-and-jobs-at-aware-super (Cornerstone), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://aware.com.au/ -> Cornerstone referenced by https://aware.com.au/member/about-us/careers-and-jobs-at-aware-super (https://awaresuper.csod.com/ux/ats/careersite/1/home?c=awaresuper)]",
+    "enabled": true
+  },
+  {
+    "company": "Colonial First State",
+    "website": "https://www.cfs.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.cfs.com.au/about-us/corporate-profile/careers-at-CFS",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.cfs.com.au/about-us/corporate-profile/careers-at-CFS (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.cfs.com.au/ -> Oracle Cloud Recruiting referenced by https://www.cfs.com.au/about-us/corporate-profile/careers-at-CFS (https://fa-eran-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions)]",
+    "enabled": true
+  },
+  {
+    "company": "BT Financial Group",
+    "website": "https://www.bt.com.au",
+    "platform": "careers_page",
+    "identifier": "https://www.bt.com.au/about-bt/careers.html",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.bt.com.au/about-bt/careers.html (Oracle Cloud Recruiting), but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.bt.com.au/ -> Oracle Cloud Recruiting referenced by https://www.bt.com.au/about-bt/careers.html (https://ebuu.fa.ap1.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX)]",
+    "enabled": true
+  },
+  {
+    "company": "Straker Translations",
+    "website": "https://www.strakertranslations.com",
+    "platform": "careers_page",
+    "identifier": "https://www.strakertranslations.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.strakertranslations.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.strakertranslations.com/]",
+    "enabled": true
+  },
+  {
+    "company": "LiteracyPlanet",
+    "website": "https://www.literacyplanet.com",
+    "platform": "careers_page",
+    "identifier": "https://www.literacyplanet.com/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.literacyplanet.com/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://www.literacyplanet.com/]",
+    "enabled": true
+  },
+  {
+    "company": "Compass Education",
+    "website": "https://www.compass.education",
+    "platform": "careers_page",
+    "identifier": "https://www.compass.education/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://www.compass.education/ (Workable), but job data is not machine-readable \u2014 check it by hand. [via Workable referenced by https://www.compass.education/ (https://apply.workable.com/compass-education/?lng=en)]",
+    "enabled": true
+  },
+  {
+    "company": "NRW Holdings",
+    "website": "https://nrw.com.au",
+    "platform": "careers_page",
+    "identifier": "https://nrw.com.au/people-careers/",
+    "contact_email": "",
+    "notes": "Discovered 2026-08-23: careers page verified at https://nrw.com.au/people-careers/, but job data is not machine-readable \u2014 check it by hand. [via reachable page https://nrw.com.au/ -> reachable page https://nrw.com.au/people-careers/]",
+    "enabled": true
+  }
+]

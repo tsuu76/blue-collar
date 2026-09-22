@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}Jobs — Blue Collar{% endblock %}
+{% block content %}
+
+<div class="pagehead">
+  <p class="eyebrow">Jobs</p>
+  <div class="pagehead__row">
+    <h1 class="pagehead__title">{{ result_count }} job{{ '' if result_count == 1 else 's' }}</h1>
+    <a class="nav__item nav__item--quiet" href="{{ url_for('jobs_page') }}">Reset filters</a>
+  </div>
+  {#- Scope banner: makes the target-region default visible, and
+      offers the explicit widening for the rare cases the user wants
+      it. `target_only` is set by the view; the link toggles the
+      `scope` query param. -#}
+  {% if target_only %}
+    <p class="pagehead__sub">
+      Showing {{ target_locations | join(' · ') }}.
+      <a class="nav__item nav__item--quiet" href="{{ url_for('jobs_page', scope='anywhere') }}">Show jobs anywhere &rarr;</a>
+    </p>
+  {% else %}
+    <p class="pagehead__sub">
+      Showing every location.
+      <a class="nav__item nav__item--quiet" href="{{ url_for('jobs_page') }}">Back to Sydney focus &rarr;</a>
+    </p>
+  {% endif %}
+</div>
+
+<form class="filterbar" method="get" action="{{ url_for('jobs_page') }}">
+  {#- Preserve the scope across filter submissions — otherwise
+      submitting the form drops ?scope=anywhere back to the default.
+      The scope link/banner above is what actually toggles it. -#}
+  {% if not target_only %}<input type="hidden" name="scope" value="anywhere">{% endif %}
+  <div class="filterbar__field filterbar__field--grow">
+    <label class="filterbar__label" for="q">Search</label>
+    <input class="input" type="text" id="q" name="q" value="{{ query.q }}"
+           placeholder="Title, company, description, or location">
+  </div>
+
+  <div class="filterbar__field">
+    <label class="filterbar__label" for="location">Location</label>
+    <select class="select" id="location" name="location">
+      <option value="">Any</option>
+      {% for loc in locations %}
+      <option value="{{ loc }}"{% if loc == query.location %} selected{% endif %}>{{ loc }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="filterbar__field">
+    <label class="filterbar__label" for="source">Source</label>
+    <select class="select" id="source" name="source">
+      <option value="">Any</option>
+      {% for src_token, src_label in sources %}
+      <option value="{{ src_token }}"{% if src_token == query.source %} selected{% endif %}>{{ src_label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="filterbar__field">
+    <label class="filterbar__label" for="status">Status</label>
+    <select class="select" id="status" name="status">
+      <option value="">Any</option>
+      {% for s in statuses %}
+      <option value="{{ s }}"{% if s == query.status %} selected{% endif %}>{{ s.replace('_', ' ') | title }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="filterbar__field">
+    <label class="filterbar__label" for="sort">Sort</label>
+    <select class="select" id="sort" name="sort">
+      <option value="recent"{% if query.sort == 'recent' %} selected{% endif %}>Newest first</option>
+      <option value="oldest"{% if query.sort == 'oldest' %} selected{% endif %}>Oldest first</option>
+      <option value="match"{% if query.sort == 'match' %} selected{% endif %}>Match score</option>
+      <option value="title"{% if query.sort == 'title' %} selected{% endif %}>Title (A–Z)</option>
+      <option value="company"{% if query.sort == 'company' %} selected{% endif %}>Company (A–Z)</option>
+    </select>
+  </div>
+
+  <div class="filterbar__actions">
+    <button class="btn btn--primary" type="submit">Search</button>
+  </div>
+</form>
+
+{% if not jobs %}
+  <div class="panel">
+    <div class="panel__body">
+      <p class="empty empty--pad">
+        <span class="empty__glyph">—</span>
+        {% if query.q or query.location or query.source or query.status %}
+          No jobs match those filters. Try widening them.
+        {% else %}
+          No jobs yet. <a href="{{ url_for('index') }}">Find new jobs</a> to get started.
+        {% endif %}
+      </p>
+    </div>
+  </div>
+{% else %}
+  <ul class="joblist">
+    {% for job in jobs %}
+    <li class="jobrow">
+      <a class="jobrow__link" href="{{ url_for('job_detail', job_id=job.id) }}">
+        <div class="jobrow__main">
+          <div class="jobrow__title">{{ job.title }}</div>
+          <div class="jobrow__meta">
+            <span class="jobrow__company">{{ job.company or 'Unknown company' }}</span>
+            {% if job.location %}<span class="sep">·</span><span>{{ job.location }}</span>{% endif %}
+            {% if job.salary %}<span class="sep">·</span><span>{{ job.salary }}</span>{% endif %}
+            <span class="sep">·</span><span class="muted">{{ platform_label(job.source) }}</span>
+          </div>
+        </div>
+        <div class="jobrow__side">
+          {% if job.fit_score %}
+            <span class="score {% if job.fit_score >= 75 %}score--high{% elif job.fit_score >= 50 %}score--mid{% else %}score--low{% endif %}">{{ job.fit_score }}</span>
+          {% endif %}
+          <span class="pill pill--sm">{{ job.status.replace('_', ' ') | title }}</span>
+          <span class="muted mono">{{ job.date_found[:10] if job.date_found else '' }}</span>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if result_count >= query.limit %}
+  <p class="muted subtle-note">Showing the first {{ query.limit }} results. Narrow your search to see the rest.</p>
+  {% endif %}
+{% endif %}
+
+{% endblock %}

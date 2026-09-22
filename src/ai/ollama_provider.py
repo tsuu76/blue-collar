@@ -34,7 +34,44 @@ def _extract_json(text: str) -> str:
     end = text.rfind("}")
     if start != -1 and end != -1 and end > start:
         return text[start : end + 1]
+    if start != -1:
+        # An object that was opened but never closed. Local models do this
+        # routinely — llama3 finishes a well-formed response and simply
+        # omits the final brace, reporting done_reason="stop" as though it
+        # were complete. Without repair the whole response is discarded and
+        # every retry fails the same way, so a perfectly good answer is lost
+        # to one missing character. Only ever ADDS the closing brackets the
+        # text is short of; it never edits content, so a genuinely mangled
+        # response still fails to parse in the caller as it should.
+        return _close_unbalanced(text[start:].strip())
     return text.strip()
+
+
+def _close_unbalanced(fragment: str) -> str:
+    """
+    Append whatever closing brackets a truncated JSON fragment is missing,
+    ignoring brackets that appear inside string literals.
+    """
+    stack: list[str] = []
+    in_string = False
+    escaped = False
+    for char in fragment:
+        if escaped:
+            escaped = False
+            continue
+        if char == "\\":
+            escaped = True
+        elif char == '"':
+            in_string = not in_string
+        elif not in_string:
+            if char in "{[":
+                stack.append(char)
+            elif char in "}]" and stack:
+                stack.pop()
+
+    if in_string:
+        fragment += '"'
+    return fragment + "".join("}" if opener == "{" else "]" for opener in reversed(stack))
 
 
 class OllamaProvider(AIProvider):

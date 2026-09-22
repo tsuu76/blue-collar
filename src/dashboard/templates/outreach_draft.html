@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block title %}{{ company.name if company else 'Draft' }} — Outreach — Blue Collar{% endblock %}
+{% block content %}
+
+{% set status_pills = {
+  'DRAFT': 'pill--ember', 'APPROVED': 'pill--sage', 'SENT': 'pill--sage',
+  'FAILED': 'pill--crimson', 'REJECTED': '', 'DO_NOT_CONTACT': 'pill--crimson'
+} %}
+{% set is_draft = message.status == 'DRAFT' %}
+
+<div class="pagehead">
+  <a class="backlink" href="{{ url_for('outreach') }}">&larr; Back to outreach</a>
+  <div class="pagehead__row">
+    <div>
+      <h1 class="pagehead__title">{{ company.name if company else 'Unknown company' }}</h1>
+      <p class="pagehead__sub">{{ message.recipient_email or 'No recipient email recorded' }}</p>
+    </div>
+    <span class="pill {{ status_pills.get(message.status, '') }}"><span class="pill__dot"></span>{{ message.status.replace('_', ' ') }}</span>
+  </div>
+</div>
+
+<div class="detail">
+  <div class="stack">
+
+    <section class="panel">
+      <div class="panel__head"><h2 class="panel__title">Email</h2></div>
+      <div class="panel__body">
+        {% if is_draft %}
+        {#- Editable only while it's a DRAFT. Once approved the fields are
+            shown read-only, so an approval can't be quietly invalidated by a
+            later edit (the repo enforces this too). -#}
+        <form class="form" method="post" action="{{ url_for('outreach_edit_draft', message_id=message.id) }}">
+          <div class="field">
+            <label class="field__label" for="subject">Subject</label>
+            <input class="input" type="text" id="subject" name="subject" value="{{ message.subject or '' }}">
+          </div>
+          <div class="field">
+            <label class="field__label" for="body">Body
+              <span class="field__hint">{{ (message.body or '').split() | length }} words</span>
+            </label>
+            <textarea class="textarea" id="body" name="body">{{ message.body or '' }}</textarea>
+          </div>
+          <div class="form__actions">
+            <button class="btn" type="submit">Save changes</button>
+          </div>
+        </form>
+        {% else %}
+        <div class="fact">
+          <div class="fact__k">Subject</div>
+          <div class="fact__v">{{ message.subject or '—' }}</div>
+        </div>
+        <div class="divider"></div>
+        <div class="prose" style="white-space:pre-wrap">{{ message.body or '' }}</div>
+        <p class="hint">This message is {{ message.status.replace('_', ' ') | lower }} and can no longer be edited.</p>
+        {% endif %}
+      </div>
+    </section>
+
+    {% if analysis %}
+    <section class="panel">
+      <div class="panel__head"><h2 class="panel__title">Why this email says what it says</h2></div>
+      <div class="panel__body">
+        {% if analysis.notes %}
+        <p class="prose">{{ analysis.notes }}</p>
+        <div class="divider"></div>
+        {% endif %}
+
+        {% if analysis.candidate_overlap %}
+        <p class="subhead">Your verified overlap</p>
+        <p class="hint">Checked against your master resume — the only skills this email may claim.</p>
+        <div class="chips">{% for skill in analysis.candidate_overlap %}<span class="chip chip--match">{{ skill }}</span>{% endfor %}</div>
+        {% endif %}
+
+        {% if analysis.recurring_skills %}
+        <div class="divider"></div>
+        <p class="subhead">Skills recurring in their postings</p>
+        <div class="chips">{% for skill in analysis.recurring_skills %}<span class="chip">{{ skill }}</span>{% endfor %}</div>
+        {% endif %}
+
+        {% if analysis.tools_and_technologies %}
+        <div class="divider"></div>
+        <p class="subhead">Tools they name</p>
+        <div class="chips">{% for tool in analysis.tools_and_technologies %}<span class="chip">{{ tool }}</span>{% endfor %}</div>
+        {% endif %}
+
+        {% if analysis.terminology %}
+        <div class="divider"></div>
+        <p class="subhead">Their own terminology</p>
+        <div class="chips">{% for term in analysis.terminology %}<span class="chip">{{ term }}</span>{% endfor %}</div>
+        {% endif %}
+
+        {% if analysis.responsibilities %}
+        <div class="divider"></div>
+        <p class="subhead">Responsibilities these roles involve</p>
+        <ul class="reasons">{% for item in analysis.responsibilities %}<li><span>{{ item }}</span></li>{% endfor %}</ul>
+        {% endif %}
+
+        {% if dropped_candidate_claims or dropped_company_terms %}
+        <div class="divider"></div>
+        {#- Surfacing what verification threw away is the point: it shows the
+            guard did its job on this specific draft. -#}
+        <div class="notice">
+          <div class="notice__title">Discarded by verification</div>
+          <ul>
+            {% for claim in dropped_candidate_claims %}
+            <li><span class="mono">{{ claim }}</span> — not in your resume, so it was removed</li>
+            {% endfor %}
+            {% for term in dropped_company_terms %}
+            <li><span class="mono">{{ term }}</span> — not found in this company's postings</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% if research and research.postings %}
+    <section class="panel">
+      <div class="panel__head"><h2 class="panel__title">Postings this was based on</h2></div>
+      <div class="panel__body">
+        <p class="hint">Real, currently-advertised roles read from their public job board.</p>
+        <div class="column__list" style="margin-top:var(--sp-4)">
+          {% for posting in research.postings %}
+          <a class="jobcard" href="{{ posting.url }}" target="_blank" rel="noopener">
+            <div class="jobcard__top"><div><div class="jobcard__title">{{ posting.title }}</div></div></div>
+            {% if posting.location %}<div class="jobcard__meta"><span>{{ posting.location }}</span></div>{% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+
+  <div class="sidebar">
+    <section class="panel">
+      <div class="panel__head"><h2 class="panel__title">Review</h2></div>
+      <div class="panel__body stack stack--tight">
+
+        <div class="facts">
+          <div class="fact">
+            <div class="fact__k">Status</div>
+            <div class="fact__v">{{ message.status.replace('_', ' ') }}</div>
+          </div>
+          <div class="fact">
+            <div class="fact__k">Recipient</div>
+            {% if message.recipient_email %}
+            <div class="fact__v">{{ message.recipient_email }}</div>
+            {% else %}
+            <div class="fact__v fact__v--empty">None recorded</div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if message.sent_at %}
+        <div class="fact">
+          <div class="fact__k">Sent</div>
+          <div class="fact__v mono">{{ message.sent_at }}</div>
+        </div>
+        {% endif %}
+
+        {#- No approve button: outreach sends automatically once a draft
+            passes the quality gate, so there is nothing here to authorise.
+            Rejecting is still offered — it is the way to stop an email that
+            hasn't gone out yet. -#}
+        {% if is_draft %}
+        <div class="divider"></div>
+        {% if message.gate_passed == 1 %}
+        <p class="notice">
+          Passed the quality gate. This sends automatically on the next outreach run —
+          you don't need to approve it.
+        </p>
+        {% else %}
+        <p class="notice notice--warn">
+          <span class="notice__title">Will not be sent</span>
+          This did not pass the quality gate. Edit it above and it will be re-checked,
+          or reject it.
+        </p>
+        {% endif %}
+        <form method="post" action="{{ url_for('outreach_reject_draft', message_id=message.id) }}">
+          <button class="btn btn--danger btn--block" type="submit">Reject draft</button>
+        </form>
+        {% elif message.status == 'APPROVED' %}
+        <div class="divider"></div>
+        <p class="notice">Cleared for sending but not yet delivered — it goes out on the next run.</p>
+        <form method="post" action="{{ url_for('outreach_reject_draft', message_id=message.id) }}">
+          <button class="btn btn--danger btn--block" type="submit">Stop this message</button>
+        </form>
+        {% endif %}
+
+        {% if message.last_error %}
+        <div class="notice notice--warn">
+          <div class="notice__title">⚠ Last error</div>
+          {{ message.last_error }}
+        </div>
+        {% endif %}
+
+      </div>
+    </section>
+  </div>
+</div>
+
+{% endblock %}

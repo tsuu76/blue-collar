@@ -27,6 +27,33 @@ class ApplicationType:
     TYPE_B = "TYPE_B"  # manual / external — goes to the manual queue
 
 
+class OutreachStatus:
+    """
+    Lifecycle of one direct-outreach message (see outreach_messages in
+    schema.sql). Separate vocabulary from JobStatus: a job moves toward
+    "apply to this posting", a message moves toward "this was sent".
+
+    DRAFT -> APPROVED -> SENT is the only path to a real email. FAILED is a
+    send that was attempted and errored (retryable). REJECTED is a draft the
+    user read and turned down; it keeps the history but stops blocking a
+    future redraft. DO_NOT_CONTACT is a draft permanently blocked because the
+    company opted out — it is never retried and never counts as a send.
+    """
+
+    DRAFT = "DRAFT"
+    APPROVED = "APPROVED"
+    SENT = "SENT"
+    FAILED = "FAILED"
+    REJECTED = "REJECTED"
+    DO_NOT_CONTACT = "DO_NOT_CONTACT"
+
+    ALL = {DRAFT, APPROVED, SENT, FAILED, REJECTED, DO_NOT_CONTACT}
+
+    # Statuses a message can still legitimately leave — anything else is a
+    # settled outcome the sending step must not touch.
+    SENDABLE = {APPROVED, FAILED}
+
+
 _WHITESPACE_RE = re.compile(r"\s+")
 
 # Common tracking/analytics query params that don't change what job a URL
@@ -91,4 +118,39 @@ def compute_dedupe_hash(
         basis = f"{normalize_for_dedupe(title)}|{normalize_for_dedupe(company)}|{normalize_for_dedupe(location)}"
     else:
         basis = canonicalize_url(url)
+    return hashlib.sha256(basis.encode("utf-8")).hexdigest()
+
+
+def domain_of(url_or_email: str) -> str:
+    """
+    Best-effort host for a URL or email address, lowercased with a leading
+    "www." stripped. Never raises — an unparseable value returns "" so the
+    caller falls back to name-based matching rather than crashing.
+    """
+    value = (url_or_email or "").strip().lower()
+    if not value:
+        return ""
+    if "@" in value:
+        return value.rsplit("@", 1)[1].strip().strip("/")
+    if "//" not in value:
+        value = f"https://{value}"
+    try:
+        netloc = urlsplit(value).netloc
+    except ValueError:
+        return ""
+    netloc = netloc.split("@")[-1].split(":")[0]
+    return netloc[4:] if netloc.startswith("www.") else netloc
+
+
+def compute_company_dedupe_hash(name: str, website: str = "") -> str:
+    """
+    Deduplication key for an outreach company, in priority order:
+      1. the website's domain — the same company is routinely written
+         "SafetyCulture", "Safety Culture" and "SafetyCulture Pty Ltd", but
+         only ever has one domain.
+      2. the normalized name — so a target with no website is still
+         deduplicated rather than becoming contactable twice.
+    """
+    domain = domain_of(website)
+    basis = f"domain|{domain}" if domain else f"name|{normalize_for_dedupe(name)}"
     return hashlib.sha256(basis.encode("utf-8")).hexdigest()

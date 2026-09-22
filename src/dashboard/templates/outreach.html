@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% block title %}Outreach — Blue Collar{% endblock %}
+{% block content %}
+
+{#- Message statuses mapped onto the design system's data-status slugs, same
+    mechanism the job board's columns use (.column[data-status=...] drives the
+    accent dot). Reusing the existing slugs rather than inventing new ones. -#}
+{% set message_slugs = {
+  'DRAFT': 'analyzing', 'APPROVED': 'qualified', 'SENT': 'applied',
+  'FAILED': 'rejected', 'REJECTED': 'skipped'
+} %}
+
+<div class="pagehead">
+  <p class="eyebrow">Direct outreach</p>
+  <div class="pagehead__row">
+    <h1 class="pagehead__title">Outreach</h1>
+    <form method="post" action="{{ url_for('outreach_run') }}">
+      <button class="btn btn--primary" type="submit"
+              title="Research, find a contact, write, check and send — in one pass. Runs local AI and real SMTP; takes a minute or two.">
+        Run outreach
+      </button>
+    </form>
+  </div>
+  <p class="pagehead__sub">
+    Companies worth contacting directly, and what happened to each of them.
+    A run goes all the way through on its own — research, contact discovery,
+    writing, the quality gate, then sending. There is nothing to approve.
+  </p>
+</div>
+
+{% if not entries %}
+<section class="panel">
+  <div class="panel__body">
+    <p class="empty"><span class="empty__glyph">—</span>No outreach companies yet</p>
+    <p class="hint" style="text-align:center">
+      Add companies to <span class="mono">config/outreach_companies.json</span> to get started.
+      Nothing is invented — this list only ever contains companies you added.
+    </p>
+  </div>
+</section>
+{% else %}
+
+{# ---------------- Written but not sent ---------------- #}
+{#- These are emails that passed every check but stopped short of sending:
+    OUTREACH_DRY_RUN is on, SMTP isn't configured, or the day's limit was
+    reached. They go out on the next run by themselves — this panel is here
+    to be read, not acted on. -#}
+{% if message_columns['DRAFT'] %}
+<section class="panel">
+  <div class="panel__head">
+    <h2 class="panel__title">Written, not sent</h2>
+    <span class="column__count">{{ draft_count }}</span>
+  </div>
+  <div class="panel__body">
+    <p class="hint">
+      These passed the quality gate and will send on the next run. Nothing here
+      needs your approval — open one to read it, or mark the company do-not-contact
+      below to stop it.
+    </p>
+    <div class="column__list" style="margin-top:var(--sp-4)">
+      {% for item in message_columns['DRAFT'] %}
+      <a class="jobcard" href="{{ url_for('outreach_draft', message_id=item.message.id) }}">
+        <div class="jobcard__top">
+          <div>
+            <div class="jobcard__title">{{ item.message.subject or 'No subject' }}</div>
+            <div class="jobcard__company">{{ item.company.name }}</div>
+          </div>
+          {% if item.message.gate_passed != 1 %}
+          <span class="pill pill--crimson"><span class="pill__dot"></span>Gate failed</span>
+          {% endif %}
+        </div>
+        <div class="jobcard__meta">
+          <span>{{ item.message.recipient_email or 'No recipient' }}</span>
+          {% if item.message.body %}
+          <span class="sep">·</span>
+          <span>{{ item.message.body.split() | length }} words</span>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ---------------- Everything else by status ---------------- #}
+{% set other_statuses = message_status_order | reject('equalto', 'DRAFT') | list %}
+{% if message_columns['APPROVED'] or message_columns['SENT'] or message_columns['FAILED'] or message_columns['REJECTED'] %}
+<div class="board" style="margin-top:var(--sp-6)">
+  {% for status in other_statuses %}
+  <section class="column" data-status="{{ message_slugs.get(status, status | lower) }}">
+    <header class="column__head">
+      <h2 class="column__label"><span class="dot"></span><span>{{ status.replace('_', ' ') }}</span></h2>
+      <span class="column__count">{{ message_columns[status] | length }}</span>
+    </header>
+    {% if not message_columns[status] %}
+    <p class="empty"><span class="empty__glyph">—</span>None</p>
+    {% else %}
+    <div class="column__list">
+      {% for item in message_columns[status] %}
+      <a class="jobcard" href="{{ url_for('outreach_draft', message_id=item.message.id) }}">
+        <div class="jobcard__top">
+          <div>
+            <div class="jobcard__title">{{ item.message.subject or 'No subject' }}</div>
+            <div class="jobcard__company">{{ item.company.name }}</div>
+          </div>
+        </div>
+        <div class="jobcard__meta">
+          <span>{{ item.message.recipient_email or 'No recipient' }}</span>
+          {% if item.message.sent_at %}
+          <span class="sep">·</span><span class="mono">{{ item.message.sent_at }}</span>
+          {% endif %}
+        </div>
+        {% if item.message.last_error %}
+        <div class="jobcard__meta"><span class="faint">{{ item.message.last_error }}</span></div>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endfor %}
+</div>
+{% endif %}
+
+{# ---------------- Companies + research ---------------- #}
+<section class="panel" style="margin-top:var(--sp-6)">
+  <div class="panel__head">
+    <h2 class="panel__title">Companies</h2>
+    <span class="column__count">{{ entries | length }}</span>
+  </div>
+  <div class="panel__body stack stack--tight">
+    {% for entry in entries %}
+    <article class="orgcard">
+      <div class="orgcard__head">
+        <div>
+          <h3 class="orgcard__name">{{ entry.company.name }}</h3>
+          {% if entry.company.website %}
+          <a class="orgcard__site" href="{{ entry.company.website }}" target="_blank" rel="noopener">{{ entry.company.website }}</a>
+          {% endif %}
+        </div>
+        <span class="pill {{ entry.state.pill }}"><span class="pill__dot"></span>{{ entry.state.label }}</span>
+      </div>
+
+      {#- Only ever shows what's actually stored. A company that hasn't been
+          researched shows that, rather than an empty-looking zero. -#}
+      <div class="facts orgcard__facts">
+        <div class="fact">
+          <div class="fact__k">Platform</div>
+          {% if entry.company.platform %}
+          <div class="fact__v">{{ entry.company.platform }}{% if entry.company.identifier %} <span class="faint">/ {{ entry.company.identifier }}</span>{% endif %}</div>
+          {% else %}
+          <div class="fact__v fact__v--empty">Not configured</div>
+          {% endif %}
+        </div>
+        <div class="fact">
+          <div class="fact__k">Postings found</div>
+          {% if entry.research %}
+          <div class="fact__v">{{ entry.research.posting_count }}</div>
+          {% else %}
+          <div class="fact__v fact__v--empty">Not researched</div>
+          {% endif %}
+        </div>
+        {#- The address and where it came from. contact_source is set by
+            src/outreach/contact_discovery.py, which only ever records an
+            address the company itself published — so this line doubles as
+            the evidence that it is real. -#}
+        <div class="fact">
+          <div class="fact__k">Contact</div>
+          {% if entry.company.contact_email %}
+          <div class="fact__v">{{ entry.company.contact_email }}</div>
+          {% if entry.company.contact_source %}
+          <div class="fact__v faint">
+            {{ {'config': 'you entered this',
+                'careers_page': 'published on their site',
+                'job_posting': 'published in their posting'}.get(entry.company.contact_source, entry.company.contact_source) }}
+            {%- if entry.company.contact_evidence_url %}
+            — <a href="{{ entry.company.contact_evidence_url }}" target="_blank" rel="noopener">source</a>
+            {%- endif %}
+          </div>
+          {% endif %}
+          {% else %}
+          <div class="fact__v fact__v--empty">None found</div>
+          {% endif %}
+        </div>
+        {#- Other addresses the search found on this company's own pages
+            and postings. `discovered_contacts` is the parsed
+            outreach_companies.discovered_contacts_json — always a list.
+            Every entry carries an evidence_url, so a viewer can always
+            open the page an address came from. Clicking one submits
+            the "Change contact" form pre-filled — same route used by
+            the manual edit box. -#}
+        {% set alternates = [] %}
+        {% for c in entry.discovered_contacts %}
+          {% if c.email and c.email != entry.company.contact_email %}
+            {% set _ = alternates.append(c) %}
+          {% endif %}
+        {% endfor %}
+        {% if alternates %}
+        <div class="fact" style="grid-column:1/-1">
+          <div class="fact__k">Other addresses discovered</div>
+          <div class="fact__v">
+            <ul class="picker">
+              {% for candidate in alternates %}
+              <li class="picker__item">
+                <form method="post" action="{{ url_for('outreach_set_contact', company_id=entry.company.id) }}" class="picker__form">
+                  <input type="hidden" name="contact_email" value="{{ candidate.email }}">
+                  <button class="picker__use" type="submit" title="Use this address for future outreach to {{ entry.company.name }}">Use</button>
+                </form>
+                <code class="mono">{{ candidate.email }}</code>
+                {% if candidate.source %}
+                <span class="faint">·
+                  {{ {'config': 'you entered this',
+                      'careers_page': 'on their site',
+                      'job_posting': 'in a posting'}.get(candidate.source, candidate.source) }}
+                </span>
+                {% endif %}
+                {% if candidate.evidence_url %}
+                <span class="faint">·
+                  <a href="{{ candidate.evidence_url }}" target="_blank" rel="noopener">source</a>
+                </span>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+        {#- Manual only. Nothing in this project sends a LinkedIn message;
+            this is here so you can reach out yourself. -#}
+        <div class="fact">
+          <div class="fact__k">LinkedIn</div>
+          {% if entry.company.linkedin_url %}
+          <div class="fact__v">
+            <a href="{{ entry.company.linkedin_url }}" target="_blank" rel="noopener">
+              {{ entry.company.contact_name or 'Profile' }}</a>
+          </div>
+          <div class="fact__v faint">for you to contact by hand</div>
+          {% else %}
+          <div class="fact__v fact__v--empty">None found</div>
+          {% endif %}
+        </div>
+        {#- X handle, mirrored on LinkedIn's storage/display treatment.
+            Recorded only when the company itself linked to it from
+            their own pages; the system never sends a message on X. -#}
+        <div class="fact">
+          <div class="fact__k">X (Twitter)</div>
+          {% if entry.company.x_handle %}
+          <div class="fact__v">
+            <a href="https://x.com/{{ entry.company.x_handle }}" target="_blank" rel="noopener">
+              @{{ entry.company.x_handle }}</a>
+            {% if entry.company.x_name %}<span class="faint"> · {{ entry.company.x_name }}</span>{% endif %}
+          </div>
+          <div class="fact__v faint">for you to contact by hand</div>
+          {% else %}
+          <div class="fact__v fact__v--empty">None found</div>
+          {% endif %}
+        </div>
+        <div class="fact">
+          <div class="fact__k">Researched</div>
+          {% if entry.company.researched_at %}
+          <div class="fact__v mono">{{ entry.company.researched_at }}</div>
+          {% else %}
+          <div class="fact__v fact__v--empty">Never</div>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if entry.research and entry.research.titles %}
+      <p class="subhead">Roles they're advertising</p>
+      <div class="chips">{% for title in entry.research.titles[:6] %}<span class="chip">{{ title }}</span>{% endfor %}</div>
+      {% endif %}
+
+      {% if entry.research and entry.research.skills %}
+      <p class="subhead">Skills their postings name</p>
+      <div class="chips">{% for skill in entry.research.skills %}<span class="chip">{{ skill }}</span>{% endfor %}</div>
+      {% endif %}
+
+      {% if entry.state.reason %}
+      <div class="notice {{ 'notice--ok' if entry.state.state == 'SENT' else 'notice--warn' }} orgcard__reason">
+        <div class="notice__title">{{ entry.state.label }}</div>
+        {{ entry.state.reason }}
+      </div>
+      {% endif %}
+
+      {#- Actions. An address typed here outranks anything discovered and is
+          never overwritten by a later run. Discovery can only ever find an
+          address the company published — it never guesses one — so this is
+          how you reach a company whose site publishes nothing. -#}
+      {% if not entry.company.do_not_contact %}
+      <div class="orgcard__actions">
+        <form class="orgcard__contact" method="post"
+              action="{{ url_for('outreach_set_contact', company_id=entry.company.id) }}">
+          <label class="sr-only" for="email-{{ entry.company.id }}">Contact email for {{ entry.company.name }}</label>
+          <input class="input" type="email" id="email-{{ entry.company.id }}" name="contact_email"
+                 value="{{ entry.company.contact_email or '' }}"
+                 placeholder="careers@example.com — an address you have verified">
+          <button class="btn" type="submit">Save</button>
+        </form>
+        <form method="post" action="{{ url_for('outreach_do_not_contact', company_id=entry.company.id) }}">
+          <button class="btn btn--quiet" type="submit"
+                  title="Never contact this company. Also blocks any queued message.">Do not contact</button>
+        </form>
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% endblock %}

@@ -20,9 +20,12 @@ from src.sources.base import NormalizedJob
 
 from .base import JobDiscoverySource
 from .sources.ashby import AshbySource
+from .sources.crawlee_jsonld import CrawleeJsonLdSource
+from .sources.generic_careers import GenericCareersSource
 from .sources.greenhouse import GreenhouseSource
 from .sources.lever import LeverSource
 from .sources.smartrecruiters import SmartRecruitersSource
+from .sources.workday import WorkdaySource
 
 logger = logging.getLogger("job_hunter.job_discovery.registry")
 
@@ -33,6 +36,27 @@ ADAPTERS: dict[str, JobDiscoverySource] = {
     "lever": LeverSource(),
     "smartrecruiters": SmartRecruitersSource(),
     "ashby": AshbySource(),
+    # Workday's career-site endpoint. Unlike the four above, its identifier
+    # is never a slug anyone could guess — it is the tenant/site URL
+    # src/job_discovery/careers_resolver.py extracted from a Workday link
+    # that appeared on the employer's own pages.
+    "workday": WorkdaySource(),
+    # ATS-agnostic fallback: re-reads one already-verified careers-page URL
+    # (see src/outreach/discovery.py's use of probe_careers_page) rather
+    # than talking to a documented platform API. Every caller elsewhere in
+    # the project — resolve_ats, targets.py's platform validation, the
+    # outreach pipeline — accepts this the same way it accepts the other
+    # four, because all of them gate on membership in this dict, not on a
+    # hardcoded platform list.
+    "careers_page": GenericCareersSource(),
+    # Multi-page JSON-LD careers crawler, driven by Crawlee. Fills the
+    # gap between `careers_page` (single already-known URL) and a full
+    # platform API adapter: walks a bounded set of same-host pages under
+    # the employer's own careers URL, extracts schema.org JobPosting
+    # markup with the same parser `careers_page` uses. See
+    # src/job_discovery/sources/crawlee_jsonld.py for the identifier
+    # config shape.
+    "crawlee_jsonld": CrawleeJsonLdSource(),
 }
 
 

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block title %}Sources — Blue Collar{% endblock %}
+{% block content %}
+
+<div class="pagehead">
+  <p class="eyebrow">Sources</p>
+  <div class="pagehead__row">
+    <h1 class="pagehead__title">Where jobs come from</h1>
+    <span class="muted">{{ active_count }} active · {{ rows | length }} total</span>
+  </div>
+  <p class="pagehead__sub">Employers Blue Collar checks for new jobs. Each entry is set up in <code class="mono">config/employers.json</code>.</p>
+</div>
+
+{% if not rows %}
+<div class="panel">
+  <div class="panel__body">
+    <p class="empty empty--pad">
+      <span class="empty__glyph">—</span>
+      No employers configured yet. Add one in <code class="mono">config/employers.json</code>.
+    </p>
+  </div>
+</div>
+{% else %}
+<ul class="sourcelist">
+  {% for row in rows %}
+  <li class="sourcerow{% if not row.enabled %} sourcerow--paused{% endif %}">
+    <a class="sourcerow__link" href="{{ url_for('source_detail_page', slug=slugify(row.company)) }}">
+      <div class="sourcerow__main">
+        <div class="sourcerow__title">{{ row.company }}</div>
+        <div class="sourcerow__meta">
+          <span>{{ row.status_label }}</span>
+          {% if row.last_updated %}
+            <span class="sep">·</span>
+            <span class="muted">Updated {{ row.last_updated[:16].replace('T', ' ') }}</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="sourcerow__side">
+        {% if row.enabled %}
+          <span class="pill pill--sage"><span class="pill__dot"></span>Active</span>
+        {% else %}
+          <span class="pill"><span class="pill__dot"></span>Paused</span>
+        {% endif %}
+        <span class="muted mono">{{ row.job_count }} job{{ '' if row.job_count == 1 else 's' }}</span>
+      </div>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

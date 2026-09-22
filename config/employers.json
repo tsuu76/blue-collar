@@ -236,5 +236,12 @@
     "platform": "smartrecruiters",
     "identifier": "Visa",
     "enabled": false
+  },
+  {
+    "_comment": "First real-world validation of the crawlee_jsonld adapter. Verified live 2026-09-14: stripe.com/robots.txt permits User-agent:*  under /careers/*; the listing at https://stripe.com/careers/search has 20 server-rendered <a href='/careers/listing/...'> anchors on page 1; every detail page carries one <script type='application/ld+json'> with @type=JobPosting, parsed cleanly by the project's existing parse_job_postings (title/company/location/identifier.value). Pagination past page 1 is JavaScript-driven, so a static-HTTP crawl only reaches the first 20 postings — this entry is left disabled by default because Stripe is not AU-focused and the reduced coverage is not useful for Ishmam's real job search; enable it if you want to try the Crawlee path against real data.",
+    "company": "Stripe",
+    "platform": "crawlee_jsonld",
+    "identifier": "{\"seed\": \"https://stripe.com/careers/search\", \"link_pattern\": \"/careers/listing/\", \"max_requests\": 30, \"max_concurrency\": 2, \"max_requests_per_minute\": 30}",
+    "enabled": false
   }
 ]

@@ -2,10 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "dashboard",
+      "name": "blue-collar",
       "runtimeExecutable": ".venv/bin/python",
-      "runtimeArgs": ["-m", "src.dashboard.app"],
-      "port": 8420
+      "runtimeArgs": ["-c", "from src.database.db import init_db; init_db(); from src.dashboard.app import create_app; app=create_app(); app.run(host='127.0.0.1', port=8422, debug=False)"],
+      "port": 8422,
+      "url": "http://127.0.0.1:8422"
     }
   ]
 }

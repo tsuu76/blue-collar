@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Activity — Blue Collar{% endblock %}
+{% block content %}
+
+<div class="pagehead">
+  <p class="eyebrow">Activity</p>
+  <div class="pagehead__row">
+    <h1 class="pagehead__title">Recent updates</h1>
+    <a class="nav__item nav__item--quiet" href="{{ url_for('index') }}">Find new jobs &rarr;</a>
+  </div>
+  <p class="pagehead__sub">Every batch of jobs Blue Collar has discovered, most recent first. Each entry is a real group of jobs in the database — nothing else is recorded here.</p>
+</div>
+
+{% if not items %}
+<div class="panel">
+  <div class="panel__body">
+    <p class="empty empty--pad">
+      <span class="empty__glyph">—</span>
+      Nothing to show yet. Once discovery finds jobs, updates appear here.
+    </p>
+  </div>
+</div>
+{% else %}
+<ul class="activity">
+  {% for item in items %}
+  <li class="activity__item">
+    <div class="activity__date">{{ item.date }}</div>
+    <div class="activity__body">
+      <div class="activity__label">
+        {% if item.slug %}
+          <a href="{{ url_for('source_detail_page', slug=item.slug) }}">{{ item.label }}</a>
+        {% else %}
+          {{ item.label }}
+        {% endif %}
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

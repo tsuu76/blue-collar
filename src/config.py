@@ -97,6 +97,36 @@ class Settings:
     cover_letter_min_words: int = _int("COVER_LETTER_MIN_WORDS", 250)
     cover_letter_max_words: int = _int("COVER_LETTER_MAX_WORDS", 400)
 
+    # --- Direct company outreach ---
+    # outreach_dry_run keeps the same "irreversible actions default OFF"
+    # posture as auto_submit_applications above: with it on, a send is
+    # recorded in the database and logged but no SMTP connection is opened,
+    # so a misconfiguration can't silently email real companies. It must be
+    # turned off deliberately.
+    outreach_dry_run: bool = _bool("OUTREACH_DRY_RUN", True)
+    # One cap covers the whole pathway: outreach now researches, drafts and
+    # sends in a single automatic run, so a message created is a message
+    # sent. Starts deliberately small — five cold emails a day is a real
+    # person's pace, and raising it is one line in .env.
+    outreach_daily_limit: int = _int("OUTREACH_DAILY_LIMIT", 5)
+    # Deliberately far tighter than the cover-letter range above: a cold
+    # email that reads like a cover letter gets deleted. Target is ~120-180
+    # words, with a little slack either side.
+    outreach_email_min_words: int = _int("OUTREACH_EMAIL_MIN_WORDS", 110)
+    outreach_email_max_words: int = _int("OUTREACH_EMAIL_MAX_WORDS", 190)
+
+    # --- SMTP (the user's own mailbox — never a paid transactional service) ---
+    # smtp_password should be a provider app-password, not an account
+    # password. All of these live in .env, which is gitignored.
+    smtp_host: str = os.getenv("SMTP_HOST", "")
+    smtp_port: int = _int("SMTP_PORT", 587)
+    smtp_username: str = os.getenv("SMTP_USERNAME", "")
+    smtp_password: str = os.getenv("SMTP_PASSWORD", "")
+    smtp_from_email: str = os.getenv("SMTP_FROM_EMAIL", "")
+    # Display name on the From header. A bare address looks automated;
+    # "Ishmam Chowdhury <...>" looks like a person wrote it.
+    smtp_from_name: str = os.getenv("SMTP_FROM_NAME", "")
+
     # --- Database ---
     database_path: str = os.getenv("DATABASE_PATH", "./data/jobs.db")
 

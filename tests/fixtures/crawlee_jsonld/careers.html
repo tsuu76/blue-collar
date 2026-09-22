@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head><title>Careers — Example Co.</title></head>
+<body>
+  <h1>Open roles</h1>
+  <ul>
+    <li><a href="/careers/jobs/it-support-officer">IT Support Officer</a></li>
+    <li><a href="/careers/jobs/service-desk-analyst">Service Desk Analyst</a></li>
+    <!-- Off-host link — the crawler must NOT follow it. -->
+    <li><a href="https://www.linkedin.com/company/example-co">Follow us on LinkedIn</a></li>
+    <!-- Same host but outside the link_pattern — must not be enqueued. -->
+    <li><a href="/press">Press releases</a></li>
+    <!-- javascript: link — must be ignored. -->
+    <li><a href="javascript:void(0)">Print</a></li>
+  </ul>
+  <a href="/careers?page=2" rel="next">Next page</a>
+</body>
+</html>

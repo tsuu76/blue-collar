@@ -70,6 +70,13 @@ class TestApiDiscoverEndpoint:
 
 class TestDiscoverButtonRoute:
     def test_redirects_to_dashboard_with_summary(self, client):
+        # The client-facing UI rewrote this flash to be user-friendly:
+        # engineering vocabulary like "inserted 3" and "ready to apply"
+        # is deliberately no longer surfaced (the discover.js progressive
+        # enhancement uses the same phrasing on the /api/discover
+        # response). The behaviour under test — a successful run
+        # redirects with a flash whose numbers reflect what happened —
+        # is preserved; only the wording changed.
         fake_result = {
             "employers_checked": 1,
             "found": 5,
@@ -80,18 +87,25 @@ class TestDiscoverButtonRoute:
         with patch("src.job_discovery.run_discovery.run_discovery", return_value=fake_result):
             resp = client.post("/discover", follow_redirects=True)
         assert resp.status_code == 200
-        assert b"inserted 3" in resp.data
-        assert b"ready to apply" in resp.data
+        assert b"3 new jobs found" in resp.data
 
     def test_failure_flashes_message_not_500(self, client):
+        # The failure path now flashes a calm message rather than the
+        # raw "Discovery failed: <exception>" text — see the spec's
+        # rule against exposing stack traces in the normal interface.
         with patch("src.job_discovery.run_discovery.run_discovery", side_effect=RuntimeError("network down")):
             resp = client.post("/discover", follow_redirects=True)
         assert resp.status_code == 200
-        assert b"Discovery failed" in resp.data
+        body = resp.data.decode().lower()
+        assert "need attention" in body or "try again" in body
+        # The internal message must NOT leak into the UI.
+        assert b"network down" not in resp.data
 
     def test_discover_button_present_on_dashboard(self, client):
+        # Button label changed from "Run discovery" (engineering-flavoured)
+        # to "Find new jobs" (client-facing).
         resp = client.get("/")
-        assert b"Run discovery" in resp.data
+        assert b"Find new jobs" in resp.data
 
 
 class TestBrowserHandoff:

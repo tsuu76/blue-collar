@@ -53,3 +53,25 @@ class QualityControlResult(BaseModel):
 
     passed: bool
     issues: list[str] = Field(default_factory=list)
+
+
+class OutreachAnalysis(BaseModel):
+    """
+    Strict schema for the outreach pathway's personalization analysis: what a
+    company appears to hire for, read off its OWN real current postings.
+
+    Shape validation only, as everywhere else in this module. The truthfulness
+    of the contents is not taken on trust — src/outreach/personalization.py
+    filters every list here against the actual posting text (and, for
+    candidate_overlap, against the master resume) after validation, so a model
+    that invents a technology or a skill the candidate lacks has it dropped
+    rather than carried into an email.
+    """
+
+    recurring_skills: list[str] = Field(default_factory=list)
+    tools_and_technologies: list[str] = Field(default_factory=list)
+    responsibilities: list[str] = Field(default_factory=list)
+    experience_requirements: list[str] = Field(default_factory=list)
+    terminology: list[str] = Field(default_factory=list)
+    candidate_overlap: list[str] = Field(default_factory=list)
+    notes: str = ""

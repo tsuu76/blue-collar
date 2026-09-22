@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Job Discovery — Blue Collar{% endblock %}
+{% block content %}
+
+<div class="hero">
+  <p class="eyebrow">Job Discovery</p>
+  <h1 class="hero__title">See what's out there today.</h1>
+  <p class="hero__lede">One place for every job Blue Collar has found on the employers you follow. Look through them, open the original listing, or check for new ones.</p>
+
+  <div class="hero__actions">
+    {#- Progressive-enhancement form: without JS this is a plain POST that
+        flashes a summary and redirects; with JS it swaps into an
+        inline loading state (see static/discover.js) and updates in
+        place. Nothing about the server behaviour changes. -#}
+    <form id="discover-form" method="post" action="{{ url_for('discover_now') }}">
+      <button id="discover-btn" class="btn btn--primary btn--lg" type="submit">Find new jobs</button>
+    </form>
+    <a class="nav__item nav__item--quiet" href="{{ url_for('activity_page') }}">See recent updates</a>
+  </div>
+
+  <p id="discover-status" class="hero__status" role="status" aria-live="polite" hidden></p>
+
+  {% if last_updated_human %}
+    <p class="hero__meta">Last checked {{ last_updated_human }}.</p>
+  {% else %}
+    <p class="hero__meta">No jobs yet — check for new ones above.</p>
+  {% endif %}
+
+  {#- Standing note that the client-facing counts and lists respect
+      settings.target_locations. Anyone who wants the raw pipeline
+      view still has the /board link in the top nav. -#}
+  <p class="hero__meta hero__meta--scope">Showing {{ target_locations | join(' · ') }}.</p>
+</div>
+
+<section class="overview" aria-label="Overview">
+  <div class="overview__tile">
+    <div class="overview__label">New today</div>
+    <div class="overview__value">{{ new_today }}</div>
+  </div>
+  <div class="overview__tile">
+    <div class="overview__label">Total jobs</div>
+    <div class="overview__value">{{ total }}</div>
+  </div>
+  <div class="overview__tile">
+    <div class="overview__label">Sources</div>
+    <div class="overview__value">{{ source_count }}</div>
+    <div class="overview__sub">{{ active_source_count }} active</div>
+  </div>
+  <div class="overview__tile">
+    <div class="overview__label">Last updated</div>
+    {% if last_updated_human %}
+      <div class="overview__value overview__value--sm">{{ last_updated_human }}</div>
+    {% else %}
+      <div class="overview__value overview__value--sm overview__value--dim">—</div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel__head panel__head--split">
+    <h2 class="panel__title">Recent jobs</h2>
+    <a class="nav__item nav__item--quiet" href="{{ url_for('jobs_page') }}">All jobs &rarr;</a>
+  </div>
+  <div class="panel__body panel__body--flush">
+    {% if not recent %}
+    <p class="empty empty--pad">
+      <span class="empty__glyph">—</span>
+      No jobs yet. Once discovery finds some, they'll appear here.
+    </p>
+    {% else %}
+    <ul class="joblist">
+      {% for job in recent %}
+      <li class="jobrow">
+        <a class="jobrow__link" href="{{ url_for('job_detail', job_id=job.id) }}">
+          <div class="jobrow__main">
+            <div class="jobrow__title">{{ job.title }}</div>
+            <div class="jobrow__meta">
+              <span class="jobrow__company">{{ job.company or 'Unknown company' }}</span>
+              {% if job.location %}<span class="sep">·</span><span>{{ job.location }}</span>{% endif %}
+              <span class="sep">·</span><span class="muted">{{ platform_label(job.source) }}</span>
+            </div>
+          </div>
+          <div class="jobrow__side">
+            {% if job.fit_score %}
+              <span class="score {% if job.fit_score >= 75 %}score--high{% elif job.fit_score >= 50 %}score--mid{% else %}score--low{% endif %}">{{ job.fit_score }}</span>
+            {% endif %}
+            <span class="muted mono">{{ job.date_found[:10] if job.date_found else '' }}</span>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='discover.js') }}" defer></script>
+
+{% endblock %}

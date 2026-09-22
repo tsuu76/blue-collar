@@ -69,8 +69,8 @@ def strip_html(raw_html: str) -> str:
     return text.strip()
 
 
-def polite_get(url: str, *, timeout: int = 15, **kwargs) -> requests.Response:
-    """A GET that rate-limits itself per-host and sends an identifying User-Agent."""
+def _wait_for_host(url: str) -> None:
+    """Block until this host's rate-limit window has elapsed, then claim it."""
     host = urlparse(url).netloc
     now = time.monotonic()
     elapsed = now - _last_request_at.get(host, 0.0)
@@ -78,9 +78,30 @@ def polite_get(url: str, *, timeout: int = 15, **kwargs) -> requests.Response:
         time.sleep(MIN_REQUEST_INTERVAL_SECONDS - elapsed)
     _last_request_at[host] = time.monotonic()
 
+
+def polite_get(url: str, *, timeout: int = 15, **kwargs) -> requests.Response:
+    """A GET that rate-limits itself per-host and sends an identifying User-Agent."""
+    _wait_for_host(url)
     headers = kwargs.pop("headers", {})
     headers.setdefault("User-Agent", USER_AGENT)
     return requests.get(url, timeout=timeout, headers=headers, **kwargs)
+
+
+def polite_post(url: str, *, timeout: int = 15, **kwargs) -> requests.Response:
+    """
+    The same per-host rate limiting and identifying User-Agent as
+    polite_get, for the one public job endpoint this project reads that is
+    POST-only: Workday's career-site search API, which takes its paging and
+    (empty) filter parameters as a JSON body rather than a query string.
+
+    This is a read, despite the verb — it retrieves the public job list a
+    Workday career site shows any visitor. Nothing here submits data to an
+    employer.
+    """
+    _wait_for_host(url)
+    headers = kwargs.pop("headers", {})
+    headers.setdefault("User-Agent", USER_AGENT)
+    return requests.post(url, timeout=timeout, headers=headers, **kwargs)
 
 
 class JobDiscoverySource(ABC):

@@ -584,3 +584,242 @@ button{ font:inherit; color:inherit; }
    .swap-slot's own position:relative above. */
 .swap-slot #cardswap-root{ position:absolute; inset:0; }
 .swap-slot .empty{ position:absolute; inset:0; border:none; }
+
+/* ==========================================================================
+   OUTREACH REVIEW
+   The /outreach page reuses the existing design system almost entirely
+   (.panel, .jobcard, .pill, .chip, .facts, .notice, .form, .btn). Only the
+   pieces with no existing equivalent are defined here: the bulk-selection
+   bar, the checkbox+card row it selects, and the company summary card.
+   All colours/spacing come from the same :root tokens as everything else.
+   ========================================================================== */
+
+.bulkbar{
+  display:flex; align-items:center; justify-content:space-between; gap:var(--sp-4);
+  flex-wrap:wrap;
+  padding:var(--sp-3) var(--sp-4);
+  background:var(--surface-2); border:1px solid var(--line);
+  border-radius:var(--r-md);
+}
+.bulkbar__all{
+  display:flex; align-items:center; gap:var(--sp-3);
+  font-size:var(--fs-sm); color:var(--text-dim); cursor:pointer; user-select:none;
+}
+.bulkbar__all:hover{ color:var(--text); }
+@media (max-width:640px){
+  .bulkbar{ flex-direction:column; align-items:stretch; }
+  .bulkbar .btn{ width:100%; }
+}
+
+/* A checkbox sitting beside a full-width card link. The checkbox must stay
+   outside the <a> — nesting a control inside an anchor makes ticking it
+   navigate instead. */
+.selectrow{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:var(--sp-3); align-items:stretch; }
+.selectrow__check{ display:flex; align-items:center; padding-left:2px; cursor:pointer; }
+.selectrow__card{ min-width:0; }
+
+.bulkbar input[type="checkbox"],
+.selectrow input[type="checkbox"]{
+  width:16px; height:16px; flex:none; cursor:pointer;
+  accent-color:var(--crimson);
+}
+
+/* Company summary card — a panel-within-a-panel, so it reads as a group
+   rather than borrowing .jobcard's clickable affordance (it isn't a link). */
+.orgcard{
+  padding:var(--sp-4);
+  background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r-md);
+}
+.orgcard__head{
+  display:grid; grid-template-columns:minmax(0,1fr) auto; gap:var(--sp-3);
+  align-items:start; margin-bottom:var(--sp-4);
+}
+@media (max-width:640px){
+  .orgcard__head{ grid-template-columns:1fr; }
+}
+.orgcard__name{
+  font-family:var(--font-display); font-size:1.1rem; letter-spacing:-.01em;
+  overflow-wrap:anywhere;
+}
+.orgcard__site{
+  display:inline-block; margin-top:2px;
+  font-size:var(--fs-sm); color:var(--text-dim); overflow-wrap:anywhere;
+  text-decoration:underline; text-underline-offset:3px;
+  text-decoration-color:rgba(247,239,236,.2);
+}
+.orgcard__site:hover{ color:var(--ember); text-decoration-color:var(--ember); }
+.orgcard__facts{ margin-bottom:var(--sp-4); }
+.orgcard__reason{ margin-top:var(--sp-4); }
+.orgcard .subhead{ margin-top:var(--sp-4); }
+.orgcard .subhead:first-of-type{ margin-top:0; }
+
+/* Company-card actions: the contact-address input (the only place an address
+   is ever entered — the system never discovers one) and the opt-out control. */
+.orgcard__actions{
+  display:flex; align-items:center; gap:var(--sp-3); flex-wrap:wrap;
+  margin-top:var(--sp-4); padding-top:var(--sp-4); border-top:1px solid var(--line);
+}
+.orgcard__contact{ display:flex; align-items:center; gap:var(--sp-2); flex:1; min-width:260px; }
+.orgcard__contact .input{ flex:1; min-width:0; }
+@media (max-width:640px){
+  .orgcard__actions{ flex-direction:column; align-items:stretch; }
+  .orgcard__contact{ min-width:0; }
+}
+
+/* =========================================================================
+   Client-facing UI — Dashboard / Jobs / Sources / Activity
+   Additive only. Does not touch existing tokens or classes used by the
+   pipeline board, outreach, or job-detail pages.
+   ========================================================================= */
+
+/* Nav — sits between the brand and the topbar actions. The topbar
+   grid is upgraded from 2 columns to 3 (brand | nav | actions) so
+   the nav can live between them without wrapping to a new row. */
+.topbar__inner{ grid-template-columns: auto minmax(0,1fr) auto; }
+.nav{ display:flex; align-items:center; gap:var(--sp-1); overflow-x:auto; }
+.nav__item{
+  display:inline-flex; align-items:center; height:34px; padding:0 var(--sp-3);
+  border-radius:var(--r-md); color:var(--text-dim);
+  font-size:var(--fs-sm); font-weight:500; letter-spacing:-.005em;
+  white-space:nowrap; transition:color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.nav__item:hover{ color:var(--text); background:rgba(247,239,236,.04); }
+.nav__item.is-active{ color:var(--text); background:rgba(247,239,236,.08); }
+.nav__item--quiet{ color:var(--text-faint); }
+.nav__item--quiet:hover{ color:var(--text-dim); background:rgba(247,239,236,.03); }
+@media (max-width:820px){
+  /* Narrow screens: let the nav wrap onto its own row rather than
+     compressing everything into one line. */
+  .topbar__inner{ grid-template-columns: auto 1fr; grid-template-rows: auto auto; }
+  .nav{ grid-column: 1 / -1; grid-row: 2; margin-top: var(--sp-2); border-top:1px solid var(--line); padding-top:var(--sp-3); }
+}
+
+/* Hero — landing page's headline + primary action. Calm, not shouty. */
+.hero{
+  padding: var(--sp-6) 0 var(--sp-8); margin-bottom:var(--sp-6);
+  border-bottom:1px solid var(--line);
+}
+.hero__title{
+  font-family:var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+  line-height:1.05; letter-spacing:-.02em; margin: var(--sp-2) 0 var(--sp-3);
+}
+.hero__lede{ color:var(--text-dim); max-width: 62ch; margin: 0 0 var(--sp-6); font-size:var(--fs-lg); }
+.hero__actions{ display:flex; align-items:center; gap:var(--sp-4); flex-wrap:wrap; }
+.hero__meta{ color:var(--text-faint); margin-top:var(--sp-4); font-size:var(--fs-sm); }
+.hero__status{
+  margin-top: var(--sp-4); padding: var(--sp-2) var(--sp-3);
+  border-radius:var(--r-md); background:rgba(247,239,236,.04);
+  border:1px solid var(--line); color:var(--text-dim); font-size:var(--fs-sm);
+  display:inline-block;
+}
+.hero__status--working{ color:var(--ember); border-color:rgba(224,164,74,.28); background:var(--ember-soft); }
+.hero__status--ok{ color:var(--sage); border-color:rgba(120,195,154,.32); background:var(--sage-soft); }
+.hero__status--warn{ color:#ffb08a; border-color:rgba(224,164,74,.32); background:var(--ember-soft); }
+.hero__status[hidden]{ display:none; }
+.hero__meta--scope{ color:var(--text-dim); }
+
+/* Overview tiles — 4 across on desktop, wrap on narrow screens. */
+.overview{
+  display:grid; gap:var(--sp-3);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: var(--sp-6);
+}
+@media (max-width:900px){ .overview{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+.overview__tile{
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg);
+  padding: var(--sp-4) var(--sp-5);
+}
+.overview__label{ color:var(--text-faint); font-size:var(--fs-xs); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--sp-2); }
+.overview__value{ font-family:var(--font-display); font-size:2rem; letter-spacing:-.02em; line-height:1; }
+.overview__value--sm{ font-size:1.15rem; }
+.overview__value--dim{ color:var(--text-faint); }
+.overview__sub{ color:var(--text-faint); font-size:var(--fs-xs); margin-top:var(--sp-2); }
+
+/* Panel refinements used by client-facing pages. */
+.panel__head--split{ display:flex; align-items:center; justify-content:space-between; }
+.panel__body--flush{ padding:0; }
+
+/* Dense, table-like job list — one row per job, no card chrome. */
+.joblist{ list-style:none; margin:0; padding:0; }
+.jobrow + .jobrow{ border-top:1px solid var(--line); }
+.jobrow__link{
+  display:flex; align-items:center; gap:var(--sp-4); justify-content:space-between;
+  padding: var(--sp-4) var(--sp-5); transition: background var(--dur) var(--ease);
+}
+.jobrow__link:hover{ background:rgba(247,239,236,.03); }
+.jobrow__main{ min-width:0; }
+.jobrow__title{ font-weight:600; letter-spacing:-.01em; margin-bottom:2px; }
+.jobrow__meta{ color:var(--text-dim); font-size:var(--fs-sm); display:flex; align-items:center; gap:var(--sp-2); flex-wrap:wrap; }
+.jobrow__company{ color:var(--text); font-weight:500; }
+.jobrow__side{ display:flex; align-items:center; gap:var(--sp-3); flex:none; }
+
+.pill--sm{ font-size:var(--fs-xs); padding: 3px 8px; }
+
+/* Filter bar — the Jobs page's search + selects. */
+.filterbar{
+  display:grid; gap:var(--sp-3); margin-bottom: var(--sp-5);
+  grid-template-columns: 1fr 180px 180px 160px 160px auto;
+  align-items:end;
+}
+@media (max-width:1100px){ .filterbar{ grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width:640px){  .filterbar{ grid-template-columns: 1fr; } }
+.filterbar__field{ display:flex; flex-direction:column; gap:var(--sp-1); min-width:0; }
+.filterbar__label{ font-size:var(--fs-xs); color:var(--text-faint); text-transform:uppercase; letter-spacing:.06em; }
+.filterbar__actions{ align-self:end; }
+.input, .select{
+  width:100%; box-sizing:border-box; height:38px; padding: 0 var(--sp-3);
+  background:var(--surface); color:var(--text);
+  border:1px solid var(--line-strong); border-radius:var(--r-md);
+  font: inherit; font-size:var(--fs-sm);
+  transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+}
+.input:focus, .select:focus{ outline:2px solid var(--focus); outline-offset:1px; border-color:transparent; }
+.select{ appearance:none; -webkit-appearance:none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%), linear-gradient(-45deg, transparent 50%, var(--text-dim) 50%);
+  background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 30px;
+}
+
+.subtle-note{ margin-top:var(--sp-4); font-size:var(--fs-sm); }
+.empty--pad{ padding: var(--sp-6) var(--sp-5); }
+
+/* Sources — one row per employer. Similar cadence to .jobrow. */
+.sourcelist{ list-style:none; margin:0; padding:0; border:1px solid var(--line); border-radius:var(--r-lg); background:var(--surface); overflow:hidden; }
+.sourcerow + .sourcerow{ border-top:1px solid var(--line); }
+.sourcerow__link{
+  display:flex; align-items:center; gap:var(--sp-4); justify-content:space-between;
+  padding: var(--sp-4) var(--sp-5); transition: background var(--dur) var(--ease);
+}
+.sourcerow__link:hover{ background:rgba(247,239,236,.03); }
+.sourcerow__title{ font-weight:600; letter-spacing:-.01em; }
+.sourcerow__meta{ color:var(--text-dim); font-size:var(--fs-sm); display:flex; align-items:center; gap:var(--sp-2); flex-wrap:wrap; }
+.sourcerow__side{ display:flex; align-items:center; gap:var(--sp-3); flex:none; }
+.sourcerow--paused{ opacity: .72; }
+.pagehead__actions{ display:flex; align-items:center; gap:var(--sp-2); flex:none; }
+
+/* Activity — chronological one-liners. */
+.activity{ list-style:none; margin:0; padding:0; border-left:1px solid var(--line); margin-left:var(--sp-3); }
+.activity__item{ display:flex; align-items:baseline; gap:var(--sp-4); padding: var(--sp-3) 0 var(--sp-3) var(--sp-5); position:relative; }
+.activity__item::before{
+  content:""; position:absolute; left:-4px; top: 20px;
+  width:7px; height:7px; border-radius:50%; background:var(--ember);
+}
+.activity__date{ color:var(--text-faint); font-family:var(--font-mono); font-size:var(--fs-xs); flex:none; min-width:90px; }
+.activity__label{ color:var(--text); }
+.activity__label a{ color:inherit; text-decoration: underline; text-decoration-color: rgba(247,239,236,.2); }
+.activity__label a:hover{ text-decoration-color: var(--ember); }
+
+/* Outreach picker — alternate discovered contact addresses, each
+   with a "Use" button that submits the same contact_email form the
+   manual edit box uses. Compact, no cards. */
+.picker{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:var(--sp-2); }
+.picker__item{ display:flex; align-items:center; gap:var(--sp-2); flex-wrap:wrap; }
+.picker__form{ display:inline-flex; margin:0; }
+.picker__use{
+  padding: 2px 10px; border-radius:var(--r-md);
+  background: var(--surface-2); border: 1px solid var(--line-strong);
+  color: var(--text); font-size: var(--fs-xs); cursor: pointer;
+}
+.picker__use:hover{ background: var(--surface-3); border-color: var(--focus); }

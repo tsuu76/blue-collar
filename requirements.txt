@@ -11,5 +11,14 @@ playwright>=1.47.0
 # Local dashboard (Phase 14) — Flask dev server, bound to 127.0.0.1 only.
 flask>=3.0.3
 
+# Crawlee-based ingestion (Phase 15) — the Python port of Crawlee, used to
+# crawl multi-page careers sites that publish schema.org JobPosting JSON-LD.
+# Version verified compatible with Python 3.10+ and pinned exactly so the
+# scraper's behaviour doesn't shift out from under us on a fresh install.
+# The `parsel` extra pulls in the lxml-based HTML parser used to enqueue
+# detail-page links from listing pages; JSON-LD parsing still runs through
+# the project's own extractor in src/job_discovery/sources/generic_careers.py.
+crawlee[parsel]==1.10.0
+
 # Testing
 pytest>=8.3.3

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}{{ row.company }} — Blue Collar{% endblock %}
+{% block content %}
+
+<div class="pagehead">
+  <a class="backlink" href="{{ url_for('sources_page') }}">&larr; All sources</a>
+  <div class="pagehead__row">
+    <div>
+      <h1 class="pagehead__title">{{ row.company }}</h1>
+      <p class="pagehead__sub">
+        {% if row.enabled %}Active source{% else %}Paused source{% endif %}
+        {% if row.last_updated %} · Last updated {{ row.last_updated[:16].replace('T', ' ') }}{% endif %}
+      </p>
+    </div>
+    <div class="pagehead__actions">
+      <form method="post" action="{{ url_for('discover_now') }}">
+        <button class="btn" type="submit">Update this source</button>
+      </form>
+      {#- One-click promote to outreach — copies this employer's entry
+          into config/outreach_companies.json. Idempotent on
+          (platform, identifier), so a double-click won't duplicate. -#}
+      <form method="post" action="{{ url_for('source_add_to_outreach', slug=slugify(row.company)) }}">
+        <button class="btn" type="submit" title="Add {{ row.company }} to the outreach targets list">Add to outreach</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<section class="panel">
+  <div class="panel__head"><h2 class="panel__title">Overview</h2></div>
+  <div class="panel__body">
+    <div class="facts">
+      <div class="fact">
+        <div class="fact__k">Jobs discovered</div>
+        <div class="fact__v">{{ row.job_count }}</div>
+      </div>
+      <div class="fact">
+        <div class="fact__k">State</div>
+        <div class="fact__v">
+          {% if row.enabled %}
+            <span class="pill pill--sage"><span class="pill__dot"></span>Active</span>
+          {% else %}
+            <span class="pill"><span class="pill__dot"></span>Paused</span>
+          {% endif %}
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact__k">Last check</div>
+        <div class="fact__v">{{ (row.last_updated or '—')[:16].replace('T', ' ') }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="panel__head panel__head--split">
+    <h2 class="panel__title">Recent jobs from {{ row.company }}</h2>
+    <a class="nav__item nav__item--quiet" href="{{ url_for('jobs_page', source=source_token) if source_token else url_for('jobs_page') }}">See all &rarr;</a>
+  </div>
+  <div class="panel__body panel__body--flush">
+    {% if not jobs %}
+    <p class="empty empty--pad">
+      <span class="empty__glyph">—</span>
+      No jobs from this source yet.
+    </p>
+    {% else %}
+    <ul class="joblist">
+      {% for job in jobs %}
+      <li class="jobrow">
+        <a class="jobrow__link" href="{{ url_for('job_detail', job_id=job.id) }}">
+          <div class="jobrow__main">
+            <div class="jobrow__title">{{ job.title }}</div>
+            <div class="jobrow__meta">
+              {% if job.location %}<span>{{ job.location }}</span>{% endif %}
+              {% if job.salary %}<span class="sep">·</span><span>{{ job.salary }}</span>{% endif %}
+            </div>
+          </div>
+          <div class="jobrow__side">
+            {% if job.fit_score %}
+              <span class="score {% if job.fit_score >= 75 %}score--high{% elif job.fit_score >= 50 %}score--mid{% else %}score--low{% endif %}">{{ job.fit_score }}</span>
+            {% endif %}
+            <span class="muted mono">{{ job.date_found[:10] if job.date_found else '' }}</span>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+
+{% endblock %}

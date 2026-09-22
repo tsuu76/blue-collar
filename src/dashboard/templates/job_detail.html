@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="pagehead">
-  <a class="backlink" href="{{ url_for('index') }}">&larr; Back to dashboard</a>
+  <a class="backlink" href="{{ url_for('jobs_page') }}">&larr; Back to jobs</a>
   <div class="pagehead__row">
     <div>
       <h1 class="pagehead__title">{{ job.title }}</h1>
@@ -29,7 +29,11 @@
         <div class="facts">
           <div class="fact">
             <div class="fact__k">Source</div>
-            <div class="fact__v">{{ job.source }}</div>
+            {#- Show the friendly employer/site name — never the raw
+                platform token (e.g. "crawl:stripe.com"). The technical
+                detail is available on the Sources page for anyone
+                who wants it. -#}
+            <div class="fact__v">{{ friendly_source(job.source, job.company) }}</div>
           </div>
           {% if platform %}
           <div class="fact">
@@ -139,7 +143,7 @@
           <p class="notice">No application generated for this job.</p>
         {% endif %}
 
-        <a class="btn btn--primary btn--block" href="{{ job.url }}" target="_blank" rel="noopener">Open job listing</a>
+        <a class="btn btn--primary btn--block" href="{{ job.url }}" target="_blank" rel="noopener">View original listing &rarr;</a>
 
         <form method="post" action="{{ url_for('check_link', job_id=job.id) }}">
           <button class="btn btn--block" type="submit">Check link is still live</button>

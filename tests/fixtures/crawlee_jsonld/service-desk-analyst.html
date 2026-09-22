@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head><title>Service Desk Analyst — Example Co.</title></head>
+<body>
+  <h1>Service Desk Analyst</h1>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    "title": "Service Desk Analyst",
+    "identifier": {"@type": "PropertyValue", "value": "job-102"},
+    "url": "https://example.test/careers/jobs/service-desk-analyst",
+    "description": "First-line technical support role.",
+    "hiringOrganization": {"@type": "Organization", "name": "Example Co."},
+    "jobLocation": {
+      "@type": "Place",
+      "address": {"@type": "PostalAddress", "addressLocality": "Sydney", "addressRegion": "NSW"}
+    }
+  }
+  </script>
+  <!-- Second script block: malformed JSON. The extractor must skip it,
+       not crash, and the well-formed block above must still be returned. -->
+  <script type="application/ld+json">
+  { this is not JSON at all
+  </script>
+</body>
+</html>

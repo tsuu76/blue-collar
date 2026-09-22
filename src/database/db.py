@@ -32,6 +32,21 @@ def get_connection(db_path: str | Path | None = None) -> sqlite3.Connection:
 _ADDITIVE_MIGRATIONS: list[tuple[str, str, str]] = [
     ("jobs", "canonical_url", "TEXT"),
     ("jobs", "discovery_metadata_json", "TEXT"),
+    ("outreach_companies", "platform", "TEXT"),
+    ("outreach_companies", "identifier", "TEXT"),
+    ("outreach_companies", "contact_name", "TEXT"),
+    ("outreach_companies", "contact_source", "TEXT"),
+    ("outreach_companies", "contact_evidence_url", "TEXT"),
+    ("outreach_companies", "linkedin_url", "TEXT"),
+    ("outreach_companies", "research_json", "TEXT"),
+    ("outreach_companies", "researched_at", "TEXT"),
+    ("outreach_companies", "discovered_contacts_json", "TEXT"),
+    ("outreach_companies", "x_handle", "TEXT"),
+    ("outreach_companies", "x_name", "TEXT"),
+    ("outreach_messages", "analysis_json", "TEXT"),
+    ("outreach_messages", "research_snapshot_json", "TEXT"),
+    ("outreach_messages", "gate_passed", "INTEGER"),
+    ("outreach_messages", "gate_reasons_json", "TEXT"),
 ]
 
 

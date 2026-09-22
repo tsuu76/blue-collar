@@ -15,10 +15,20 @@
       <img class="brand__mark" src="{{ url_for('static', filename='logo.svg') }}" alt="" width="34" height="34">
       <span class="brand__name">Blue <em>Collar</em></span>
     </a>
+    {#- Primary product nav. `active_nav` is set by each view to the key
+        below (dashboard / jobs / sources / activity) so the current
+        page's link picks up the accent style. Board / Outreach /
+        Import live in a secondary group on the right — still one click
+        away, but demoted from the top-line reading. -#}
+    <nav class="nav" aria-label="Sections">
+      <a class="nav__item{% if active_nav == 'dashboard' %} is-active{% endif %}" href="{{ url_for('index') }}">Dashboard</a>
+      <a class="nav__item{% if active_nav == 'jobs' %} is-active{% endif %}" href="{{ url_for('jobs_page') }}">Jobs</a>
+      <a class="nav__item{% if active_nav == 'sources' %} is-active{% endif %}" href="{{ url_for('sources_page') }}">Sources</a>
+      <a class="nav__item{% if active_nav == 'activity' %} is-active{% endif %}" href="{{ url_for('activity_page') }}">Activity</a>
+    </nav>
     <div class="topbar__actions">
-      <form method="post" action="{{ url_for('discover_now') }}">
-        <button class="btn btn--ghost" type="submit" title="Check every enabled employer in config/employers.json for new jobs, then run them through the pipeline">Run discovery</button>
-      </form>
+      <a class="nav__item nav__item--quiet" href="{{ url_for('board_page') }}">Board</a>
+      <a class="nav__item nav__item--quiet" href="{{ url_for('outreach') }}">Outreach</a>
       <a class="btn btn--primary" href="{{ url_for('import_job') }}">+ Import job</a>
     </div>
   </div>
